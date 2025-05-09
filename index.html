@@ -257,14 +257,15 @@
             <div class="signup-container">
                 <h2>Join the Eterna Legacy</h2>
                 <p class="signup-subtitle">Eterna is in its pre-launch phase. Sign up to our waiting list to receive project updates and exclusive pre-launch details.</p>
-                <form id="signup-form">
+                <form id="signup-form" action="https://formspree.io/f/xldblbgg" method="POST">
                     <div class="form-group">
-                        <label for="signup-email">Email Address</label>
-                        <input type="email" id="signup-email" placeholder="Enter your email" required aria-label="Email address for signup" />
+                      <label for="signup-email">Email Address</label>
+                      <input type="email" name="email" id="signup-email" placeholder="Enter your email" required aria-label="Email address for signup" />
                     </div>
+                    <input type="hidden" name="_subject" value="New Signup for Eterna" />
+                    <input type="text" name="_gotcha" style="display:none">
                     <button type="submit" aria-label="Join the waiting list">Reserve Your Spot</button>
-                    <div id="signup-message" role="alert"></div>
-                </form>
+                  </form>
                 <p class="signup-motivation">Be a pioneer in preserving memories for generations.</p>
                 <p><a href="https://www.kickstarter.com/projects/your-campaign" aria-label="Visit our Kickstarter campaign" rel="noopener">Support Us on Kickstarter</a></p>
             </div>
@@ -426,26 +427,6 @@
             });
             window.location.href = 'index.html';
         }
-
-        // Signup form validation (placeholder)
-        document.querySelector('#signup-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const email = document.querySelector('#signup-email').value;
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            const messageDiv = document.querySelector('#signup-message');
-            messageDiv.textContent = '';
-
-            if (!emailRegex.test(email)) {
-                messageDiv.textContent = 'Please enter a valid email address.';
-                messageDiv.style.color = '#FF6B6B';
-                return;
-            }
-
-            console.log('Form submitted:', email);
-            messageDiv.textContent = 'Thank you for signing up! We’ll be in touch soon.';
-            messageDiv.style.color = '#FFF8E7';
-            document.querySelector('#signup-email').value = '';
-        });
 
         // Video lazy-loading for background videos
         document.querySelectorAll('.bg-video').forEach(video => {
