@@ -1479,4 +1479,50 @@ footer a:hover {
         max-width: 400px;
         margin: 1rem auto;
     }
+    #detailed-features .feature-text {
+        position: relative;
+        background-color: var(--dark-bg);
+        padding: 25px;
+        border-radius: 10px;
+        border: 2px solid var(--accent-color);
+        color: var(--text-color);
+        z-index: 3;
+        text-align: center;
+        max-width: 350px;
+        min-width: 280px;
+        margin: 1rem;
+        flex: 1;
+    }
+    
+    #detailed-features .feature-image 
+        z-index: 2;
+        position: relative;
+        max-width: 300px;
+        border-radius: 10px;
+    }
+    
+    #detailed-features .feature-layout {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        padding: 2rem;
+        z-index: 1;
+        position: relative;
+    }
+    @media (max-width: 768px) {
+        #detailed-features .feature-layout {
+            flex-direction: column;
+        }
+    
+        #detailed-features .feature-text {
+            max-width: 90%;
+        }
+    
+        #detailed-features .feature-image {
+            width: 80%;
+        }
+    }
 }
