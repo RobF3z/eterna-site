@@ -17,7 +17,7 @@
 html, body {
     height: 100%;
     font-family: 'Marcellus', serif;
-    background-color: var(--primary-bg);
+    background-color: var(--primary-bg) !important; /* Restore dark green */
     color: var(--text-color);
     scroll-behavior: smooth;
 }
@@ -277,7 +277,7 @@ p, li, label {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background: var(--primary-bg);
+    background: var(--primary-bg) !important; /* Restore dark green */
     z-index: 1;
 }
 
@@ -293,12 +293,12 @@ p, li, label {
 
 /* Logo */
 .main-logo {
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 200px;
-    z-index: 10;
+    position: absolute !important;
+    top: 20px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 200px !important;
+    z-index: 10 !important;
 }
 
 /* Text Box Styles */
@@ -313,10 +313,10 @@ p, li, label {
 
 /* Hero Section */
 #hero .hero-text {
-    position: absolute;
-    top: 66.67%; /* Position at the lower third (2/3 down the page) */
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: absolute !important;
+    top: 75% !important; /* Move to lower third (75% down the section) */
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important; /* Center horizontally, adjust vertically */
     z-index: 2;
     max-width: 80%;
     color: var(--text-color);
@@ -1222,10 +1222,10 @@ footer a:hover {
     }
 
     .main-logo {
-        max-width: 150px;
-        top: 80px;
-        left: 50%;
-        transform: translateX(-50%);
+        max-width: 150px !important;
+        top: 80px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
     }
 
     #hero .hero-text h1 {
