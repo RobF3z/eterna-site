@@ -294,27 +294,29 @@ p, li, label {
 /* Logo */
 .main-logo {
     position: absolute !important;
-    top: 80px !important;
+    top: 15% !important; /* Adjusted to avoid overlap with navbar */
     left: 50% !important;
     transform: translateX(-50%) !important;
-    width: 375px !important; /* Increased from 300px to 375px (25% increase) */
+    width: 375px !important;
     z-index: 10 !important;
 }
 
 /* Text Box Styles */
-.overlay-text, .split-block, .feature-text, .center-block, .signup-callout, .split-text, .echo-overlay-text, .echo-info-left, .echo-info-right, .timeline-container, .timeline-preview, .memory-card, .vertical-timeline-placeholder, .instructions-placeholder {
+.overlay-text, .split-block, .center-block, .signup-callout, .split-text, .echo-overlay-text, .echo-info-left, .echo-info-right, .timeline-container, .timeline-preview, .memory-card, .vertical-timeline-placeholder, .instructions-placeholder {
     position: relative;
-    background-color: var(--dark-bg);
+    background-color: var(--dark-bg) !important; /* Ensure visibility */
     padding: 25px;
     border-radius: 10px;
     z-index: 2;
     text-align: center;
+    border: 2px solid var(--accent-color); /* Added border for visibility */
+    opacity: 1 !important; /* Ensure containers are visible */
 }
 
 /* Hero Section */
 #hero .hero-text {
     position: absolute !important;
-    top: 75% !important;
+    top: 70% !important; /* Adjusted to avoid overlap with main-logo */
     left: 50% !important;
     transform: translate(-50%, -50%) !important;
     z-index: 2;
@@ -364,7 +366,7 @@ p, li, label {
 
 .video-container {
     width: 80%;
-    max-width: 1600px; /* Increased from 800px to 1600px (doubled) */
+    max-width: 1600px;
     aspect-ratio: 16 / 9;
     border: 2px solid var(--accent-color);
     border-radius: 10px;
@@ -416,6 +418,8 @@ p, li, label {
     transform: translateX(-50%);
     z-index: 2;
     color: var(--text-color);
+    width: 80%; /* Ensure it fits within the viewport */
+    max-width: 600px; /* Prevent it from being too wide */
 }
 
 #features-overview .features-block {
@@ -426,13 +430,13 @@ p, li, label {
 }
 
 #features-overview .left-block {
-    top: 30%;
+    top: 25%; /* Adjusted to stack properly */
     left: 5%;
     text-align: left;
 }
 
 #features-overview .right-block {
-    top: 30%;
+    top: 55%; /* Adjusted to stack properly */
     right: 5%;
     text-align: right;
 }
@@ -454,6 +458,8 @@ p, li, label {
     transform: translateX(-50%);
     z-index: 2;
     color: var(--text-color);
+    width: 80%; /* Ensure it fits within the viewport */
+    max-width: 600px; /* Prevent it from being too wide */
 }
 
 #technology .echo-logo {
@@ -462,12 +468,12 @@ p, li, label {
     left: 50%;
     transform: translateX(-50%);
     width: 200px;
-    z-index: 2;
+    z-index: 3; /* Ensure it’s above other elements */
 }
 
 #technology .tech-text {
     position: absolute;
-    top: 50%;
+    top: 65%; /* Adjusted to avoid overlap with echo-logo */
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
@@ -483,6 +489,8 @@ p, li, label {
     transform: translateX(-50%);
     z-index: 2;
     color: var(--text-color);
+    width: 80%; /* Ensure it fits within the viewport */
+    max-width: 600px; /* Prevent it from being too wide */
 }
 
 #legacy-1 .legacy-block {
@@ -493,13 +501,13 @@ p, li, label {
 }
 
 #legacy-1 .left-block {
-    top: 30%;
+    top: 25%; /* Adjusted to stack properly */
     left: 5%;
     text-align: left;
 }
 
 #legacy-1 .right-block {
-    top: 30%;
+    top: 55%; /* Adjusted to stack properly */
     right: 5%;
     text-align: right;
 }
@@ -557,6 +565,7 @@ p, li, label {
 .feature-image {
     max-width: 300px;
     border-radius: 10px;
+    z-index: 2; /* Ensure it stays within the flex layout */
 }
 
 /* Signup Section */
@@ -1224,10 +1233,14 @@ footer a:hover {
     }
 
     .main-logo {
-        max-width: 250px !important; /* Increased from 200px to 250px (25% increase) */
-        top: 100px !important;
+        max-width: 250px !important;
+        top: 15% !important;
         left: 50% !important;
         transform: translateX(-50%) !important;
+    }
+
+    #hero .hero-text {
+        top: 65% !important; /* Adjusted for mobile */
     }
 
     #hero .hero-text h1 {
@@ -1251,6 +1264,10 @@ footer a:hover {
 
     #features-overview .right-block {
         top: 50%;
+    }
+
+    #technology .tech-text {
+        top: 60% !important; /* Adjusted for mobile */
     }
 
     #legacy-1 .legacy-block {
@@ -1289,7 +1306,7 @@ footer a:hover {
 
     .video-container {
         width: 90%;
-        max-width: 800px; /* Increased from 600px to 800px */
+        max-width: 800px;
     }
 
     .timeline-container {
