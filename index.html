@@ -58,7 +58,7 @@
           }
         }
         </script>
-      </head>
+    </head>
 <body>
     <div class="preloader" aria-live="polite">
         <div class="spinner"></div>
@@ -128,7 +128,7 @@
         <!-- New Section: Intro Video -->
         <section class="section" id="intro-video">
             <div class="video-container">
-                <video class="intro-video" controls preload="auto" poster="Assets/Eterna Logo 1.jpeg">
+                <video class="intro-video" autoplay muted loop controls preload="auto" poster="Assets/Eterna Logo 1.jpeg">
                     <source src="Assets/Eterna Add V4.mp4" type="video/mp4">
                     Your browser does not support the video tag. Please ensure videos are available.
                 </video>
@@ -306,6 +306,16 @@
             document.querySelectorAll('[data-auth="protected"]').forEach(el => {
                 el.style.display = loggedIn ? 'inline-block' : 'none';
             });
+
+            // Intro video autoplay at 50% volume
+            const introVideo = document.querySelector('.intro-video');
+            if (introVideo) {
+                introVideo.volume = 0.5; // Set volume to 50%
+                introVideo.muted = false; // Unmute after setting volume
+                introVideo.play().catch(error => {
+                    console.log('Intro video autoplay failed:', error);
+                });
+            }
         });
 
         // Mobile menu toggle

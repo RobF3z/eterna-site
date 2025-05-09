@@ -297,7 +297,7 @@ p, li, label {
     top: 80px !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
-    width: 300px !important;
+    width: 375px !important; /* Increased from 300px to 375px (25% increase) */
     z-index: 10 !important;
 }
 
@@ -364,7 +364,7 @@ p, li, label {
 
 .video-container {
     width: 80%;
-    max-width: 800px;
+    max-width: 1600px; /* Increased from 800px to 1600px (doubled) */
     aspect-ratio: 16 / 9;
     border: 2px solid var(--accent-color);
     border-radius: 10px;
@@ -1224,7 +1224,7 @@ footer a:hover {
     }
 
     .main-logo {
-        max-width: 200px !important;
+        max-width: 250px !important; /* Increased from 200px to 250px (25% increase) */
         top: 100px !important;
         left: 50% !important;
         transform: translateX(-50%) !important;
@@ -1289,7 +1289,7 @@ footer a:hover {
 
     .video-container {
         width: 90%;
-        max-width: 600px;
+        max-width: 800px; /* Increased from 600px to 800px */
     }
 
     .timeline-container {
