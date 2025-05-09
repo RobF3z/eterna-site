@@ -1,1633 +1,453 @@
 <!DOCTYPE html>
 <html lang="en-GB">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Create a lasting digital legacy with Eterna’s AI. Preserve your voice and memories for loved ones to cherish forever. Start today!" />
-  <meta name="keywords" content="digital legacy, voice preservation, AI legacy, memory preservation, eterna ai" />
-  <meta name="author" content="Eterna AI" />
-  <title>Eterna: AI Digital Legacy Platform | Leave More Than Memories</title>
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://eterna-ai.co.uk/" />
-
-  <!-- Open Graph Meta -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://eterna-ai.co.uk/" />
-  <meta property="og:title" content="Eterna: AI Digital Legacy Platform" />
-  <meta property="og:description" content="Preserve your voice and memories with Eterna’s AI. Build a digital legacy for generations to cherish. Start now!" />
-  <meta property="og:image" content="https://eterna-ai.co.uk/assets/eterna-logo-169.webp" />
-  <meta property="og:site_name" content="Eterna" />
-
-  <!-- Twitter Card Meta -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@EternaAI" />
-  <meta name="twitter:title" content="Eterna: AI Digital Legacy Platform" />
-  <meta name="twitter:description" content="Preserve your voice and memories with Eterna’s AI. Build a digital legacy for generations to cherish. Start now!" />
-  <meta name="twitter:image" content="https://eterna-ai.co.uk/assets/eterna-logo-169.webp" />
-
-  <!-- Favicon -->
-  <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
-  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
-
-  <!-- Fonts & CSS -->
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" as="style" />
-  <link rel="stylesheet" href="/assets/styles-v2.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet" />
-  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Eterna",
-    "url": "https://eterna-ai.co.uk",
-    "description": "Preserve your digital legacy with Eterna's AI-powered Echo Engine.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Eterna AI",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://eterna-ai.co.uk/assets/eterna-logo-169.webp"
-      },
-      "sameAs": [
-        "https://twitter.com/EternaAI",
-        "https://linkedin.com/company/eterna-ai"
-      ]
-    }
-  }
-  </script>
-
-  <!-- Inline CSS for Updated Styles -->
-  <style>
-    /* CSS Variables */
-    :root {
-        --primary-bg: #444E32;
-        --text-color: #FFF8E7;
-        --accent-color: #B08D57;
-        --dark-bg: rgba(32, 24, 12, 0.55);
-        --dark-bg-solid: #20180C;
-    }
-
-    /* Reset and Base Styles */
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    html, body {
-        height: 100%;
-        font-family: 'Marcellus', serif;
-        background-color: var(--primary-bg) !important;
-        color: var(--text-color);
-        scroll-behavior: smooth;
-    }
-
-    /* Typography */
-    h1 {
-        font-size: 2rem;
-        font-weight: 700;
-        letter-spacing: 1px;
-    }
-
-    h2 {
-        font-size: 1.375rem;
-    }
-
-    h3 {
-        font-size: 1.25rem;
-    }
-
-    p, li, label {
-        font-size: 1.125rem;
-    }
-
-    /* Preloader */
-    .preloader {
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        background: var(--primary-bg);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        z-index: 500;
-        transition: opacity 0.5s;
-    }
-
-    .preloader.hidden {
-        opacity: 0;
-        pointer-events: none;
-        visibility: hidden;
-    }
-
-    .spinner {
-        width: 40px;
-        height: 40px;
-        border: 4px solid var(--accent-color);
-        border-top: 4px solid transparent;
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-    }
-
-    @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-    }
-
-    /* Navbar */
-    .navbar {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background-color: rgba(68, 78, 50, 0.9);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 15px 20px;
-        z-index: 100;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    }
-
-    .menu-icon {
-        position: absolute;
-        left: 20px;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 28px;
-        color: var(--text-color);
-        cursor: pointer;
-    }
-
-    .menu-icon:focus {
-        outline: 2px solid var(--text-color);
-        outline-offset: 2px;
-    }
-
-    .navbar-slogan {
-        font-size: 1.25rem;
-        font-weight: 600;
-        color: var(--text-color);
-        text-align: center;
-        max-width: 60%;
-        z-index: 1;
-    }
-
-    .nav-buttons {
-        position: absolute;
-        right: 20px;
-        top: 50%;
-        transform: translateY(-50%);
-        display: flex;
-        gap: 10px;
-    }
-
-    .nav-buttons button, .nav-menu button {
-        padding: 8px 16px;
-        background: none;
-        border: 2px solid var(--accent-color);
-        color: var(--text-color);
-        cursor: pointer;
-        border-radius: 5px;
-        transition: background-color 0.3s;
-    }
-
-    .nav-buttons button:hover, .nav-menu button:hover {
-        background-color: var(--accent-color);
-        color: var(--dark-bg-solid);
-    }
-
-    .nav-buttons button:focus, .nav-menu button:focus {
-        outline: 2px solid var(--text-color);
-        outline-offset: 2px;
-    }
-
-    .nav-menu {
-        display: none;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background-color: var(--primary-bg);
-        padding: 20px;
-        flex-direction: column;
-        gap: 10px;
-        z-index: 99;
-        transition: opacity 0.3s ease-in-out;
-        opacity: 0;
-    }
-
-    .nav-menu.active {
-        display: flex;
-        opacity: 1;
-    }
-
-    @media (min-width: 769px) {
-        .nav-menu {
-            display: none !important;
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Create a lasting digital legacy with Eterna’s AI. Preserve your voice and memories for loved ones to cherish forever. Start today!" />
+        <meta name="keywords" content="digital legacy, voice preservation, AI legacy, memory preservation, eterna ai" />
+        <meta name="author" content="Eterna AI" />
+        <title>Eterna: AI Digital Legacy Platform | Leave More Than Memories</title>
+      
+        <!-- Canonical -->
+        <link rel="canonical" href="https://eterna-ai.co.uk/" />
+      
+        <!-- Open Graph Meta -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://eterna-ai.co.uk/" />
+        <meta property="og:title" content="Eterna: AI Digital Legacy Platform" />
+        <meta property="og:description" content="Preserve your voice and memories with Eterna’s AI. Build a digital legacy for generations to cherish. Start now!" />
+        <meta property="og:image" content="https://eterna-ai.co.uk/assets/eterna-logo-169.webp" />
+        <meta property="og:site_name" content="Eterna" />
+      
+        <!-- Twitter Card Meta -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@EternaAI" />
+        <meta name="twitter:title" content="Eterna: AI Digital Legacy Platform" />
+        <meta name="twitter:description" content="Preserve your voice and memories with Eterna’s AI. Build a digital legacy for generations to cherish. Start now!" />
+        <meta name="twitter:image" content="https://eterna-ai.co.uk/assets/eterna-logo-169.jpeg" />
+      
+        <!-- Favicon -->
+        <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+      
+        <!-- Fonts & CSS -->
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" as="style" />
+        <link rel="stylesheet" href="/assets/styles-v2.min.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+      
+        <!-- Structured Data -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "Eterna",
+          "url": "https://eterna-ai.co.uk",
+          "description": "Preserve your digital legacy with Eterna's AI-powered Echo Engine.",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Eterna AI",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://eterna-ai.co.uk/assets/eterna-logo-169.webp"
+            },
+            "sameAs": [
+              "https://twitter.com/EternaAI",
+              "https://linkedin.com/company/eterna-ai"
+            ]
+          }
         }
-    }
-
-    /* Login Overlay */
-    .login-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.7);
-        display: none;
-        align-items: center;
-        justify-content: center;
-        z-index: 1000;
-    }
-
-    .login-overlay[style*="display: flex"] {
-        display: flex !important;
-    }
-
-    .login-form {
-        background: var(--dark-bg);
-        padding: 20px;
-        border-radius: 10px;
-        width: 90%;
-        max-width: 400px;
-        text-align: center;
-        border: 2px solid var(--accent-color);
-    }
-
-    .login-form h2 {
-        font-size: 1.5rem;
-        margin-bottom: 15px;
-        color: var(--text-color);
-    }
-
-    .login-form form {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .login-form label {
-        text-align: left;
-        font-size: 1.125rem;
-        color: var(--text-color);
-    }
-
-    .login-form input {
-        padding: 10px;
-        border: 2px solid var(--accent-color);
-        border-radius: 5px;
-        background: transparent;
-        color: var(--text-color);
-        font-size: 1rem;
-    }
-
-    .login-form input:focus {
-        outline: 2px solid var(--text-color);
-        outline-offset: 2px;
-    }
-
-    .login-form button {
-        padding: 10px;
-        background: none;
-        border: 2px solid var(--accent-color);
-        color: var(--text-color);
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
-
-    .login-form button:hover {
-        background-color: var(--accent-color);
-        color: var(--dark-bg-solid);
-    }
-
-    .login-form button:focus {
-        outline: 2px solid var(--text-color);
-        outline-offset: 2px;
-    }
-
-    /* Login Overlay Messages */
-    .login-form .success-message {
-        margin-top: 10px;
-        font-size: 0.875rem;
-        text-align: center;
-        color: var(--accent-color);
-        padding: 8px;
-        border-radius: 4px;
-        background: rgba(255, 255, 255, 0.1);
-    }
-
-    .login-form .error-message {
-        margin-top: 10px;
-        font-size: 0.875rem;
-        text-align: center;
-        color: var(--text-color);
-        padding: 8px;
-        border-radius: 4px;
-        background: rgba(255, 0, 0, 0.2);
-    }
-
-    /* Sections */
-    .section {
-        position: relative;
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        background: var(--primary-bg) !important;
-        z-index: 1;
-    }
-
-    .bg-video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: 0;
-    }
-
-    /* Logo */
-    .main-logo {
-        position: absolute !important;
-        top: 80px !important;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
-        width: 375px !important; /* Increased from 300px to 375px (25% increase) */
-        z-index: 10 !important;
-    }
-
-    /* Text Box Styles */
-    .overlay-text, .split-block, .feature-text, .center-block, .signup-callout, .split-text, .echo-overlay-text, .echo-info-left, .echo-info-right, .timeline-container, .timeline-preview, .memory-card, .vertical-timeline-placeholder, .instructions-placeholder {
-        position: relative;
-        background-color: var(--dark-bg);
-        padding: 25px;
-        border-radius: 10px;
-        z-index: 2;
-        text-align: center;
-    }
-
-    /* Hero Section */
-    #hero .hero-text {
-        position: absolute !important;
-        top: 75% !important;
-        left: 50% !important;
-        transform: translate(-50%, -50%) !important;
-        z-index: 2;
-        max-width: 80%;
-        color: var(--text-color);
-    }
-
-    #hero .hero-text h1 {
-        font-size: 3rem;
-        margin-bottom: 1rem;
-    }
-
-    #hero .hero-text p {
-        font-size: 1.5rem;
-        margin-bottom: 2rem;
-    }
-
-    #hero .cta-button {
-        padding: 0.75rem 1.5rem;
-        font-size: 1.2rem;
-        background: none;
-        border: 2px solid var(--accent-color);
-        color: var(--text-color);
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
-
-    #hero .cta-button:hover {
-        background-color: var(--accent-color);
-        color: var(--dark-bg-solid);
-    }
-
-    #hero .cta-button:focus {
-        outline: 2px solid var(--text-color);
-        outline-offset: 2px;
-    }
-
-    /* Intro Video Section */
-    #intro-video {
-        background: var(--primary-bg) !important;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 2rem;
-    }
-
-    .video-container {
-        width: 80%;
-        max-width: 1600px; /* Increased from 800px to 1600px (doubled) */
-        aspect-ratio: 16 / 9;
-        border: 2px solid var(--accent-color);
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        background: var(--primary-bg) !important;
-    }
-
-    .intro-video {
-        width: 100%;
-        height: 100%;
-        display: block;
-        background: var(--primary-bg) !important;
-    }
-
-    .intro-video::-webkit-media-controls-panel {
-        background: var(--dark-bg);
-        color: var(--text-color);
-    }
-
-    .intro-video::-webkit-media-controls-play-button,
-    .intro-video::-webkit-media-controls-volume-slider,
-    .intro-video::-webkit-media-controls-mute-button,
-    .intro-video::-webkit-media-controls-current-time-display,
-    .intro-video::-webkit-media-controls-time-remaining-display {
-        filter: invert(90%) sepia(20%) saturate(300%) hue-rotate(20deg);
-    }
-
-    .intro-video::-webkit-media-controls-timeline {
-        background: var(--dark-bg-solid);
-        border-radius: 5px;
-    }
-
-    .intro-video::-webkit-media-controls-timeline::-webkit-slider-thumb {
-        background: var(--accent-color);
-        border-radius: 50%;
-    }
-
-    .intro-video:focus {
-        outline: 2px solid var(--text-color);
-        outline-offset: 2px;
-    }
-
-    /* Features Overview Section */
-    #features-overview .center-block {
-        position: absolute;
-        top: 10%;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 2;
-        color: var(--text-color);
-    }
-
-    #features-overview .features-block {
-        position: absolute;
-        z-index: 2;
-        color: var(--text-color);
-        max-width: 40%;
-    }
-
-    #features-overview .left-block {
-        top: 30%;
-        left: 5%;
-        text-align: left;
-    }
-
-    #features-overview .right-block {
-        top: 30%;
-        right: 5%;
-        text-align: right;
-    }
-
-    .features-block h3 {
-        font-size: 1.8rem;
-        margin-bottom: 1rem;
-    }
-
-    .features-block p {
-        font-size: 1.2rem;
-    }
-
-    /* Technology Section */
-    #technology .center-block {
-        position: absolute;
-        top: 10%;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 2;
-        color: var(--text-color);
-    }
-
-    #technology .echo-logo {
-        position: absolute;
-        top: 20%;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 200px;
-        z-index: 2;
-    }
-
-    #technology .tech-text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 2;
-        max-width: 80%;
-        color: var(--text-color);
-    }
-
-    /* Legacy Sections */
-    #legacy-1 .center-block {
-        position: absolute;
-        top: 10%;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 2;
-        color: var(--text-color);
-    }
-
-    #legacy-1 .legacy-block {
-        position: absolute;
-        z-index: 2;
-        color: var(--text-color);
-        max-width: 40%;
-    }
-
-    #legacy-1 .left-block {
-        top: 30%;
-        left: 5%;
-        text-align: left;
-    }
-
-    #legacy-1 .right-block {
-        top: 30%;
-        right: 5%;
-        text-align: right;
-    }
-
-    #legacy-2 .legacy-text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 2;
-        max-width: 80%;
-        color: var(--text-color);
-    }
-
-    /* Accessibility, Solitude, Memories Gramps */
-    .split-text {
-        position: absolute;
-        top: 50%;
-        left: 5%;
-        transform: translateY(-50%);
-        z-index: 2;
-        max-width: 50%;
-        color: var(--text-color);
-        text-align: left;
-    }
-
-    .split-text h3 {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-    }
-
-    .split-text p {
-        font-size: 1.2rem;
-    }
-
-    /* Detailed Features Section */
-    #detailed-features {
-        background: var(--dark-bg-solid);
-        padding: 2rem;
-    }
-
-    .feature-layout {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 2rem;
-    }
-
-    .feature-text {
-        max-width: 30%;
-        color: var(--text-color);
-    }
-
-    .feature-image {
-        max-width: 300px;
-        border-radius: 10px;
-    }
-
-    /* Signup Section */
-    #signup {
-        background: linear-gradient(135deg, var(--dark-bg-solid) 0%, var(--primary-bg) 100%);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 60vh;
-        padding: 2rem;
-    }
-
-    .signup-container {
-        background: var(--dark-bg);
-        border: 2px solid var(--accent-color);
-        border-radius: 15px;
-        padding: 3rem;
-        max-width: 600px;
-        width: 100%;
-        text-align: center;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    }
-
-    .signup-container h2 {
-        font-family: 'Marcellus', serif;
-        font-size: 2.5rem;
-        color: var(--text-color);
-        margin-bottom: 1rem;
-    }
-
-    .signup-container .signup-subtitle {
-        font-size: 1.2rem;
-        color: var(--text-color);
-        margin-bottom: 2rem;
-        opacity: 0.9;
-    }
-
-    #signup-form {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .form-group {
-        display: flex;
-        flex-direction: column;
-        text-align: left;
-    }
-
-    .form-group label {
-        font-size: 1rem;
-        color: var(--text-color);
-        margin-bottom: 0.5rem;
-    }
-
-    #signup-form input {
-        padding: 0.75rem;
-        font-size: 1rem;
-        border: 2px solid var(--accent-color);
-        border-radius: 5px;
-        background: transparent;
-        color: var(--text-color);
-        outline: none;
-        transition: border-color 0.3s;
-    }
-
-    #signup-form input:focus {
-        border-color: var(--accent-color);
-        outline: 2px solid var(--text-color);
-        outline-offset: 2px;
-    }
-
-    #signup-form button {
-        padding: 0.75rem;
-        font-size: 1.2rem;
-        background: none;
-        border: 2px solid var(--accent-color);
-        color: var(--text-color);
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
-
-    #signup-form button:hover {
-        background-color: var(--accent-color);
-        color: var(--dark-bg-solid);
-    }
-
-    #signup-form button:focus {
-        outline: 2px solid var(--text-color);
-        outline-offset: 2px;
-    }
-
-    #signup-message {
-        margin-top: 1rem;
-        font-size: 1rem;
-        color: var(--text-color);
-    }
-
-    .signup-motivation {
-        font-size: 1rem;
-        color: var(--text-color);
-        margin: 1rem 0;
-        opacity: 0.8;
-    }
-
-    .signup-container a {
-        color: var(--text-color);
-        text-decoration: underline;
-        transition: color 0.3s;
-    }
-
-    .signup-container a:hover {
-        color: var(--accent-color);
-    }
-
-    /* Timeline Container */
-    .timeline-container {
-        width: 90%;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 20px;
-        background: var(--dark-bg);
-        border: 3px solid var(--accent-color);
-        border-radius: 15px;
-        z-index: 2;
-    }
-
-    .timeline-container h1 {
-        font-size: 2rem;
-        margin-bottom: 20px;
-        color: var(--text-color);
-        border-bottom: 2px solid var(--accent-color);
-        padding-bottom: 10px;
-    }
-
-    /* Filter Controls */
-    .filter-controls {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        justify-content: center;
-        margin-bottom: 20px;
-        background: var(--dark-bg-solid);
-        padding: 15px;
-        border-radius: 10px;
-    }
-
-    .filter-controls select, .filter-controls button {
-        padding: 10px;
-        border: 2px solid var(--accent-color);
-        border-radius: 5px;
-        background: transparent;
-        color: var(--text-color);
-        font-size: 1rem;
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
-
-    .filter-controls select:hover, .filter-controls button:hover {
-        background-color: var(--accent-color);
-        color: var(--dark-bg-solid);
-    }
-
-    .filter-controls select:focus, .filter-controls button:focus {
-        outline: 2px solid var(--text-color);
-        outline-offset: 2px;
-    }
-
-    /* Memory Swiper */
-    .memory-swiper {
-        max-width: 100%;
-        margin: 0 auto;
-    }
-
-    .memory-card {
-        background: var(--dark-bg);
-        padding: 25px;
-        border-radius: 12px;
-        text-align: left;
-        border: 2px solid var(--accent-color);
-        max-width: 500px;
-        margin: 0 auto;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .memory-card:hover {
-        transform: scale(1.05);
-        box-shadow: 0 0 20px rgba(176, 141, 87, 0.3);
-    }
-
-    .memory-card:focus {
-        outline: 2px solid var(--text-color);
-        outline-offset: 2px;
-    }
-
-    .memory-card h2 {
-        font-size: 1.5rem;
-        margin-bottom: 12px;
-        color: var(--text-color);
-    }
-
-    .memory-card p {
-        font-size: 1.125rem;
-        color: var(--text-color);
-        opacity: 0.9;
-        margin-bottom: 10px;
-    }
-
-    .memory-card em {
-        font-size: 1rem;
-        color: var(--accent-color);
-    }
-
-    .memory-card .tags-visibility {
-        font-size: 0.875rem;
-        color: var(--text-color);
-        opacity: 0.8;
-        margin-bottom: 8px;
-    }
-
-    .memory-card .tags-visibility strong {
-        color: var(--accent-color);
-        font-weight: normal;
-    }
-
-    .memory-card .memory-actions {
-        display: flex;
-        gap: 10px;
-        margin-top: 15px;
-    }
-
-    .memory-card button {
-        padding: 8px 16px;
-        background: none;
-        border: 2px solid var(--accent-color);
-        color: var(--text-color);
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
-
-    .memory-card button:hover {
-        background-color: var(--accent-color);
-        color: var(--dark-bg-solid);
-    }
-
-    .memory-card button:focus {
-        outline: 2px solid var(--text-color);
-        outline-offset: 2px;
-    }
-
-    /* Memory Card Image */
-    .memory-image {
-        width: 100%;
-        max-height: 200px;
-        object-fit: cover;
-        border-radius: 8px;
-        margin-bottom: 15px;
-        display: block;
-    }
-
-    /* Swiper Controls */
-    .swiper-pagination-bullet {
-        background: var(--accent-color);
-        opacity: 0.5;
-    }
-
-    .swiper-pagination-bullet-active {
-        opacity: 1;
-    }
-
-    .swiper-button-prev,
-    .swiper-button-next {
-        color: var(--accent-color);
-        background: var(--dark-bg);
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .swiper-button-prev:hover,
-    .swiper-button-next:hover {
-        background: var(--accent-color);
-        color: var(--dark-bg-solid);
-    }
-
-    /* Loading Spinner */
-    .loading-spinner {
-        text-align: center;
-        padding: 20px;
-        font-size: 1.125rem;
-        color: var(--text-color);
-    }
-
-    .loading-spinner::before {
-        content: '';
-        display: inline-block;
-        width: 24px;
-        height: 24px;
-        border: 3px solid var(--accent-color);
-        border-top: 3px solid transparent;
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-        margin-right: 10px;
-        vertical-align: middle;
-    }
-
-    /* Error Message */
-    .error-message {
-        text-align: center;
-        padding: 20px;
-        font-size: 1.125rem;
-        color: var(--text-color);
-        background: rgba(255, 0, 0, 0.2);
-        border-radius: 8px;
-        margin: 0 auto;
-        max-width: 600px;
-    }
-
-    .error-message button {
-        padding: 8px 16px;
-        background: none;
-        border: 2px solid var(--accent-color);
-        color: var(--text-color);
-        border-radius: 5px;
-        cursor: pointer;
-        margin-left: 10px;
-        transition: background-color 0.3s;
-    }
-
-    .error-message button:hover {
-        background-color: var(--accent-color);
-        color: var(--dark-bg-solid);
-    }
-
-    .error-message button:focus {
-        outline: 2px solid var(--text-color);
-        outline-offset: 2px;
-    }
-
-    /* Modal */
-    .modal {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(32, 24, 12, 0.7);
-        display: none;
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-    }
-
-    .modal-content {
-        background: var(--dark-bg-solid);
-        padding: 20px;
-        border-radius: 10px;
-        border: 2px solid var(--accent-color);
-        max-width: 500px;
-        width: 90%;
-        max-height: 80vh;
-        overflow-y: auto;
-    }
-
-    .modal-content h2 {
-        font-size: 1.5rem;
-        margin-bottom: 15px;
-        color: var(--text-color);
-    }
-
-    .modal-content form {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .modal-content label {
-        font-size: 1.125rem;
-        color: var(--text-color);
-        text-align: left;
-    }
-
-    .modal-content input, .modal-content textarea, .modal-content select {
-        padding: 10px;
-        border: 2px solid var(--accent-color);
-        border-radius: 5px;
-        background: transparent;
-        color: var(--text-color);
-        font-size: 1rem;
-    }
-
-    .modal-content input:focus, .modal-content textarea:focus, .modal-content select:focus {
-        outline: 2px solid var(--text-color);
-        outline-offset: 2px;
-    }
-
-    .modal-content textarea {
-        height: 80px;
-        resize: vertical;
-    }
-
-    .modal-content input[type="file"] {
-        padding: 5px;
-    }
-
-    .modal-content button {
-        padding: 10px;
-        background: none;
-        border: 2px solid var(--accent-color);
-        color: var(--text-color);
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
-
-    .modal-content button:hover {
-        background-color: var(--accent-color);
-        color: var(--dark-bg-solid);
-    }
-
-    .modal-content button:focus {
-        outline: 2px solid var(--text-color);
-        outline-offset: 2px;
-    }
-
-    .modal-content::-webkit-scrollbar {
-        width: 8px;
-    }
-
-    .modal-content::-webkit-scrollbar-track {
-        background: var(--dark-bg);
-    }
-
-    .modal-content::-webkit-scrollbar-thumb {
-        background: var(--accent-color);
-        border-radius: 4px;
-    }
-
-    /* Instructions Placeholder */
-    .instructions-placeholder {
-        position: absolute;
-        left: 5vw;
-        top: 25vh;
-        width: 25%;
-        max-width: 348px;
-        max-height: 50vh;
-        overflow-y: auto;
-        text-align: left;
-    }
-
-    .instructions-placeholder h2 {
-        font-size: 1.5rem;
-        margin-bottom: 15px;
-    }
-
-    .instructions-placeholder ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    .instructions-placeholder li {
-        margin-bottom: 10px;
-        font-size: 1rem;
-    }
-
-    .instructions-placeholder::-webkit-scrollbar {
-        width: 8px;
-    }
-
-    .instructions-placeholder::-webkit-scrollbar-track {
-        background: var(--dark-bg);
-    }
-
-    .instructions-placeholder::-webkit-scrollbar-thumb {
-        background: var(--accent-color);
-        border-radius: 4px;
-    }
-
-    /* Vertical Timeline Placeholder */
-    .vertical-timeline-placeholder {
-        position: absolute;
-        right: 5vw;
-        top: 25vh;
-        width: 25%;
-        max-width: 348px;
-        max-height: 50vh;
-        text-align: left;
-        display: flex;
-        flex-direction: column;
-        padding: 20px;
-    }
-
-    .vertical-timeline-placeholder h2 {
-        font-size: 1.5rem;
-        margin-bottom: 15px;
-    }
-
-    .vertical-timeline-placeholder ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    .vertical-timeline-placeholder li {
-        margin-bottom: 10px;
-        font-size: 1rem;
-    }
-
-    .vertical-timeline-placeholder .timeline-content {
-        display: flex;
-        justify-content: space-between;
-        flex: 1;
-        overflow: hidden;
-        padding-right: 15px;
-    }
-
-    .vertical-timeline-placeholder .timeline-swiper {
-        flex: 0 0 80%;
-        margin: 0 auto;
-        overflow: hidden;
-    }
-
-    .vertical-timeline-placeholder .slider-container {
-        flex: 0 0 15px;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-    }
-
-    .vertical-timeline-placeholder .timeline-control-slider {
-        width: 120px;
-        height: 8px;
-        -webkit-appearance: none;
-        background: var(--dark-bg-solid);
-        border-radius: 5px;
-        transform: rotate(-90deg);
-        transform-origin: left center;
-        margin: 60px 0 60px 0;
-    }
-
-    .vertical-timeline-placeholder .timeline-control-slider::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        width: 16px;
-        height: 16px;
-        background: var(--accent-color);
-        border-radius: 50%;
-        cursor: pointer;
-    }
-
-    .vertical-timeline-placeholder .timeline-control-slider::-moz-range-thumb {
-        width: 16px;
-        height: 16px;
-        background: var(--accent-color);
-        border-radius: 50%;
-        cursor: pointer;
-    }
-
-    .vertical-timeline-placeholder .timeline-control-slider:focus {
-        outline: 2px solid var(--text-color);
-        outline-offset: 2px;
-    }
-
-    .vertical-timeline-placeholder .swiper-slide {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 80px;
-        opacity: 0.6;
-        transition: opacity 0.3s, transform 0.3s;
-    }
-
-    .vertical-timeline-placeholder .swiper-slide-active {
-        opacity: 1;
-        transform: scale(1.1);
-    }
-
-    .vertical-timeline-placeholder .memory-card {
-        background: var(--dark-bg-solid);
-        padding: 10px;
-        border-radius: 5px;
-        text-align: center;
-        border: 2px solid var(--accent-color);
-        width: 90%;
-        height: 60px;
-        font-size: 1rem;
-        color: var(--text-color);
-        position: relative;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-    }
-
-    .vertical-timeline-placeholder .memory-card:hover {
-        pointer-events: none;
-    }
-
-    .vertical-timeline-placeholder .memory-card h3 {
-        font-size: 1rem;
-        margin-bottom: 5px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    .vertical-timeline-placeholder .memory-card p {
-        font-size: 0.875rem;
-        margin: 0;
-    }
-
-    /* Footer */
-    footer {
-        text-align: center;
-        padding: 20px;
-        background: rgba(32, 24, 12, 0.85);
-        color: var(--text-color);
-        font-size: 0.875rem;
-    }
-
-    footer p {
-        margin: 0.5rem 0;
-    }
-
-    footer a {
-        color: var(--text-color);
-        text-decoration: none;
-        margin: 0 0.5rem;
-    }
-
-    footer a:hover {
-        color: var(--accent-color);
-    }
-
-    .socials {
-        margin-top: 1rem;
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-    }
-
-    .socials a {
-        color: var(--text-color);
-        transition: color 0.3s;
-    }
-
-    .socials a:hover {
-        color: var(--accent-color);
-    }
-
-    /* Mobile Adjustments */
-    @media (max-width: 768px) {
-        .navbar-slogan {
-            font-size: 0.875rem;
-        }
-
-        .nav-buttons {
-            display: none;
-        }
-
-        .menu-icon {
-            display: block;
-        }
-
-        .main-logo {
-            max-width: 250px !important; /* Increased from 200px to 250px (25% increase) */
-            top: 100px !important;
-            left: 50% !important;
-            transform: translateX(-50%) !important;
-        }
-
-        #hero .hero-text h1 {
-            font-size: 2rem;
-        }
-
-        #hero .hero-text p {
-            font-size: 1rem;
-        }
-
-        #features-overview .features-block {
-            max-width: 90%;
-            left: 50%;
-            transform: translateX(-50%);
-            text-align: center;
-        }
-
-        #features-overview .left-block {
-            top: 20%;
-        }
-
-        #features-overview .right-block {
-            top: 50%;
-        }
-
-        #legacy-1 .legacy-block {
-            max-width: 90%;
-            left: 50%;
-            transform: translateX(-50%);
-            text-align: center;
-        }
-
-        #legacy-1 .left-block {
-            top: 20%;
-        }
-
-        #legacy-1 .right-block {
-            top: 50%;
-        }
-
-        .split-text {
-            max-width: 90%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-        }
-
-        .split-text h3 {
-            font-size: 1.5rem;
-        }
-
-        .split-text p {
-            font-size: 1rem;
-        }
-
-        .feature-text {
-            max-width: 90%;
-        }
-
-        .video-container {
-            width: 90%;
-            max-width: 800px; /* Increased from 600px to 800px */
-        }
-
-        .timeline-container {
-            width: 100%;
-            padding: 15px;
-        }
-
-        .timeline-container h1 {
-            font-size: 1.75rem;
-        }
-
-        .memory-card {
-            max-width: 100%;
-            padding: 20px;
-        }
-
-        .memory-card h2 {
-            font-size: 1.375rem;
-        }
-
-        .memory-card p {
-            font-size: 1rem;
-        }
-
-        .memory-card .memory-image {
-            max-height: 150px;
-        }
-
-        .instructions-placeholder,
-        .vertical-timeline-placeholder {
-            position: relative;
-            width: 80%;
-            max-width: 500px;
-            margin: 20px auto;
-            top: auto;
-            left: auto;
-            right: auto;
-        }
-
-        .vertical-timeline-placeholder .timeline-content {
-            flex-direction: column;
-            padding-right: 0;
-        }
-
-        .vertical-timeline-placeholder .timeline-swiper {
-            flex: 1;
-            height: 200px;
-            margin: 0 auto;
-        }
-
-        .vertical-timeline-placeholder .swiper-slide {
-            height: 60px;
-        }
-
-        .vertical-timeline-placeholder .slider-container {
-            flex: 0 0 40px;
-            justify-content: center;
-        }
-
-        .vertical-timeline-placeholder .timeline-control-slider {
-            transform: none;
-            width: 100%;
-            margin: 0;
-        }
-
-        .signup-container {
-            padding: 2rem;
-        }
-
-        .signup-container h2 {
-            font-size: 2rem;
-        }
-
-        .signup-container .signup-subtitle {
-            font-size: 1rem;
-        }
-    }
-  </style>
-</head>
+        </script>
+      </head>
 <body>
-  <!-- Preloader -->
-  <div class="preloader">
-    <div class="spinner"></div>
-  </div>
+    <div class="preloader" aria-live="polite">
+        <div class="spinner"></div>
+        <span>Loading...</span>
+    </div>
+    <noscript>
+        <style>
+            .preloader { display: none; }
+            .nav-menu { display: flex; flex-direction: column; position: static; }
+        </style>
+        <p>JavaScript is disabled. Some features may be limited.</p>
+    </noscript>
 
-  <!-- Navbar -->
-  <nav class="navbar">
-    <span class="menu-icon">☰</span>
-    <span class="navbar-slogan">Your Legacy, Forever</span>
-    <div class="nav-buttons">
-      <button>Login</button>
-      <button>Sign Up</button>
-    </div>
-    <div class="nav-menu">
-      <button>Login</button>
-      <button>Sign Up</button>
-    </div>
-  </nav>
-
-  <!-- Login Overlay -->
-  <div class="login-overlay">
-    <div class="login-form">
-      <h2>Login</h2>
-      <form>
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required />
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required />
-        <button type="submit">Login</button>
-      </form>
-    </div>
-  </div>
-
-  <!-- Hero Section -->
-  <section id="hero" class="section">
-    <video class="bg-video" src="/assets/hero-video.mp4" autoplay loop muted></video>
-    <img src="/assets/eterna-logo-169.webp" alt="Eterna Logo" class="main-logo" />
-    <div class="hero-text">
-      <h1>Preserve Your Legacy with Eterna</h1>
-      <p>Create a digital legacy your family can cherish forever.</p>
-      <button class="cta-button">Get Started</button>
-    </div>
-  </section>
-
-  <!-- Intro Video Section -->
-  <section id="intro-video" class="section">
-    <div class="video-container">
-      <video class="intro-video" src="/assets/intro-video.mp4" autoplay muted loop controls></video>
-    </div>
-  </section>
-
-  <!-- Features Overview Section -->
-  <section id="features-overview" class="section">
-    <div class="center-block">
-      <h2>Features Overview</h2>
-    </div>
-    <div class="features-block left-block">
-      <h3>Voice Preservation</h3>
-      <p>Capture and preserve your voice for future generations.</p>
-    </div>
-    <div class="features-block right-block">
-      <h3>Memory Timeline</h3>
-      <p>Create a timeline of your most cherished memories.</p>
-    </div>
-  </section>
-
-  <!-- Technology Section -->
-  <section id="technology" class="section">
-    <div class="center-block">
-      <h2>Eterna Technology</h2>
-    </div>
-    <img src="/assets/echo-logo.png" alt="Echo Logo" class="echo-logo" />
-    <div class="tech-text">
-      <p>Powered by the Echo Engine, Eterna uses AI to preserve your legacy.</p>
-    </div>
-  </section>
-
-  <!-- Legacy Sections -->
-  <section id="legacy-1" class="section">
-    <div class="center-block">
-      <h2>Your Digital Legacy</h2>
-    </div>
-    <div class="legacy-block left-block">
-      <h3>Secure Storage</h3>
-      <p>Your memories are safely stored for generations.</p>
-    </div>
-    <div class="legacy-block right-block">
-      <h3>Easy Sharing</h3>
-      <p>Share your legacy with loved ones effortlessly.</p>
-    </div>
-  </section>
-
-  <section id="legacy-2" class="section">
-    <div class="legacy-text">
-      <h2>A Legacy That Lasts</h2>
-      <p>Ensure your stories live on forever with Eterna.</p>
-    </div>
-  </section>
-
-  <!-- Accessibility Section -->
-  <section id="accessibility" class="section">
-    <div class="split-text">
-      <h3>Accessibility First</h3>
-      <p>Designed with accessibility in mind for all users.</p>
-    </div>
-  </section>
-
-  <!-- Detailed Features Section -->
-  <section id="detailed-features" class="section">
-    <div class="feature-layout">
-      <div class="feature-text">
-        <h3>Feature One</h3>
-        <p>Details about feature one.</p>
-      </div>
-      <img src="/assets/feature-image-1.jpg" alt="Feature Image 1" class="feature-image" />
-      <div class="feature-text">
-        <h3>Feature Two</h3>
-        <p>Details about feature two.</p>
-      </div>
-      <img src="/assets/feature-image-2.jpg" alt="Feature Image 2" class="feature-image" />
-    </div>
-  </section>
-
-  <!-- Signup Section -->
-  <section id="signup" class="section">
-    <div class="signup-container">
-      <h2>Join Eterna Today</h2>
-      <p class="signup-subtitle">Start preserving your legacy now.</p>
-      <form id="signup-form">
-        <div class="form-group">
-          <label for="signup-email">Email</label>
-          <input type="email" id="signup-email" name="email" required />
+    <!-- Login Overlay -->
+    <div class="login-overlay" id="login-overlay" style="display: none;" role="dialog" aria-labelledby="login-title">
+        <div class="login-form">
+            <h2 id="login-title">Sign In to Eterna</h2>
+            <form id="login-form" onsubmit="handleLoginSubmit(event)">
+                <label for="login-email">Email</label>
+                <input type="email" id="login-email" placeholder="Enter email" required aria-label="Email" aria-required="true" />
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" placeholder="Enter password" required aria-label="Password" aria-required="true" />
+                <button type="submit" aria-label="Sign in">Sign In</button>
+                <button type="button" onclick="closeLoginOverlay()" aria-label="Close sign-in form">Close</button>
+            </form>
         </div>
-        <div class="form-group">
-          <label for="signup-password">Password</label>
-          <input type="password" id="signup-password" name="password" required />
+    </div>
+
+    <nav class="navbar" aria-label="Main navigation">
+        <button class="menu-icon" role="button" aria-label="Toggle navigation menu" tabindex="0" onclick="toggleNavMenu()">☰</button>
+        <p class="navbar-slogan">Preserve Your voice. Your story. Your legacy</p>
+        <div class="nav-buttons">
+            <button onclick="showLoginOverlay()" aria-label="Log in to Eterna">Login</button>
+            <button onclick="window.location.href='#signup'" aria-label="Sign up for Eterna">Sign Up</button>
+            <!-- Protected buttons hidden until logged in -->
+            <button data-auth="protected" onclick="window.location.href='full-echo-v2.html'" aria-label="Talk to Your Echo">Talk to Echo</button>
+            <button data-auth="protected" onclick="window.location.href='memory-timeline.html'" aria-label="View Your Memories">View Memories</button>
+            <button data-auth="protected" onclick="window.location.href='family-tree.html'" aria-label="View Your Family Tree">Family Tree</button>
+            <button data-auth="protected" onclick="logout()" aria-label="Log out of Eterna">Logout</button>
         </div>
-        <button type="submit">Sign Up</button>
-      </form>
-      <p id="signup-message"></p>
-      <p class="signup-motivation">Already have an account? <a href="#">Login</a></p>
-    </div>
-  </section>
-
-  <!-- Timeline Section -->
-  <section id="timeline" class="section">
-    <div class="timeline-container">
-      <h1>Your Memory Timeline</h1>
-      <div class="filter-controls">
-        <select>
-          <option>Filter by Year</option>
-          <option>2025</option>
-          <option>2024</option>
-        </select>
-        <button>Apply Filters</button>
-      </div>
-      <div class="memory-swiper">
-        <div class="memory-card">
-          <img src="/assets/memory-image.jpg" alt="Memory Image" class="memory-image" />
-          <h2>Family Reunion 2025</h2>
-          <p>A wonderful gathering with loved ones.</p>
-          <em>January 2025</em>
-          <p class="tags-visibility"><strong>Tags:</strong> Family, Celebration</p>
-          <div class="memory-actions">
-            <button>Edit</button>
-            <button>Share</button>
-          </div>
+        <div class="nav-menu" aria-hidden="true">
+            <button onclick="showLoginOverlay()" aria-label="Log in to Eterna">Login</button>
+            <button onclick="window.location.href='#signup'" aria-label="Sign up for Eterna">Sign Up</button>
+            <!-- Protected buttons hidden until logged in -->
+            <button data-auth="protected" onclick="window.location.href='full-echo-v2.html'" aria-label="Talk to Your Echo">Talk to Echo</button>
+            <button data-auth="protected" onclick="window.location.href='memory-timeline.html'" aria-label="View Your Memories">View Memories</button>
+            <button data-auth="protected" onclick="window.location.href='family-tree.html'" aria-label="View Your Family Tree">Family Tree</button>
+            <button data-auth="protected" onclick="logout()" aria-label="Log out of Eterna">Logout</button>
         </div>
-      </div>
-    </div>
-  </section>
+    </nav>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Eterna AI. All rights reserved.</p>
-    <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-    <div class="socials">
-      <a href="#">Twitter</a>
-      <a href="#">LinkedIn</a>
-      <a href="#">Instagram</a>
-    </div>
-  </footer>
+    <main>
+        <!-- Section 1: Hero -->
+        <section class="section" id="hero">
+            <video autoplay muted loop class="bg-video" preload="metadata">
+                <source src="Assets/Forest 1.mp4" type="video/mp4">
+                Your browser does not support the video tag. Please ensure videos are available.
+            </video>
+            <img src="Assets/Eterna Logo 1.jpeg" class="main-logo" alt="Eterna Logo" />
+            <div class="overlay-text hero-text" role="region" aria-label="Introduction to Eterna">
+                <h1>Your Story. Preserved. Shared. Remembered.</h1>
+                <p>Eterna uses advanced AI to capture your voice, values, and memories — so your loved ones can keep hearing from you for generations.</p>
+                <button class="cta-button" aria-label="Start building your Echo" onclick="window.location.href='#signup'">Start Building Your Echo</button>
+            </div>
+        </section>
 
-  <!-- JavaScript for Video Autoplay and Volume -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const video = document.querySelector('.intro-video');
-        if (video) {
-            video.volume = 0.5; // Set volume to 50%
-            video.muted = false; // Unmute after setting volume
-            video.play().catch(error => {
-                console.log('Autoplay failed:', error);
+        <!-- New Section: Intro Video -->
+        <section class="section" id="intro-video">
+            <div class="video-container">
+                <video class="intro-video" controls preload="auto" poster="Assets/Eterna Logo 1.jpeg">
+                    <source src="Assets/Eterna Add V4.mp4" type="video/mp4">
+                    Your browser does not support the video tag. Please ensure videos are available.
+                </video>
+            </div>
+        </section>
+
+        <!-- Section 2: Features Overview -->
+        <section class="section" id="features-overview">
+            <video autoplay muted loop class="bg-video" preload="metadata">
+                <source src="Assets/holiday.mp4" type="video/mp4">
+                Your browser does not support the video tag. Please ensure videos are available.
+            </video>
+            <div class="center-block">
+                <h3>Family Memories, Never Lost</h3>
+            </div>
+            <div class="split-block left-block features-block">
+                <h3>Capture Your Unique Voice</h3>
+                <p>Engage in casual, heartfelt conversations with Echo to preserve your tone, humor, and wisdom. Our AI learns your speech patterns and values, creating a voice-first memory timeline that reflects the real you, ready to share with future generations.</p>
+            </div>
+            <div class="split-block right-block features-block">
+                <h3>Cherish Every Moment</h3>
+                <p>From spontaneous family gatherings to your favorite bedtime stories, Echo saves the everyday moments that define you. Relive the laughter and love anytime, ensuring your presence is felt by those you hold dear, now and forever.</p>
+            </div>
+        </section>
+
+        <!-- Section 3: Technology -->
+        <section class="section" id="technology">
+            <video autoplay muted loop class="bg-video" preload="metadata">
+                <source src="Assets/AI 1.mp4" type="video/mp4">
+                Your browser does not support the video tag. Please ensure videos are available.
+            </video>
+            <div class="center-block">
+                <h3>The Technology Behind the Voice</h3>
+            </div>
+            <img src="Assets/echo logo 1.png" class="echo-logo" alt="Echo Logo" />
+            <div class="overlay-text tech-text">
+                <h2>AI That Understands You</h2>
+                <p>Echo uses cutting-edge generative AI to map your voice, personality, and thought patterns. We continuously refine our technology to deliver the most authentic and emotionally resonant experience, all while prioritizing your privacy and security. Your voice, your essence—preserved forever.</p>
+            </div>
+        </section>
+
+        <!-- Section 4: Legacy Reinforcement (First) -->
+        <section class="section" id="legacy-1">
+            <video autoplay muted loop class="bg-video" preload="metadata">
+                <source src="Assets/Book 1.mp4" type="video/mp4">
+                Your browser does not support the video tag. Please ensure videos are available.
+            </video>
+            <div class="center-block">
+                <h3>Memories That Matter Most</h3>
+            </div>
+            <div class="split-block left-block legacy-block">
+                <h3>Keep Nan’s Kitchen Alive</h3>
+                <p>From Yorkshire puds to Sunday roasts, Echo records every step in Nan’s voice. It’s like cooking beside her again — even years from now.</p>
+            </div>
+            <div class="split-block right-block legacy-block">
+                <h3>Never Lose Dad’s Laugh</h3>
+                <p>Whether it’s the punchline he always told or the way he explained things — Echo lets his personality shine through for generations who never got to meet him.</p>
+            </div>
+        </section>
+
+        <!-- Section 5: Legacy Reinforcement (Second) -->
+        <section class="section" id="legacy-2">
+            <video autoplay muted loop class="bg-video" preload="metadata">
+                <source src="Assets/Memory 1.mp4" type="video/mp4">
+                Your browser does not support the video tag. Please ensure videos are available.
+            </video>
+            <div class="overlay-text legacy-text">
+                <h2>A Bridge Between Generations</h2>
+                <p>Let your great-grandchildren laugh at your jokes, learn your lessons, and know your heart. With Eterna, your spirit lives in every conversation.</p>
+            </div>
+        </section>
+
+        <!-- Section 6: Accessibility -->
+        <section class="section" id="accessibility">
+            <video autoplay muted loop class="bg-video" preload="metadata">
+                <source src="Assets/User Post.mp4" type="video/mp4">
+                Your browser does not support the video tag. Please ensure videos are available.
+            </video>
+            <div class="split-text accessibility-text">
+                <h3>Your Memories, Always Within Reach</h3>
+                <p>Whether your family is down the street or across the world, Echo is always ready. Just one click to hear your stories, your laughter — your voice.</p>
+            </div>
+        </section>
+
+        <!-- Section 7: Solitude -->
+        <section class="section" id="solitude">
+            <video autoplay muted loop class="bg-video" preload="metadata">
+                <source src="Assets/alone beach.mp4" type="video/mp4">
+                Your browser does not support the video tag. Please ensure videos are available.
+            </video>
+            <div class="split-text">
+                <h3>Hold On to Every Moment</h3>
+                <p>From quiet beach mornings to small daily rituals, Eterna helps you preserve the subtle moments that shaped who you are — and share them with the people you love.</p>
+            </div>
+        </section>
+
+        <!-- Section 8: Memories of Gramps -->
+        <section class="section" id="memories-gramps">
+            <video autoplay muted loop class="bg-video" preload="metadata">
+                <source src="Assets/lost gramps.mp4" type="video/mp4">
+                Your browser does not support the video tag. Please ensure videos are available.
+            </video>
+            <div class="split-text">
+                <h3>Grampa’s Voice Still Echoes</h3>
+                <p>Standing at the memorial, it’s not just a photo they remember — it’s the warmth of his voice, the way he said their name, the lessons he left behind. With Eterna, those moments aren’t lost. They’re lived.</p>
+            </div>
+        </section>
+
+        <!-- Section 9: Detailed Features -->
+        <section class="section" id="detailed-features">
+            <div class="feature-layout">
+                <div class="feature-text left-text">
+                    <h3>Relive Your Story</h3>
+                    <p>Explore your life’s milestones, moments, and memories through Eterna’s dynamic Memory Timeline — all narrated in your own voice.</p>
+                </div>
+                <img src="Assets/grand 1.png" class="feature-image" alt="Grandparent sharing a story with family" />
+                <div class="feature-text right-text">
+                    <h3>Feel the Connection</h3>
+                    <p>The Echo Assistant lets your family ask questions and receive answers in your voice, creating a bond that lives beyond the moment.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 10: Signup -->
+        <section class="section" id="signup">
+            <div class="signup-container">
+                <h2>Join the Eterna Legacy</h2>
+                <p class="signup-subtitle">Eterna is in its pre-launch phase. Sign up to our waiting list to receive project updates and exclusive pre-launch details.</p>
+                <form id="signup-form">
+                    <div class="form-group">
+                        <label for="signup-email">Email Address</label>
+                        <input type="email" id="signup-email" placeholder="Enter your email" required aria-label="Email address for signup" />
+                    </div>
+                    <button type="submit" aria-label="Join the waiting list">Reserve Your Spot</button>
+                    <div id="signup-message" role="alert"></div>
+                </form>
+                <p class="signup-motivation">Be a pioneer in preserving memories for generations.</p>
+                <p><a href="https://www.kickstarter.com/projects/your-campaign" aria-label="Visit our Kickstarter campaign" rel="noopener">Support Us on Kickstarter</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Eterna. All rights reserved.</p>
+        <p>
+            <a href="/privacy-policy" aria-label="Privacy Policy">Privacy Policy</a> |
+            <a href="/terms" aria-label="Terms of Service">Terms</a> |
+            <a href="/contact" aria-label="Contact Us">Contact</a>
+        </p>
+        <div class="socials">
+            <a href="https://twitter.com/eterna" aria-label="Twitter" rel="noopener">
+                <svg role="img" aria-label="Twitter logo" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFF8E7" stroke-width="2">
+                    <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                </svg>
+            </a>
+            <a href="https://facebook.com/eterna" aria-label="Facebook" rel="noopener">
+                <svg role="img" aria-label="Facebook logo" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFF8E7" stroke-width="2">
+                    <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                </svg>
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        // Preloader
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.querySelector('.preloader').classList.add('hidden');
+            }, 500);
+        });
+
+        // Hide protected buttons until logged in
+        window.addEventListener('DOMContentLoaded', () => {
+            const loggedIn = !!localStorage.getItem('access_token');
+            document.querySelectorAll('[data-auth="protected"]').forEach(el => {
+                el.style.display = loggedIn ? 'inline-block' : 'none';
+            });
+        });
+
+        // Mobile menu toggle
+        function toggleNavMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.classList.toggle('active');
+            navMenu.setAttribute('aria-hidden', !navMenu.classList.contains('active'));
+            navMenu.style.display = navMenu.classList.contains('active') ? 'flex' : 'none';
+            // Ensure protected buttons in mobile menu reflect login state
+            const loggedIn = !!localStorage.getItem('access_token');
+            document.querySelectorAll('.nav-menu [data-auth="protected"]').forEach(el => {
+                el.style.display = loggedIn ? 'block' : 'none';
             });
         }
-    });
-  </script>
+
+        // Login overlay
+        function showLoginOverlay() {
+            const overlay = document.getElementById('login-overlay');
+            overlay.style.display = 'flex';
+            overlay.style.zIndex = '1000'; // Ensure overlay is above navbar
+        }
+
+        function closeLoginOverlay() {
+            document.getElementById('login-overlay').style.display = 'none';
+            // Remove any success/error messages
+            const messages = document.querySelectorAll('.login-form .success-message, .login-form .error-message');
+            messages.forEach(msg => msg.remove());
+        }
+
+        // Login form submission
+        async function handleLoginSubmit(event) {
+            event.preventDefault();
+            const username = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+
+            const existingMessages = document.querySelectorAll('.login-form .success-message, .login-form .error-message');
+            existingMessages.forEach(msg => msg.remove());
+
+            try {
+                console.log('Attempting login with:', { username, password });
+                const response = await fetch("https://eterna-4zdf.onrender.com/auth/login", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    },
+                    body: new URLSearchParams({
+                        username,
+                        password
+                    })
+                });
+
+                const data = await response.json();
+                console.log('API Response:', response.status, data);
+
+                if (data.access_token) {
+                    localStorage.setItem("access_token", data.access_token);
+                    const successMsg = document.createElement('p');
+                    successMsg.className = 'success-message';
+                    successMsg.textContent = 'Login successful!';
+                    document.querySelector('.login-form').appendChild(successMsg);
+
+                    document.querySelectorAll('[data-auth="protected"]').forEach(el => {
+                        el.style.display = 'inline-block';
+                    });
+
+                    try {
+                        const userResponse = await fetch("https://eterna-4zdf.onrender.com/users/me", {
+                            headers: {
+                                "Authorization": "Bearer " + localStorage.getItem("access_token")
+                            }
+                        });
+                        const userData = await userResponse.json();
+                        console.log('User Info:', userResponse.status, userData);
+
+                        if (userResponse.ok) {
+                            const userMsg = document.createElement('p');
+                            userMsg.className = 'success-message';
+                            userMsg.textContent = `Welcome, ${userData.email}!`;
+                            document.querySelector('.login-form').appendChild(userMsg);
+                        } else {
+                            console.warn('Failed to fetch user info:', userData);
+                        }
+                    } catch (userError) {
+                        console.warn('Error fetching user info:', userError);
+                    }
+
+                    setTimeout(closeLoginOverlay, 2000);
+                } else {
+                    const errorMsg = document.createElement('p');
+                    errorMsg.className = 'error-message';
+                    errorMsg.textContent = data.detail || 'Login failed.';
+                    document.querySelector('.login-form').appendChild(errorMsg);
+                }
+            } catch (err) {
+                console.error("Login error:", err);
+                const errorMsg = document.createElement('p');
+                errorMsg.className = 'error-message';
+                errorMsg.textContent = 'Server error. Please try again later.';
+                document.querySelector('.login-form').appendChild(errorMsg);
+            }
+        }
+
+        // Logout function
+        function logout() {
+            localStorage.removeItem('access_token');
+            document.querySelectorAll('[data-auth="protected"]').forEach(el => {
+                el.style.display = 'none';
+            });
+            window.location.href = 'index.html';
+        }
+
+        // Signup form validation (placeholder)
+        document.querySelector('#signup-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.querySelector('#signup-email').value;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const messageDiv = document.querySelector('#signup-message');
+            messageDiv.textContent = '';
+
+            if (!emailRegex.test(email)) {
+                messageDiv.textContent = 'Please enter a valid email address.';
+                messageDiv.style.color = '#FF6B6B';
+                return;
+            }
+
+            console.log('Form submitted:', email);
+            messageDiv.textContent = 'Thank you for signing up! We’ll be in touch soon.';
+            messageDiv.style.color = '#FFF8E7';
+            document.querySelector('#signup-email').value = '';
+        });
+
+        // Video lazy-loading for background videos
+        document.querySelectorAll('.bg-video').forEach(video => {
+            const observer = new IntersectionObserver(([entry]) => {
+                if (entry.isIntersecting) {
+                    video.play();
+                } else {
+                    video.pause();
+                }
+            }, { threshold: 0.1 });
+            observer.observe(video);
+        });
+    </script>
 </body>
 </html>
