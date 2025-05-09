@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Explore your memories with Eterna's Memory Timeline, narrated in your own voice." />
+    <meta name="keywords" content="Eterna, Echo, digital legacy, memory timeline, voice archive, AI" />
+    <meta property="og:title" content="Eterna - Memory Timeline" />
+    <meta property="og:description" content="Relive your life’s moments through Eterna’s dynamic Memory Timeline." />
+    <meta property="og:image" content="https://www.eterna.com/Assets/Eterna%20Logo%201.jpeg" />
+    <title>Eterna - Memory Timeline</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="styles-v2.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Eterna - Memory Timeline",
+        "url": "https://www.eterna.com/memory-timeline.html",
+        "description": "Relive your life’s moments through Eterna’s dynamic Memory Timeline."
+    }
+    </script>
+</head>
+<body>
+    <div class="preloader" aria-live="polite">
+        <div class="spinner"></div>
+        <span>Loading...</span>
+    </div>
+    <noscript>
+        <style>
+            .preloader { display: none; }
+            .nav-menu { display: flex; flex-direction: column; position: static; }
+        </style>
+        <p>JavaScript is required to use the Memory Timeline. Please enable JavaScript or contact support.</p>
+    </noscript>
+
+    <!-- Login Overlay -->
+    <div class="login-overlay" id="login-overlay" style="display: none;" role="dialog" aria-labelledby="login-title">
+        <div class="login-form">
+            <h2 id="login-title">Sign In to Eterna</h2>
+            <form id="login-form" onsubmit="handleLoginSubmit(event)">
+                <label for="login-email">Email</label>
+                <input type="email" id="login-email" placeholder="Enter email" required aria-label="Email" />
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" placeholder="Enter password" required aria-label="Password" />
+                <button type="submit" aria-label="Sign in">Sign In</button>
+                <button type="button" onclick="closeLoginOverlay()" aria-label="Close sign-in form">Close</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar" aria-label="Main navigation">
+        <button class="menu-icon" role="button" aria-label="Toggle navigation menu" tabindex="0" onclick="toggleNavMenu()">☰</button>
+        <p class="navbar-slogan">Your voice. Your story. Your legacy</p>
+        <div class="nav-buttons">
+            <button onclick="showLoginOverlay()" aria-label="Log in to Eterna">Login</button>
+            <button onclick="window.location.href='index.html#signup'" aria-label="Sign up for Eterna">Sign Up</button>
+            <button data-auth="protected" onclick="window.location.href='full-echo-v2.html'" aria-label="Talk to Your Echo">Talk to Echo</button>
+            <button data-auth="protected" onclick="window.location.href='memory-timeline.html'" aria-label="View Your Memories">View Memories</button>
+            <button data-auth="protected" onclick="window.location.href='family-tree.html'" aria-label="View Your Family Tree">Family Tree</button>
+            <button data-auth="protected" onclick="logout()" aria-label="Log out of Eterna">Logout</button>
+        </div>
+        <div class="nav-menu" aria-hidden="true">
+            <button onclick="showLoginOverlay()" aria-label="Log in to Eterna">Login</button>
+            <button onclick="window.location.href='index.html#signup'" aria-label="Sign up for Eterna">Sign Up</button>
+            <button data-auth="protected" onclick="window.location.href='full-echo-v2.html'" aria-label="Talk to Your Echo">Talk to Echo</button>
+            <button data-auth="protected" onclick="window.location.href='memory-timeline.html'" aria-label="View Your Memories">View Memories</button>
+            <button data-auth="protected" onclick="window.location.href='family-tree.html'" aria-label="View Your Family Tree">Family Tree</button>
+            <button data-auth="protected" onclick="logout()" aria-label="Log out of Eterna">Logout</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Centered Timeline -->
+    <section class="section hero" role="region" aria-label="Memory Timeline">
+        <video autoplay muted loop playsinline class="bg-video" preload="metadata">
+            <source src="Assets/49981-459802291.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="section-gradient"></div>
+        <img src="Assets/Eterna Logo 1.jpeg" alt="Eterna Logo" class="main-logo" />
+        <div class="timeline-container">
+            <h1>Your Memory Timeline</h1>
+            <div class="filter-controls">
+                <button onclick="openCreateModal()" aria-label="Add a memory manually">Add Memory</button>
+                <select id="tag-filter" aria-label="Filter memories by tag">
+                    <option value="">All Tags</option>
+                    <option value="Family">Family</option>
+                    <option value="Milestone">Milestone</option>
+                    <option value="Holiday">Holiday</option>
+                </select>
+                <select id="sort-order" aria-label="Sort memories">
+                    <option value="desc">Newest First</option>
+                    <option value="asc">Oldest First</option>
+                </select>
+                <button onclick="fetchMemories()" aria-label="Apply filters and refresh memories">Refresh</button>
+            </div>
+            <div class="loading-spinner" id="loading-spinner">Loading memories...</div>
+            <div class="error-message" id="error-message" style="display: none;"></div>
+            <div class="memory-swiper">
+                <div class="swiper-wrapper" id="memory-timeline"></div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+        <section class="instructions-placeholder">
+            <h2>How to Use</h2>
+            <ul>
+                <li>View memories curated by Echo in the timeline.</li>
+                <li>Filter by tags or sort by date above.</li>
+                <li>Click on a memory card to edit or delete it.</li>
+                <li>Add a manual memory if needed.</li>
+            </ul>
+        </section>
+        <section class="vertical-timeline-placeholder">
+            <h2>Memory Highlights</h2>
+            <div class="timeline-content">
+                <div class="timeline-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="memory-card">
+                                <h3>First Family Trip</h3>
+                                <p>Visited the lake house in 2015.</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="memory-card">
+                                <h3>Graduation Day</h3>
+                                <p>Graduated with honors in 2020.</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="memory-card">
+                                <h3>Wedding Anniversary</h3>
+                                <p>Celebrated 10 years in 2023.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-container">
+                    <input type="range" min="0" max="100" value="50" class="timeline-control-slider" aria-label="Timeline navigation slider" />
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- Create Memory Modal -->
+    <div class="modal" id="create-modal" style="display: none;" role="dialog" aria-labelledby="create-modal-title">
+        <div class="modal-content">
+            <h2 id="create-modal-title">Add a Memory</h2>
+            <form id="memory-form" onsubmit="createMemory(event)">
+                <label for="memory-title">Title</label>
+                <input type="text" id="memory-title" placeholder="Memory title" required aria-label="Memory title" />
+                <label for="memory-content">Content</label>
+                <textarea id="memory-content" placeholder="Describe your memory..." required aria-label="Memory content"></textarea>
+                <label for="memory-date">Date</label>
+                <input type="date" id="memory-date" required aria-label="Memory date" />
+                <label for="memory-image">Image (optional)</label>
+                <input type="file" id="memory-image" accept="image/*" aria-label="Upload memory image" />
+                <label for="memory-tags">Tags (comma-separated)</label>
+                <input type="text" id="memory-tags" placeholder="e.g., Family, Milestone" aria-label="Memory tags" />
+                <label for="memory-visibility">Visibility</label>
+                <select id="memory-visibility" aria-label="Memory visibility">
+                    <option value="private">Private</option>
+                    <option value="family">Family</option>
+                    <option value="public">Public</option>
+                </select>
+                <button type="submit" aria-label="Save memory">Save Memory</button>
+                <button type="button" onclick="closeCreateModal()" aria-label="Close create form">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Edit Memory Modal -->
+    <div class="modal" id="edit-modal" style="display: none;" role="dialog" aria-labelledby="edit-modal-title">
+        <div class="modal-content">
+            <h2 id="edit-modal-title">Edit Memory</h2>
+            <form id="edit-memory-form" onsubmit="updateMemory(event)">
+                <input type="hidden" id="edit-memory-id" />
+                <label for="edit-memory-title">Title</label>
+                <input type="text" id="edit-memory-title" required aria-label="Edit memory title" />
+                <label for="edit-memory-content">Content</label>
+                <textarea id="edit-memory-content" required aria-label="Edit memory content"></textarea>
+                <label for="edit-memory-date">Date</label>
+                <input type="date" id="edit-memory-date" required aria-label="Edit memory date" />
+                <label for="edit-memory-image">Image (optional)</label>
+                <input type="file" id="edit-memory-image" accept="image/*" aria-label="Upload new memory image" />
+                <label for="edit-memory-tags">Tags (comma-separated)</label>
+                <input type="text" id="edit-memory-tags" aria-label="Edit memory tags" />
+                <label for="edit-memory-visibility">Visibility</label>
+                <select id="edit-memory-visibility" aria-label="Edit memory visibility">
+                    <option value="private">Private</option>
+                    <option value="family">Family</option>
+                    <option value="public">Public</option>
+                </select>
+                <button type="submit" aria-label="Save changes">Save Changes</button>
+                <button type="button" onclick="closeEditModal()" aria-label="Close edit form">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2025 Eterna. All rights reserved.</p>
+            <p>
+                <a href="/privacy-policy" aria-label="Privacy Policy">Privacy Policy</a> |
+                <a href="/terms" aria-label="Terms of Service">Terms</a> |
+                <a href="/contact" aria-label="Contact Us">Contact</a>
+            </p>
+            <div class="socials">
+                <a href="https://twitter.com/eterna" aria-label="Twitter" rel="noopener">
+                    <svg role="img" aria-label="Twitter logo" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFF8E7" stroke-width="2">
+                        <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                    </svg>
+                </a>
+                <a href="https://facebook.com/eterna" aria-label="Facebook" rel="noopener">
+                    <svg role="img" aria-label="Facebook logo" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFF8E7" stroke-width="2">
+                        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        // Preloader
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.querySelector('.preloader').classList.add('hidden');
+            }, 500);
+        });
+
+        // Hide protected buttons until logged in
+        window.addEventListener('DOMContentLoaded', () => {
+            const loggedIn = !!localStorage.getItem('access_token');
+            document.querySelectorAll('[data-auth="protected"]').forEach(el => {
+                el.style.display = loggedIn ? 'inline-block' : 'none';
+            });
+        });
+
+        // Mobile menu toggle
+        function toggleNavMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.classList.toggle('active');
+            navMenu.setAttribute('aria-hidden', !navMenu.classList.contains('active'));
+            navMenu.style.display = navMenu.classList.contains('active') ? 'flex' : 'none';
+            const loggedIn = !!localStorage.getItem('access_token');
+            document.querySelectorAll('.nav-menu [data-auth="protected"]').forEach(el => {
+                el.style.display = loggedIn ? 'block' : 'none';
+            });
+        }
+
+        // Login overlay
+        function showLoginOverlay() {
+            const overlay = document.getElementById('login-overlay');
+            overlay.style.display = 'flex';
+            overlay.style.zIndex = '1000';
+        }
+
+        function closeLoginOverlay() {
+            document.getElementById('login-overlay').style.display = 'none';
+            const messages = document.querySelectorAll('.login-form .success-message, .login-form .error-message');
+            messages.forEach(msg => msg.remove());
+        }
+
+        async function handleLoginSubmit(event) {
+            event.preventDefault();
+            const username = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+            const existingMessages = document.querySelectorAll('.login-form .success-message, .login-form .error-message');
+            existingMessages.forEach(msg => msg.remove());
+
+            try {
+                const response = await fetch("https://eterna-4zdf.onrender.com/auth/login", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                    body: new URLSearchParams({ username, password })
+                });
+                const data = await response.json();
+                if (data.access_token) {
+                    localStorage.setItem("access_token", data.access_token);
+                    const successMsg = document.createElement('p');
+                    successMsg.className = 'success-message';
+                    successMsg.textContent = 'Login successful!';
+                    document.querySelector('.login-form').appendChild(successMsg);
+
+                    document.querySelectorAll('[data-auth="protected"]').forEach(el => {
+                        el.style.display = 'inline-block';
+                    });
+
+                    const userResponse = await fetch("https://eterna-4zdf.onrender.com/users/me", {
+                        headers: { "Authorization": "Bearer " + localStorage.getItem("access_token") }
+                    });
+                    const userData = await userResponse.json();
+                    if (userResponse.ok) {
+                        const userMsg = document.createElement('p');
+                        userMsg.className = 'success-message';
+                        userMsg.textContent = `Welcome, ${userData.email}!`;
+                        document.querySelector('.login-form').appendChild(userMsg);
+                    }
+                    setTimeout(closeLoginOverlay, 2000);
+                } else {
+                    const errorMsg = document.createElement('p');
+                    errorMsg.className = 'error-message';
+                    errorMsg.textContent = data.detail || 'Login failed.';
+                    document.querySelector('.login-form').appendChild(errorMsg);
+                }
+            } catch (err) {
+                const errorMsg = document.createElement('p');
+                errorMsg.className = 'error-message';
+                errorMsg.textContent = 'Server error. Please try again later.';
+                document.querySelector('.login-form').appendChild(errorMsg);
+            }
+        }
+
+        function logout() {
+            localStorage.removeItem('access_token');
+            document.querySelectorAll('[data-auth="protected"]').forEach(el => {
+                el.style.display = 'none';
+            });
+            window.location.href = 'index.html';
+        }
+
+        // Swiper Initialization
+        const timelineSwiper = new Swiper('.timeline-swiper', {
+            direction: 'vertical',
+            slidesPerView: 3,
+            spaceBetween: 10,
+            loop: true,
+            centeredSlides: true,
+            watchSlidesProgress: true,
+            autoplay: { delay: 3000, disableOnInteraction: true },
+        });
+
+        const memorySwiper = new Swiper('.memory-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            pagination: { el: '.swiper-pagination', clickable: true },
+            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+            breakpoints: {
+                768: { slidesPerView: 2, spaceBetween: 40 },
+            }
+        });
+
+        // Timeline Slider Control
+        const slider = document.querySelector('.timeline-control-slider');
+        slider.addEventListener('input', (e) => {
+            const index = Math.floor((e.target.value / 100) * (timelineSwiper.slides.length - 1));
+            timelineSwiper.slideTo(index);
+        });
+
+        // Modal Controls
+        function openCreateModal() {
+            document.getElementById('create-modal').style.display = 'flex';
+        }
+
+        function closeCreateModal() {
+            document.getElementById('create-modal').style.display = 'none';
+            document.getElementById('memory-form').reset();
+        }
+
+        function closeEditModal() {
+            document.getElementById('edit-modal').style.display = 'none';
+            document.getElementById('edit-memory-form').reset();
+            currentMemoryId = null;
+        }
+
+        // API Functions
+        let currentMemoryId = null;
+
+        async function fetchMemories() {
+            const userId = "85127b36-144e-4396-b54e-6719d8978a17";
+            const tagFilter = document.getElementById('tag-filter').value;
+            const sortOrder = document.getElementById('sort-order').value;
+            const filter = tagFilter ? `&tags=${tagFilter}` : '';
+            const sort = sortOrder ? `&sort=${sortOrder}` : '';
+
+            document.getElementById('loading-spinner').style.display = 'block';
+            document.getElementById('error-message').style.display = 'none';
+
+            try {
+                const response = await fetch(`https://eterna-4zdf.onrender.com/memories/?user_id=${userId}${filter}${sort}`, {
+                    headers: { "Authorization": "Bearer " + localStorage.getItem("access_token") }
+                });
+                const memories = await response.json();
+                if (response.ok) {
+                    displayMemories(memories);
+                } else {
+                    throw new Error(memories.detail || 'Failed to load memories.');
+                }
+            } catch (error) {
+                document.getElementById('error-message').innerHTML = `${error.message} <button onclick="fetchMemories()">Retry</button>`;
+                document.getElementById('error-message').style.display = 'block';
+            } finally {
+                document.getElementById('loading-spinner').style.display = 'none';
+            }
+        }
+
+        function displayMemories(memories) {
+            const timeline = document.getElementById('memory-timeline');
+            timeline.innerHTML = '';
+            memories.forEach(memory => {
+                const slide = document.createElement('div');
+                slide.className = 'swiper-slide';
+                slide.innerHTML = `
+                    <div class="memory-card" tabindex="0" role="button" aria-label="Memory: ${memory.title}">
+                        ${memory.image_url ? `<img src="${memory.image_url}" alt="Memory image" class="memory-image" />` : ''}
+                        <h2>${memory.title}</h2>
+                        <p>${memory.content}</p>
+                        <p><em>${new Date(memory.memory_date).toLocaleDateString()}</em></p>
+                        ${memory.tags ? `<p class="tags-visibility"><strong>Tags:</strong> ${memory.tags}</p>` : ''}
+                        ${memory.visibility ? `<p class="tags-visibility"><strong>Visibility:</strong> ${memory.visibility}</p>` : ''}
+                        <div class="memory-actions">
+                            <button onclick="editMemory('${memory.id}')" aria-label="Edit memory: ${memory.title}">Edit</button>
+                            <button onclick="deleteMemory('${memory.id}')" aria-label="Delete memory: ${memory.title}">Delete</button>
+                        </div>
+                    </div>
+                `;
+                timeline.appendChild(slide);
+            });
+            memorySwiper.update();
+        }
+
+        async function createMemory(event) {
+            event.preventDefault();
+            const formData = new FormData();
+            formData.append('title', document.getElementById('memory-title').value);
+            formData.append('content', document.getElementById('memory-content').value);
+            formData.append('memory_date', document.getElementById('memory-date').value);
+            formData.append('tags', document.getElementById('memory-tags').value);
+            formData.append('visibility', document.getElementById('memory-visibility').value);
+            formData.append('user_id', "85127b36-144e-4396-b54e-6719d8978a17");
+            const imageFile = document.getElementById('memory-image').files[0];
+            if (imageFile) formData.append('image', imageFile);
+
+            try {
+                const response = await fetch('https://eterna-4zdf.onrender.com/memories/', {
+                    method: 'POST',
+                    body: formData,
+                    headers: { "Authorization": "Bearer " + localStorage.getItem("access_token") }
+                });
+                if (response.ok) {
+                    closeCreateModal();
+                    fetchMemories();
+                } else {
+                    const error = await response.json();
+                    throw new Error(error.detail || 'Failed to create memory.');
+                }
+            } catch (error) {
+                document.getElementById('error-message').innerHTML = `${error.message} <button onclick="fetchMemories()">Retry</button>`;
+                document.getElementById('error-message').style.display = 'block';
+            }
+        }
+
+        function editMemory(id) {
+            currentMemoryId = id;
+            fetch(`https://eterna-4zdf.onrender.com/memories/${id}`, {
+                headers: { "Authorization": "Bearer " + localStorage.getItem("access_token") }
+            })
+                .then(response => response.json())
+                .then(memory => {
+                    document.getElementById('edit-memory-id').value = memory.id;
+                    document.getElementById('edit-memory-title').value = memory.title;
+                    document.getElementById('edit-memory-content').value = memory.content;
+                    document.getElementById('edit-memory-date').value = memory.memory_date;
+                    document.getElementById('edit-memory-tags').value = memory.tags || '';
+                    document.getElementById('edit-memory-visibility').value = memory.visibility || 'private';
+                    document.getElementById('edit-modal').style.display = 'flex';
+                })
+                .catch(error => {
+                    document.getElementById('error-message').innerHTML = `Failed to load memory: ${error.message} <button onclick="fetchMemories()">Retry</button>`;
+                    document.getElementById('error-message').style.display = 'block';
+                });
+        }
+
+        async function updateMemory(event) {
+            event.preventDefault();
+            const formData = new FormData();
+            formData.append('title', document.getElementById('edit-memory-title').value);
+            formData.append('content', document.getElementById('edit-memory-content').value);
+            formData.append('memory_date', document.getElementById('edit-memory-date').value);
+            formData.append('tags', document.getElementById('edit-memory-tags').value);
+            formData.append('visibility', document.getElementById('edit-memory-visibility').value);
+            formData.append('user_id', "85127b36-144e-4396-b54e-6719d8978a17");
+            const imageFile = document.getElementById('edit-memory-image').files[0];
+            if (imageFile) formData.append('image', imageFile);
+
+            try {
+                const response = await fetch(`https://eterna-4zdf.onrender.com/memories/${currentMemoryId}`, {
+                    method: 'PUT',
+                    body: formData,
+                    headers: { "Authorization": "Bearer " + localStorage.getItem("access_token") }
+                });
+                if (response.ok) {
+                    closeEditModal();
+                    fetchMemories();
+                } else {
+                    const error = await response.json();
+                    throw new Error(error.detail || 'Failed to update memory.');
+                }
+            } catch (error) {
+                document.getElementById('error-message').innerHTML = `${error.message} <button onclick="fetchMemories()">Retry</button>`;
+                document.getElementById('error-message').style.display = 'block';
+            }
+        }
+
+        async function deleteMemory(id) {
+            if (!confirm('Are you sure you want to delete this memory?')) return;
+            try {
+                const response = await fetch(`https://eterna-4zdf.onrender.com/memories/${id}`, {
+                    method: 'DELETE',
+                    headers: { "Authorization": "Bearer " + localStorage.getItem("access_token") }
+                });
+                if (response.ok) {
+                    fetchMemories();
+                } else {
+                    const error = await response.json();
+                    throw new Error(error.detail || 'Failed to delete memory.');
+                }
+            } catch (error) {
+                document.getElementById('error-message').innerHTML = `${error.message} <button onclick="fetchMemories()">Retry</button>`;
+                document.getElementById('error-message').style.display = 'block';
+            }
+        }
+
+        // Initial Fetch
+        document.addEventListener('DOMContentLoaded', fetchMemories);
+
+        // Video Lazy-Loading
+        document.querySelectorAll('video').forEach(video => {
+            const observer = new IntersectionObserver(([entry]) => {
+                if (entry.isIntersecting) {
+                    video.play();
+                } else {
+                    video.pause();
+                }
+            }, { threshold: 0.1 });
+            observer.observe(video);
+        });
+    </script>
+</body>
+</html>

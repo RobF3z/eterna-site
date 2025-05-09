@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eterna - Family Tree</title>
+  <link rel="stylesheet" href="styles-v2.css" />
+</head>
+
+<body>
+  <!-- Navbar (No Login button since user is logged in) -->
+  <nav class="navbar" aria-label="Main navigation">
+    <button class="menu-icon" role="button" aria-label="Toggle navigation menu" tabindex="0" onclick="toggleNavMenu()">☰</button>
+    <p class="navbar-slogan">Your voice. Your story. Your legacy</p>
+    <div class="nav-buttons">
+      <button onclick="window.location.href='#signup'" aria-label="Sign up for Eterna">Sign Up</button>
+      <button onclick="window.location.href='full-echo-v2.html'" aria-label="Talk to Your Echo">Talk to Echo</button>
+      <button onclick="window.location.href='memory-timeline.html'" aria-label="View Your Memories">View Memories</button>
+      <button onclick="window.location.href='family-tree.html'" aria-label="View Your Family Tree">Family Tree</button>
+    </div>
+    <div class="nav-menu" aria-hidden="true">
+      <button onclick="window.location.href='#signup'" aria-label="Sign up for Eterna">Sign Up</button>
+      <button onclick="window.location.href='full-echo-v2.html'" aria-label="Talk to Your Echo">Talk to Echo</button>
+      <button onclick="window.location.href='memory-timeline.html'" aria-label="View Your Memories">View Memories</button>
+      <button onclick="window.location.href='family-tree.html'" aria-label="View Your Family Tree">Family Tree</button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero section" role="region" aria-label="Family Tree Introduction">
+    <video autoplay muted loop playsinline class="bg-video" poster="Assets/video-poster.jpg">
+      <source src="Assets/49981-459802291.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="section-gradient"></div>
+    <img src="Assets/Eterna Logo 1.jpeg" alt="Eterna Logo" class="main-logo" />
+    <section class="instructions-placeholder">
+      <h2>How to Use</h2>
+      <ul>
+        <li>Explore your family tree visualization below.</li>
+        <li>Click on nodes to view family member details.</li>
+        <li>Add new relatives using the form (coming soon).</li>
+        <li>Connect memories to family members for a richer legacy.</li>
+      </ul>
+    </section>
+    <section class="vertical-timeline-placeholder">
+      <h2>Family Tree Features</h2>
+      <ul>
+        <li>Interactive tree visualization.</li>
+        <li>Detailed profiles for each family member.</li>
+        <li>Memory integration with timeline.</li>
+        <li>Secure sharing with family.</li>
+      </ul>
+    </section>
+  </section>
+
+  <!-- Family Tree Preview Section -->
+  <section class="timeline-preview" role="region" aria-label="Family Tree Preview">
+    <h2>Visualize your family legacy</h2>
+    <p>Explore a dynamic family tree that connects generations, with each node representing a loved one’s story.</p>
+    <img src="Assets/family-tree-placeholder.png" alt="Family Tree Concept Preview" class="timeline-preview-img" loading="lazy" />
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Eterna. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Toggle navigation menu for mobile
+    function toggleNavMenu() {
+      const navMenu = document.querySelector('.nav-menu');
+      const isActive = navMenu.classList.toggle('active');
+      navMenu.setAttribute('aria-hidden', !isActive);
+      navMenu.style.display = isActive ? 'flex' : 'none';
+    }
+  </script>
+</body>
+</html>

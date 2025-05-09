@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Talk to your Echo with Eterna's voice legacy engine." />
+    <title>Eterna - Talk to Your Echo</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+<body>
+    <div class="preloader">Loading...</div>
+
+    <!-- Navbar -->
+    <nav class="navbar" aria-label="Main navigation">
+        <button class="menu-icon" role="button" aria-label="Toggle navigation menu" tabindex="0">☰</button>
+        <div class="navbar-slogan">Your voice. Your story. Your legacy</div>
+        <div class="nav-buttons">
+            <button onclick="window.location.href='index.html'" aria-label="Back to Home">Home</button>
+        </div>
+        <div class="nav-menu" aria-hidden="true">
+            <button onclick="window.location.href='index.html'" aria-label="Back to Home">Home</button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Background Video -->
+        <section class="section" id="echo-section">
+            <video autoplay muted loop class="bg-video" preload="metadata">
+                <source src="Assets/107586-678540756.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <!-- Eterna Logo at top -->
+            <img src="Assets/Eterna Logo 1.jpeg" class="main-logo" alt="Eterna Logo" />
+
+            <!-- Echo Selection Screen -->
+            <div class="echo-overlay-text" id="echo-selection">
+                <h1>Who would you like to visit?</h1>
+                <div class="echo-choice-buttons">
+                    <button onclick="startEcho('my')">My Echo</button>
+                    <button onclick="startEcho('shared')">Shared Echo</button>
+                    <button onclick="startEcho('public')">Public Echo</button>
+                </div>
+            </div>
+
+            <!-- Echo Main Interface -->
+            <div id="echo-main" style="display: none; flex-direction: column; align-items: center; text-align: center;">
+                <div class="chat-interface">
+                    <p class="echo-welcome-text">
+                        Welcome to Echo. Here, your memories, your stories, and your voice live on.  
+                        Feel free to ask anything, or just say hello.
+                    </p>
+            
+                    <div class="orb-container">
+                        <video autoplay muted loop playsinline id="echo-orb">
+                            <source src="Assets/Eterna_Orb_Low.mp4" type="video/mp4">
+                        </video>
+                        <div class="fade-overlay"></div> <!-- NEW layer -->
+                    </div>
+            
+                    <div id="chat-log"></div>
+            
+                    <div class="chat-input-area">
+                        <input type="text" id="user-input" placeholder="Ask your Echo anything..." />
+                        <button onclick="sendMessage()">Send</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Eterna. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Preloader
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.querySelector('.preloader').classList.add('hidden');
+            }, 500);
+        });
+
+        // Mobile menu toggle
+        document.querySelector('.menu-icon').addEventListener('click', () => {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.classList.toggle('active');
+            navMenu.setAttribute('aria-hidden', !navMenu.classList.contains('active'));
+        });
+
+        // Echo selection
+        function startEcho(type) {
+            document.getElementById('echo-selection').style.display = 'none';
+            document.getElementById('echo-main').style.display = 'flex';
+            document.querySelector('.main-logo').classList.add('logo-small');
+        }
+
+        // Chat logic
+        function sendMessage() {
+            const input = document.getElementById('user-input');
+            const text = input.value.trim();
+            if (text === '') return;
+
+            const userBubble = document.createElement('div');
+            userBubble.className = 'user-bubble';
+            userBubble.textContent = text;
+            document.getElementById('chat-log').appendChild(userBubble);
+
+            // Fake Echo response
+            const echoText = "That's a wonderful memory.";
+            const echoBubble = document.createElement('div');
+            echoBubble.className = 'echo-bubble';
+            echoBubble.textContent = echoText;
+            document.getElementById('chat-log').appendChild(echoBubble);
+
+            speakText(echoText);
+
+            input.value = '';
+            input.focus();
+        }
+
+        // SpeechSynthesis
+        function speakText(text) {
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'en-GB';
+            utterance.pitch = 1;
+            utterance.rate = 1;
+            speechSynthesis.speak(utterance);
+        }
+    </script>
+</body>
+</html>

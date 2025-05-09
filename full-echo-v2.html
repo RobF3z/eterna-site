@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Talk to your Echo with Eterna's voice legacy engine." />
+    <meta name="keywords" content="Eterna, Echo, digital legacy, voice archive, AI" />
+    <meta property="og:title" content="Eterna - Talk to Your Echo" />
+    <meta property="og:description" content="Interact with your digital legacy through Eterna's Echo engine." />
+    <meta property="og:image" content="https://www.eterna.com/Assets/Eterna%20Logo%201.jpeg" />
+    <title>Eterna - Talk to Your Echo</title>
+    <link rel="stylesheet" href="styles-v2.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Eterna - Talk to Your Echo",
+        "url": "https://www.eterna.com/full-echo-v2.html",
+        "description": "Interact with your digital legacy through Eterna's Echo engine."
+    }
+    </script>
+</head>
+<body>
+    <div class="preloader" aria-live="polite">
+        <div class="spinner"></div>
+        <span>Loading...</span>
+    </div>
+    <noscript>
+        <style>
+            .preloader { display: none; }
+            .nav-menu { display: flex; flex-direction: column; position: static; }
+            #echo-main { display: none; }
+        </style>
+        <p>JavaScript is required to use the Echo interface. Please enable JavaScript or contact support.</p>
+    </noscript>
+
+    <nav class="navbar" aria-label="Main navigation">
+        <button class="menu-icon" role="button" aria-label="Toggle navigation menu" tabindex="0">☰</button>
+        <p class="navbar-slogan">Your voice. Your story. Your legacy</p>
+        <div class="nav-buttons">
+            <button onclick="showLoginOverlay()" aria-label="Log in to Eterna">Login</button>
+            <button onclick="window.location.href='index.html#signup'" aria-label="Sign up for Eterna">Sign Up</button>
+            <button onclick="window.location.href='index.html'" aria-label="Back to Home">Home</button>
+        </div>
+        <div class="nav-menu" aria-hidden="true">
+            <button onclick="showLoginOverlay()" aria-label="Log in to Eterna">Login</button>
+            <button onclick="window.location.href='index.html#signup'" aria-label="Sign up for Eterna">Sign Up</button>
+            <button onclick="window.location.href='index.html'" aria-label="Back to Home">Home</button>
+        </div>
+    </nav>
+
+    <div class="login-overlay" id="login-overlay" style="display: none;">
+        <div class="login-form">
+            <h2>Sign In</h2>
+            <form id="login-form">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter username" required aria-label="Username" />
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter password" required aria-label="Password" />
+                <button type="submit" aria-label="Sign in">Sign In</button>
+                <button type="button" onclick="closeLoginOverlay()" aria-label="Close sign-in form">Close</button>
+            </form>
+        </div>
+    </div>
+
+    <main>
+        <section class="section" id="echo-section">
+            <video autoplay muted loop class="bg-video" preload="metadata">
+                <source src="Assets/107586-678540756.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <img src="Assets/Eterna Logo 1.jpeg" class="main-logo" alt="Eterna Logo" />
+            <div class="echo-overlay-text echo-selection-text" id="echo-selection" role="region" aria-label="Echo selection">
+                <h1>Who would you like to visit?</h1>
+                <div class="echo-choice-buttons">
+                    <button onclick="startEcho('my')" aria-label="Select My Echo">My Echo</button>
+                    <button onclick="startEcho('shared')" aria-label="Select Shared Echo">Shared Echo</button>
+                    <button onclick="startEcho('public')" aria-label="Select Public Echo">Public Echo</button>
+                </div>
+            </div>
+            <div class="echo-info-left">
+                <h3>Getting Started with Echo</h3>
+                <p>To begin, select an Echo type below. Each option offers a unique way to preserve and share your legacy:</p>
+                <ul>
+                    <li><strong>My Echo</strong>: A personal archive of your voice and memories, private to you and your chosen loved ones.</li>
+                    <li><strong>Shared Echo</strong>: Collaborate with family or friends to create a collective memory bank, blending multiple voices.</li>
+                    <li><strong>Public Echo</strong>: Share your story with a broader community, inspiring others while preserving your legacy.</li>
+                </ul>
+            </div>
+            <div class="echo-info-right">
+                <h3>Echo’s Core Features</h3>
+                <ul>
+                    <li><strong>Chat & Voice Interface</strong>: Engage in natural conversations with your Echo, powered by AI that mirrors your voice and personality.</li>
+                    <li><strong>Family Tree</strong>: Build a digital lineage, connecting your stories to your ancestors and descendants.</li>
+                    <li><strong>Memory Timeline</strong>: A dynamic chronicle of your life’s moments, narrated in your voice for future generations.</li>
+                </ul>
+            </div>
+            <div id="echo-main" class="echo-main">
+                <div class="chat-interface">
+                    <p class="echo-welcome-text">
+                        Welcome to Echo. Here, your memories, your stories, and your voice live on.  
+                        Feel free to ask anything, or just say hello.
+                    </p>
+                    <div class="orb-container">
+                        <video muted loop playsinline id="echo-orb">
+                            <source src="Assets/Eterna_Orb_Low.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="iris-overlay"></div>
+                        <div class="fade-overlay"></div>
+                    </div>
+                    <div id="chat-log" aria-live="polite"></div>
+                    <div class="chat-input-area">
+                        <input type="text" id="user-input" placeholder="Ask your Echo anything..." aria-label="Enter your message to Echo" />
+                        <button onclick="sendMessage()" aria-label="Send message">Send</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Eterna. All rights reserved.</p>
+        <p>
+            <a href="/privacy-policy" aria-label="Privacy Policy">Privacy Policy</a> |
+            <a href="/terms" aria-label="Terms of Service">Terms</a> |
+            <a href="/contact" aria-label="Contact Us">Contact</a>
+        </p>
+        <div class="socials">
+            <a href="https://twitter.com/eterna" aria-label="Twitter" rel="noopener">
+                <svg role="img" aria-label="Twitter logo" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFF8E7" stroke-width="2">
+                    <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                </svg>
+            </a>
+            <a href="https://facebook.com/eterna" aria-label="Facebook" rel="noopener">
+                <svg role="img" aria-label="Facebook logo" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFF8E7" stroke-width="2">
+                    <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                </svg>
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        // Preloader
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.querySelector('.preloader').classList.add('hidden');
+            }, 500);
+        });
+
+        // Mobile menu toggle
+        document.querySelector('.menu-icon').addEventListener('click', () => {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.classList.toggle('active');
+            navMenu.setAttribute('aria-hidden', !navMenu.classList.contains('active'));
+        });
+
+        // Login overlay
+        function showLoginOverlay() {
+            document.getElementById('login-overlay').style.display = 'flex';
+        }
+
+        function closeLoginOverlay() {
+            document.getElementById('login-overlay').style.display = 'none';
+        }
+
+        document.getElementById('login-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            console.log('Login attempt:', { username, password });
+            closeLoginOverlay();
+        });
+
+        // Video lazy-loading and error handling
+        document.querySelectorAll('video').forEach(video => {
+            const observer = new IntersectionObserver(([entry]) => {
+                if (entry.isIntersecting) {
+                    video.play().catch(error => {
+                        console.error('Video play failed:', error, 'Video:', video);
+                    });
+                } else {
+                    video.pause();
+                }
+            }, { threshold: 0.1 });
+            observer.observe(video);
+
+            // Add error handling for video loading
+            video.addEventListener('error', (e) => {
+                console.error('Video loading error:', e, 'Source:', video.currentSrc);
+            });
+            video.addEventListener('loadeddata', () => {
+                console.log('Video loaded successfully:', video.id, 'Source:', video.currentSrc);
+            });
+        });
+
+        // Echo selection
+        function startEcho(type) {
+            console.log('startEcho called with type:', type);
+            const echoMain = document.getElementById('echo-main');
+            const irisOverlay = document.querySelector('.iris-overlay');
+            const echoOrb = document.getElementById('echo-orb');
+            console.log('irisOverlay element:', irisOverlay, 'styles:', window.getComputedStyle(irisOverlay));
+            console.log('echoOrb element:', echoOrb);
+
+            document.getElementById('echo-selection').style.display = 'none';
+            echoMain.style.display = 'flex';
+            document.querySelector('.main-logo').classList.add('logo-small');
+
+            // Force initial state with a slight delay to ensure browser applies it
+            irisOverlay.style.clipPath = 'ellipse(50% 25% at 50% 50%)';
+            console.log('Initial clip-path set:', irisOverlay.style.clipPath);
+
+            // Reset iris animation
+            irisOverlay.style.animation = 'none';
+            void irisOverlay.offsetWidth; // Force reflow
+            console.log('Iris animation reset');
+
+            // Get video duration and set animation
+            const defaultDuration = 5; // Fallback duration
+            echoOrb.addEventListener('loadedmetadata', () => {
+                const duration = echoOrb.duration || defaultDuration;
+                console.log('Video duration:', duration, 'seconds');
+                const openDuration = 0.5; // Open/close in 0.5s
+                const openPercent = (openDuration / duration) * 100; // First 0.5s
+                const closePercent = ((duration - openDuration) / duration) * 100; // Last 0.5s
+                console.log('Animation timing: open at', openPercent.toFixed(2), '%, close at', closePercent.toFixed(2), '%');
+
+                // Inject dynamic keyframes (ensure correct direction)
+                let styleElement = document.getElementById('iris-keyframes');
+                if (!styleElement) {
+                    styleElement = document.createElement('style');
+                    styleElement.id = 'iris-keyframes';
+                    document.head.appendChild(styleElement);
+                }
+                styleElement.textContent = `
+                    @keyframes iris-blink {
+                        0% { clip-path: ellipse(50% 25% at 50% 50%); }
+                        ${openPercent}% { clip-path: ellipse(0% 0% at 50% 50%); }
+                        ${closePercent}% { clip-path: ellipse(0% 0% at 50% 50%); }
+                        100% { clip-path: ellipse(50% 25% at 50% 50%); }
+                    }
+                `;
+                console.log('Dynamic keyframes injected:', styleElement.textContent);
+
+                // Apply animation with a slight delay to ensure initial state is respected
+                setTimeout(() => {
+                    irisOverlay.style.animation = `iris-blink ${duration}s linear infinite`;
+                    irisOverlay.style.animationFillMode = 'forwards';
+                    console.log('Iris animation applied:', irisOverlay.style.animation, 'play-state:', window.getComputedStyle(irisOverlay).animationPlayState);
+
+                    // Debug clip-path during animation
+                    let startTime = performance.now();
+                    function debugClipPath() {
+                        const elapsed = (performance.now() - startTime) / 1000;
+                        const computedClipPath = window.getComputedStyle(irisOverlay).clipPath;
+                        console.log(`Clip-path at ${elapsed.toFixed(2)}s:`, computedClipPath);
+                        if (elapsed < duration) {
+                            requestAnimationFrame(debugClipPath);
+                        }
+                    }
+                    requestAnimationFrame(debugClipPath);
+                }, 50); // 50ms delay to ensure initial state applies
+
+                // Show video
+                echoOrb.classList.add('loaded');
+                console.log('Video shown with class: loaded');
+            }, { once: true });
+
+            // Trigger loadedmetadata manually
+            if (echoOrb.readyState >= 2) {
+                echoOrb.dispatchEvent(new Event('loadedmetadata'));
+            } else {
+                echoOrb.load();
+                console.log('Video reload triggered to fire loadedmetadata');
+            }
+
+            // Start video
+            echoOrb.currentTime = 0;
+            echoOrb.play().catch(error => {
+                console.error('Video play failed:', error);
+            });
+        }
+
+        // Chat logic
+        function loadChatLog() {
+            const savedLog = localStorage.getItem('chatLog');
+            if (savedLog) {
+                document.getElementById('chat-log').innerHTML = savedLog;
+            }
+        }
+
+        function saveChatLog() {
+            const chatLog = document.getElementById('chat-log').innerHTML;
+            localStorage.setItem('chatLog', chatLog);
+        }
+
+        window.addEventListener('load', loadChatLog);
+
+        function sendMessage() {
+            const input = document.getElementById('user-input');
+            const text = input.value.trim();
+            if (text === '') return;
+
+            const userBubble = document.createElement('div');
+            userBubble.className = 'user-bubble';
+            userBubble.textContent = text.replace(/</g, '<').replace(/>/g, '>');
+            document.getElementById('chat-log').appendChild(userBubble);
+
+            const responses = [
+                "That's a beautiful memory!",
+                "Tell me more about that moment.",
+                "I love hearing your stories."
+            ];
+            const echoText = responses[Math.floor(Math.random() * responses.length)];
+            const echoBubble = document.createElement('div');
+            echoBubble.className = 'echo-bubble';
+            echoBubble.textContent = echoText;
+            document.getElementById('chat-log').appendChild(echoBubble);
+
+            const chatLog = document.getElementById('chat-log');
+            chatLog.scrollTop = chatLog.scrollHeight;
+
+            try {
+                speakText(echoText);
+            } catch (error) {
+                console.error('Speech synthesis failed:', error);
+            }
+
+            saveChatLog();
+            input.value = '';
+            input.focus();
+        }
+
+        function speakText(text) {
+            if ('speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'en-GB';
+                utterance.pitch = 1;
+                utterance.rate = 1;
+                speechSynthesis.speak(utterance);
+            } else {
+                console.warn('Speech synthesis not supported in this browser.');
+            }
+        }
+    </script>
+</body>
+</html>
