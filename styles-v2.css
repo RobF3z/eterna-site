@@ -1383,4 +1383,88 @@ footer a:hover {
     .signup-container .signup-subtitle {
         font-size: 1rem;
     }
+/* --- MOBILE FIXES FOR OVERLAPPING ELEMENTS --- */
+@media (max-width: 768px) {
+    .section {
+        flex-direction: column;
+        padding: 2rem 1rem;
+    }
+
+    .main-logo {
+        top: 10% !important;
+        max-width: 200px !important;
+    }
+
+    #hero .hero-text {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
+        padding: 1.5rem;
+        margin-top: 2rem;
+        background-color: var(--dark-bg);
+    }
+
+    #features-overview,
+    #legacy-1,
+    #technology {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 3rem 1rem;
+    }
+
+    #features-overview .center-block,
+    #features-overview .left-block,
+    #features-overview .right-block,
+    #legacy-1 .center-block,
+    #legacy-1 .left-block,
+    #legacy-1 .right-block,
+    #technology .center-block,
+    #technology .tech-text {
+        position: static !important;
+        transform: none !important;
+        max-width: 95% !important;
+        width: 100%;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    .split-text,
+    #legacy-2 .legacy-text {
+        position: static !important;
+        transform: none !important;
+        max-width: 95% !important;
+        text-align: center;
+        margin: 2rem 0;
+    }
+
+    .feature-layout {
+        flex-direction: column !important;
+        align-items: center;
+    }
+
+    .feature-text {
+        max-width: 90% !important;
+        text-align: center;
+    }
+
+    .feature-image {
+        max-width: 90% !important;
+        margin-bottom: 1rem;
+    }
+
+    .video-container {
+        width: 100% !important;
+        aspect-ratio: auto !important;
+    }
+
+    .intro-video {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    .signup-container {
+        padding: 2rem 1rem !important;
+    }
 }
