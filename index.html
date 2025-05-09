@@ -90,11 +90,12 @@
 
         <!-- New Section: Intro Video -->
         <section class="section" id="intro-video">
-            <video autoplay muted loop class="bg-video" preload="metadata">
-                <source src="Assets/Eterna Add V4.mp4" type="video/mp4">
-                Your browser does not support the video tag. Please ensure videos are available.
-            </video>
-            <div class="section-gradient"></div>
+            <div class="video-container">
+                <video class="intro-video" controls preload="metadata">
+                    <source src="Assets/Eterna Add V4.mov" type="video/mp4">
+                    Your browser does not support the video tag. Please ensure videos are available.
+                </video>
+            </div>
         </section>
 
         <!-- Section 2: Features Overview -->
@@ -406,7 +407,7 @@
             document.querySelector('#signup-email').value = '';
         });
 
-        // Video lazy-loading
+        // Video lazy-loading for background videos
         document.querySelectorAll('.bg-video').forEach(video => {
             const observer = new IntersectionObserver(([entry]) => {
                 if (entry.isIntersecting) {

@@ -363,6 +363,59 @@ p, li, label {
     outline-offset: 2px;
 }
 
+/* Intro Video Section */
+#intro-video {
+    background: var(--dark-bg-solid);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.video-container {
+    width: 80%;
+    max-width: 800px;
+    aspect-ratio: 16 / 9;
+    border: 2px solid var(--accent-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.intro-video {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.intro-video::-webkit-media-controls-panel {
+    background: var(--dark-bg);
+    color: var(--text-color);
+}
+
+.intro-video::-webkit-media-controls-play-button,
+.intro-video::-webkit-media-controls-volume-slider,
+.intro-video::-webkit-media-controls-mute-button,
+.intro-video::-webkit-media-controls-current-time-display,
+.intro-video::-webkit-media-controls-time-remaining-display {
+    filter: invert(90%) sepia(20%) saturate(300%) hue-rotate(20deg);
+}
+
+.intro-video::-webkit-media-controls-timeline {
+    background: var(--dark-bg-solid);
+    border-radius: 5px;
+}
+
+.intro-video::-webkit-media-controls-timeline::-webkit-slider-thumb {
+    background: var(--accent-color);
+    border-radius: 50%;
+}
+
+.intro-video:focus {
+    outline: 2px solid var(--text-color);
+    outline-offset: 2px;
+}
+
 /* Features Overview Section */
 #features-overview .center-block {
     position: absolute;
@@ -1240,6 +1293,11 @@ footer a:hover {
 
     .feature-text {
         max-width: 90%;
+    }
+
+    .video-container {
+        width: 90%;
+        max-width: 600px;
     }
 
     .timeline-container {
