@@ -291,23 +291,13 @@ p, li, label {
     z-index: 0;
 }
 
-/* Section Gradient */
-.section-gradient {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 20%;
-    background: linear-gradient(to top, var(--primary-bg), transparent);
-    z-index: 1;
-}
-
 /* Logo */
 .main-logo {
     position: absolute;
     top: 20px;
-    left: 20px;
-    width: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
     z-index: 10;
 }
 
@@ -324,7 +314,7 @@ p, li, label {
 /* Hero Section */
 #hero .hero-text {
     position: absolute;
-    top: 50%;
+    top: 66.67%; /* Position at the lower third (2/3 down the page) */
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
@@ -1234,8 +1224,8 @@ footer a:hover {
     .main-logo {
         max-width: 150px;
         top: 80px;
-        left: 20px;
-        transform: none;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     #hero .hero-text h1 {
