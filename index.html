@@ -7,7 +7,7 @@
     <meta name="keywords" content="digital legacy, AI, voice archive, family memories, Eterna, Echo" />
     <meta property="og:title" content="Eterna - Your Legacy, Forever" />
     <meta property="og:description" content="Build a lasting digital legacy with Eterna's Echo Engine, preserving your stories for future generations." />
-    <meta property="og:image" content="https://www.eterna.com/Assets/Eterna%20Logo%201.jpeg" />
+    <meta property="og:image" content="https://eterna-ai.co.uk/Assets/Eterna%20Logo%201.jpeg" />
     <title>Eterna - Your Legacy, Forever</title>
     <link rel="stylesheet" href="styles-v2.css" />
     <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
@@ -16,7 +16,7 @@
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "Eterna",
-        "url": "https://www.eterna.com",
+        "url": "https://eterna-ai.co.uk",
         "description": "Preserve your digital legacy with Eterna's AI-powered Echo Engine."
     }
     </script>
@@ -85,6 +85,15 @@
                 <p>Eterna uses advanced AI to capture your voice, values, and memories — so your loved ones can keep hearing from you for generations.</p>
                 <button class="cta-button" aria-label="Start building your Echo" onclick="window.location.href='#signup'">Start Building Your Echo</button>
             </div>
+            <div class="section-gradient"></div>
+        </section>
+
+        <!-- New Section: Intro Video -->
+        <section class="section" id="intro-video">
+            <video autoplay muted loop class="bg-video" preload="metadata">
+                <source src="Assets/Eterna Add V4.mov" type="video/mp4">
+                Your browser does not support the video tag. Please ensure videos are available.
+            </video>
             <div class="section-gradient"></div>
         </section>
 
@@ -214,16 +223,20 @@
 
         <!-- Section 10: Signup -->
         <section class="section" id="signup">
-            <article class="signup-callout">
+            <div class="signup-container">
                 <h2>Join the Eterna Legacy</h2>
-                <p>Secure one of only 500 Founder Membership spots to shape the future of digital legacy. Your story deserves to be timeless—start today.</p>
-                <form id="signup-form" method="post" action="/submit-signup">
-                    <input type="email" placeholder="Enter your email" required aria-label="Email address" />
+                <p class="signup-subtitle">Secure one of 500 Founder Membership spots to shape the future of digital legacy. Start preserving your story today.</p>
+                <form id="signup-form">
+                    <div class="form-group">
+                        <label for="signup-email">Email Address</label>
+                        <input type="email" id="signup-email" placeholder="Enter your email" required aria-label="Email address for signup" />
+                    </div>
                     <button type="submit" aria-label="Join the waiting list">Reserve Your Spot</button>
+                    <div id="signup-message" role="alert"></div>
                 </form>
                 <p class="signup-motivation">Be a pioneer in preserving memories for generations.</p>
                 <p><a href="https://www.kickstarter.com/projects/your-campaign" aria-label="Visit our Kickstarter campaign" rel="noopener">Support Us on Kickstarter</a></p>
-            </article>
+            </div>
         </section>
     </main>
 
@@ -293,105 +306,104 @@
 
         // Login form submission
         async function handleLoginSubmit(event) {
-    event.preventDefault();
-    const username = document.getElementById('login-email').value; // Map email to username for FastAPI
-    const password = document.getElementById('login-password').value;
+            event.preventDefault();
+            const username = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
 
-    // Remove any existing messages
-    const existingMessages = document.querySelectorAll('.login-form .success-message, .login-form .error-message');
-    existingMessages.forEach(msg => msg.remove());
+            const existingMessages = document.querySelectorAll('.login-form .success-message, .login-form .error-message');
+            existingMessages.forEach(msg => msg.remove());
 
-    try {
-        console.log('Attempting login with:', { username, password }); // Debug log
-        const response = await fetch("https://eterna-4zdf.onrender.com/auth/login", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded"
-            },
-            body: new URLSearchParams({
-                username,
-                password
-            })
-        });
-
-        const data = await response.json();
-        console.log('API Response:', response.status, data); // Debug log
-
-        if (data.access_token) {
-            localStorage.setItem("access_token", data.access_token);
-            const successMsg = document.createElement('p');
-            successMsg.className = 'success-message';
-            successMsg.textContent = 'Login successful!';
-            document.querySelector('.login-form').appendChild(successMsg);
-
-            // Show protected buttons
-            document.querySelectorAll('[data-auth="protected"]').forEach(el => {
-                el.style.display = 'inline-block';
-            });
-
-            // Fetch user info from the correct endpoint: /users/users/me
             try {
-                const userResponse = await fetch("https://eterna-4zdf.onrender.com/users/me", {
+                console.log('Attempting login with:', { username, password });
+                const response = await fetch("https://eterna-4zdf.onrender.com/auth/login", {
+                    method: "POST",
                     headers: {
-                        "Authorization": "Bearer " + localStorage.getItem("access_token")
-                    }
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    },
+                    body: new URLSearchParams({
+                        username,
+                        password
+                    })
                 });
-                const userData = await userResponse.json();
-                console.log('User Info:', userResponse.status, userData); // Debug log
 
-                if (userResponse.ok) {
-                    const userMsg = document.createElement('p');
-                    userMsg.className = 'success-message';
-                    userMsg.textContent = `Welcome, ${userData.email}!`;
-                    document.querySelector('.login-form').appendChild(userMsg);
+                const data = await response.json();
+                console.log('API Response:', response.status, data);
+
+                if (data.access_token) {
+                    localStorage.setItem("access_token", data.access_token);
+                    const successMsg = document.createElement('p');
+                    successMsg.className = 'success-message';
+                    successMsg.textContent = 'Login successful!';
+                    document.querySelector('.login-form').appendChild(successMsg);
+
+                    document.querySelectorAll('[data-auth="protected"]').forEach(el => {
+                        el.style.display = 'inline-block';
+                    });
+
+                    try {
+                        const userResponse = await fetch("https://eterna-4zdf.onrender.com/users/me", {
+                            headers: {
+                                "Authorization": "Bearer " + localStorage.getItem("access_token")
+                            }
+                        });
+                        const userData = await userResponse.json();
+                        console.log('User Info:', userResponse.status, userData);
+
+                        if (userResponse.ok) {
+                            const userMsg = document.createElement('p');
+                            userMsg.className = 'success-message';
+                            userMsg.textContent = `Welcome, ${userData.email}!`;
+                            document.querySelector('.login-form').appendChild(userMsg);
+                        } else {
+                            console.warn('Failed to fetch user info:', userData);
+                        }
+                    } catch (userError) {
+                        console.warn('Error fetching user info:', userError);
+                    }
+
+                    setTimeout(closeLoginOverlay, 2000);
                 } else {
-                    // Log the error but don't display it to the user since login succeeded
-                    console.warn('Failed to fetch user info:', userData);
+                    const errorMsg = document.createElement('p');
+                    errorMsg.className = 'error-message';
+                    errorMsg.textContent = data.detail || 'Login failed.';
+                    document.querySelector('.login-form').appendChild(errorMsg);
                 }
-            } catch (userError) {
-                console.warn('Error fetching user info:', userError);
+            } catch (err) {
+                console.error("Login error:", err);
+                const errorMsg = document.createElement('p');
+                errorMsg.className = 'error-message';
+                errorMsg.textContent = 'Server error. Please try again later.';
+                document.querySelector('.login-form').appendChild(errorMsg);
             }
-
-            setTimeout(closeLoginOverlay, 2000); // Close overlay after showing messages
-        } else {
-            const errorMsg = document.createElement('p');
-            errorMsg.className = 'error-message';
-            errorMsg.textContent = data.detail || 'Login failed.';
-            document.querySelector('.login-form').appendChild(errorMsg);
         }
-    } catch (err) {
-        console.error("Login error:", err);
-        const errorMsg = document.createElement('p');
-        errorMsg.className = 'error-message';
-        errorMsg.textContent = 'Server error. Please try again later.';
-        document.querySelector('.login-form').appendChild(errorMsg);
-    }
-}
 
         // Logout function
         function logout() {
             localStorage.removeItem('access_token');
-            // Hide protected buttons
             document.querySelectorAll('[data-auth="protected"]').forEach(el => {
                 el.style.display = 'none';
             });
             window.location.href = 'index.html';
         }
 
-        // Signup form validation
+        // Signup form validation (placeholder)
         document.querySelector('#signup-form').addEventListener('submit', (e) => {
             e.preventDefault();
-            const email = document.querySelector('#signup-form input').value;
+            const email = document.querySelector('#signup-email').value;
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const messageDiv = document.querySelector('#signup-message');
+            messageDiv.textContent = '';
+
             if (!emailRegex.test(email)) {
-                const error = document.createElement('p');
-                error.textContent = 'Please enter a valid email address.';
-                error.style.color = '#FFF8E7';
-                document.querySelector('.signup-callout').appendChild(error);
-                setTimeout(() => error.remove(), 3000);
+                messageDiv.textContent = 'Please enter a valid email address.';
+                messageDiv.style.color = '#FF6B6B';
                 return;
             }
+
             console.log('Form submitted:', email);
+            messageDiv.textContent = 'Thank you for signing up! We’ll be in touch soon.';
+            messageDiv.style.color = '#FFF8E7';
+            document.querySelector('#signup-email').value = '';
         });
 
         // Video lazy-loading
