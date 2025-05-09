@@ -551,10 +551,10 @@ p, li, label {
 
 .feature-layout {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
     gap: 2rem;
+    padding: 2rem 1rem;
 }
 
 .feature-text {
@@ -1466,5 +1466,17 @@ footer a:hover {
 
     .signup-container {
         padding: 2rem 1rem !important;
+    }
+    #detailed-features .feature-text {
+        position: relative;
+        background-color: var(--dark-bg);
+        padding: 25px;
+        border-radius: 10px;
+        border: 2px solid var(--accent-color);
+        color: var(--text-color);
+        z-index: 2;
+        text-align: center;
+        max-width: 400px;
+        margin: 1rem auto;
     }
 }
