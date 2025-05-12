@@ -362,28 +362,33 @@ p, li, label {
     justify-content: center;
     align-items: center;
     padding: 2rem;
-    min-height: 50vh; /* Define a height for the section */
+    height: 80vh; /* Increase height to make the video appear larger */
     width: 100%;
+    position: relative;
 }
 
 .video-container {
-    width: 100%; /* Take the full width of the parent */
-    height: 100%; /* Take the full height of the parent */
-    max-width: 1600px; /* Keep the max-width to prevent it from getting too large */
+    width: 60%; /* Reduce width to better match the square video */
+    height: 80%; /* Increase height relative to the section */
+    max-width: 800px; /* Reduce max-width to keep the container proportional */
     border: 2px solid var(--accent-color);
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     background: var(--primary-bg) !important;
-    position: relative; /* Ensure the video is positioned relative to this container */
+    position: relative;
+    aspect-ratio: 1 / 1; /* Enforce a square aspect ratio for the container */
 }
 
 .intro-video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensure the video fills the container while maintaining aspect ratio */
+    object-fit: cover; /* Ensure the video fills the container */
     display: block;
     background: var(--primary-bg) !important;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .intro-video::-webkit-media-controls-panel {
