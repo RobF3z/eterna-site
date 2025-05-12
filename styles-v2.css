@@ -1657,21 +1657,20 @@ footer a:hover {
 }
 
 /* Hide all sections except #hero, #intro-video, and #signup */
-#features-overview,
-#technology,
-#legacy-1,
-#legacy-2,
-#accessibility,
-#solitude,
-#memories-gramps,
-#detailed-features {
+.section#features-overview,
+.section#technology,
+.section#legacy-1,
+.section#legacy-2,
+.section#accessibility,
+.section#solitude,
+.section#memories-gramps,
+.section#detailed-features {
     display: none !important;
 }
 
 /* Ensure the sections we want to keep are visible */
-#hero,
-#intro-video,
-#signup {
+.section#hero,
+.section#intro-video,
+.section#signup {
     display: flex !important;
 }
-
