@@ -1,73 +1,93 @@
 <!DOCTYPE html>
 <html lang="en-GB">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Create a lasting digital legacy with Eterna’s AI. Preserve your voice and memories for loved ones to cherish forever. Start today!" />
-    <meta name="keywords" content="digital legacy, voice preservation, AI legacy, memory preservation, eterna ai" />
-    <meta name="author" content="Eterna AI" />
-    <title>Eterna: AI Digital Legacy Platform | Eterna</title>
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Create a lasting digital legacy with Eterna’s AI. Preserve your voice and memories for loved ones to cherish forever. Start today!" />
+  <meta name="keywords" content="digital legacy, voice preservation, AI legacy, memory preservation, eterna ai" />
+  <meta name="author" content="Eterna AI" />
+  <title>Eterna: AI Digital Legacy Platform | Eterna</title>
 
-    <!-- Canonical -->
-    <link rel="canonical" href="https://eterna-ai.co.uk/" />
+  <!-- Canonical -->
+  <link rel="canonical" href="https://eterna-ai.co.uk/" />
 
-    <!-- Open Graph Meta -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://eterna-ai.co.uk/" />
-    <meta property="og:title" content="Eterna: AI Digital Legacy Platform" />
-    <meta property="og:description" content="Preserve your voice and memories with Eterna’s AI. Build a digital legacy for generations to cherish. Start now!" />
-    <meta property="og:image" content="assets/eterna-logo-169.webp" />
-    <meta property="og:site_name" content="Eterna" />
+  <!-- Open Graph Meta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://eterna-ai.co.uk/" />
+  <meta property="og:title" content="Eterna: AI Digital Legacy Platform" />
+  <meta property="og:description" content="Preserve your voice and memories with Eterna’s AI. Build a digital legacy for generations to cherish. Start now!" />
+  <meta property="og:image" content="assets/eterna-logo-169.webp" />
+  <meta property="og:site_name" content="Eterna" />
 
-    <!-- Twitter Card Meta -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@EternaAI" />
-    <meta name="twitter:title" content="Eterna: AI Digital Legacy Platform" />
-    <meta name="twitter:description" content="Preserve your voice and memories with Eterna’s AI. Build a digital legacy for generations to cherish. Start now!" />
-    <meta name="twitter:image" content="assets/eterna-logo-169.jpeg" />
+  <!-- Twitter Card Meta -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@EternaAI" />
+  <meta name="twitter:title" content="Eterna: AI Digital Legacy Platform" />
+  <meta name="twitter:description" content="Preserve your voice and memories with Eterna’s AI. Build a digital legacy for generations to cherish. Start now!" />
+  <meta name="twitter:image" content="assets/eterna-logo-169.jpeg" />
 
-    <!-- Favicon -->
-    <link rel="icon" href="..assets/favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="..assets/apple-touch-icon.png" />
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
 
-    <!-- Fonts & CSS -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" as="style" />
-    <link rel="stylesheet" href="styles/landing.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet" />
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <!-- Fonts -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet" />
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
 
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Eterna",
-      "url": "https://eterna-ai.co.uk",
-      "description": "Preserve your digital legacy with Eterna's AI-powered Echo Engine.",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Eterna AI",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "assets/eterna-logo-169.webp"
-        },
-        "sameAs": [
-          "https://twitter.com/EternaAI",
-          "https://linkedin.com/company/eterna-ai"
-        ]
-      }
+  <!-- CSS (Split Stylesheets) -->
+  <link rel="stylesheet" href="styles/variables.css" />
+  <link rel="stylesheet" href="styles/reset.css" />
+  <link rel="stylesheet" href="styles/typography.css" />
+  <link rel="stylesheet" href="styles/preloader.css" />
+  <link rel="stylesheet" href="styles/navbar.css" />
+  <link rel="stylesheet" href="styles/login-overlay.css" />
+  <link rel="stylesheet" href="styles/hero.css" />
+  <link rel="stylesheet" href="styles/intro-video.css" />
+  <link rel="stylesheet" href="styles/features.css" />
+  <link rel="stylesheet" href="styles/technology.css" />
+  <link rel="stylesheet" href="styles/legacy.css" />
+  <link rel="stylesheet" href="styles/accessibility.css" />
+  <link rel="stylesheet" href="styles/solitude.css" />
+  <link rel="stylesheet" href="styles/memories-gramps.css" />
+  <link rel="stylesheet" href="styles/detailed-features.css" />
+  <link rel="stylesheet" href="styles/signup.css" />
+  <link rel="stylesheet" href="styles/footer.css" />
+  <link rel="stylesheet" href="styles/media-queries.css" />
+  <link rel="stylesheet" href="styles/patches.css" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Eterna",
+    "url": "https://eterna-ai.co.uk",
+    "description": "Preserve your digital legacy with Eterna's AI-powered Echo Engine.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Eterna AI",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "assets/eterna-logo-169.webp"
+      },
+      "sameAs": [
+        "https://twitter.com/EternaAI",
+        "https://linkedin.com/company/eterna-ai"
+      ]
     }
-    </script>
+  }
+  </script>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EG96DT3C65"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-EG96DT3C65');
-    </script>
-  </head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EG96DT3C65"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-EG96DT3C65');
+  </script>
+</head>
 
   <body>
     <div class="preloader" aria-live="polite">
