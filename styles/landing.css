@@ -1,10 +1,11 @@
+
 /* Base Variables */
 :root {
     --primary-bg: #444E32;
     --text-color: #FFF8E7;
     --accent-color: #B08D57;
     --dark-bg: rgba(32, 24, 12, 0.55);
-    --dark-bg-solid: #20180C;
+    --dark-bg-solid: #2B3B2B; /* Updated: dark olive green */
 }
 
 /* Reset and Typography */
@@ -101,6 +102,7 @@ p, li, label { font-size: 1.125rem; }
     background: none;
     z-index: 1;
 }
+
 #hero .bg-video {
     position: absolute;
     top: 0;
@@ -110,14 +112,16 @@ p, li, label { font-size: 1.125rem; }
     object-fit: cover;
     z-index: 0;
 }
+
 #hero .main-logo {
     position: absolute;
-    top: 20%;
+    top: 15%;
     left: 50%;
     transform: translateX(-50%);
     width: 375px;
     z-index: 2;
 }
+
 #hero .hero-text {
     position: absolute;
     top: 70%;
@@ -167,26 +171,22 @@ p, li, label { font-size: 1.125rem; }
     position: relative;
 }
 .video-container {
-    width: 75%;
-    height: 100%;
+    width: 100%;
     max-width: 1200px;
+    height: auto;
     border: 2px solid var(--accent-color);
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     background: var(--primary-bg);
     position: relative;
-    aspect-ratio: 1 / 1;
 }
 .intro-video {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
     display: block;
     background: var(--primary-bg);
-    position: absolute;
-    top: 0;
-    left: 0;
 }
 .intro-video:focus {
     outline: 2px solid var(--text-color);
@@ -195,7 +195,7 @@ p, li, label { font-size: 1.125rem; }
 
 /* Signup Section */
 #signup {
-    background: linear-gradient(135deg, var(--dark-bg-solid) 0%, var(--primary-bg) 100%);
+    background: var(--primary-bg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -243,6 +243,25 @@ p, li, label { font-size: 1.125rem; }
 #signup-form button:hover {
     background-color: var(--accent-color);
     color: var(--dark-bg-solid);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: var(--dark-bg-solid);
+    color: var(--text-color);
+}
+footer p, footer a {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin: 0.5rem;
+}
+footer .socials {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
 }
 
 /* Mobile Tweaks */
