@@ -1,337 +1,426 @@
 <!DOCTYPE html>
 <html lang="en-GB">
- <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Create a lasting digital legacy with Eterna’s AI. Preserve your voice and memories for loved ones to cherish forever. Start today!" />
-  <meta name="keywords" content="digital legacy, voice preservation, AI legacy, memory preservation, eterna ai" />
-  <meta name="author" content="Eterna AI" />
-  <title>Eterna: AI Digital Legacy Platform | Eterna</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Create a lasting digital legacy with Eterna’s AI. Preserve your voice and memories for loved ones to cherish forever. Start today!" />
+    <meta name="keywords" content="digital legacy, voice preservation, AI legacy, memory preservation, eterna ai" />
+    <meta name="author" content="Eterna AI" />
+    <title>Eterna: AI Digital Legacy Platform | Eterna</title>
 
-  <!-- Canonical -->
-  <link rel="canonical" href="https://eterna-ai.co.uk/" />
+    <link rel="canonical" href="https://eterna-ai.co.uk/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://eterna-ai.co.uk/" />
+    <meta property="og:title" content="Eterna: AI Digital Legacy Platform" />
+    <meta property="og:description" content="Preserve your voice and memories with Eterna’s AI. Build a digital legacy for generations to cherish. Start now!" />
+    <meta property="og:image" content="Assets/eterna-logo-169.webp" />
+    <meta property="og:site_name" content="Eterna" />
 
-  <!-- Open Graph Meta -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://eterna-ai.co.uk/" />
-  <meta property="og:title" content="Eterna: AI Digital Legacy Platform" />
-  <meta property="og:description" content="Preserve your voice and memories with Eterna’s AI. Build a digital legacy for generations to cherish. Start now!" />
-  <meta property="og:image" content="assets/eterna-logo-169.webp" />
-  <meta property="og:site_name" content="Eterna" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@EternaAI" />
+    <meta name="twitter:title" content="Eterna: AI Digital Legacy Platform" />
+    <meta name="twitter:description" content="Preserve your voice and memories with Eterna’s AI. Build a digital legacy for generations to cherish. Start now!" />
+    <meta name="twitter:image" content="Assets/eterna-logo-169.jpeg" />
 
-  <!-- Twitter Card Meta -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@EternaAI" />
-  <meta name="twitter:title" content="Eterna: AI Digital Legacy Platform" />
-  <meta name="twitter:description" content="Preserve your voice and memories with Eterna’s AI. Build a digital legacy for generations to cherish. Start now!" />
-  <meta name="twitter:image" content="assets/eterna-logo-169.jpeg" />
+    <link rel="icon" href="Assets/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="Assets/apple-touch-icon.png" />
 
-  <!-- Favicon -->
-  <link rel="icon" href="/eterna-site/assets/favicon.ico" type="image/x-icon" />
-  <link rel="apple-touch-icon" href="/eterna-site/assets/apple-touch-icon.png" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" as="style" />
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="styles/landing.css" />
 
-  <!-- Fonts -->
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" as="style" />
-  <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet" />
-  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-
-  <!-- CSS (Split Stylesheets) -->
-  <link rel="stylesheet" href="/eterna-site//styles/variables.css" />
-  <link rel="stylesheet" href="/eterna-site//styles/reset.css" />
-  <link rel="stylesheet" href="/eterna-site//styles/typography.css" />
-  <link rel="stylesheet" href="/eterna-site//styles/preloader.css" />
-  <link rel="stylesheet" href="/eterna-site//styles/navbar.css" />
-  <link rel="stylesheet" href="/eterna-site//styles/login-overlay.css" />
-  <link rel="stylesheet" href="/eterna-site//styles/hero.css" />
-  <link rel="stylesheet" href="/eterna-site//styles/intro-video.css" />
-  <link rel="stylesheet" href="/eterna-site//styles/features.css" />
-  <link rel="stylesheet" href="/eterna-site//styles/technology.css" />
-  <link rel="stylesheet" href="/eterna-site//styles/legacy.css" />
-  <link rel="stylesheet" href="/eterna-site//styles/accessibility.css" />
-  <link rel="stylesheet" href="/eterna-site//styles/solitude.css" />
-  <link rel="stylesheet" href="/eterna-site//styles/memories-gramps.css" />
-  <link rel="stylesheet" href="/eterna-site//styles/detailed-features.css" />
-  <link rel="stylesheet" href="/eterna-site//styles/signup.css" />
-  <link rel="stylesheet" href="/eterna-site//styles/footer.css" />
-  <link rel="stylesheet" href="/eterna-site//styles/media-queries.css" />
-  <link rel="stylesheet" href="/eterna-site//styles/patches.css" />
-
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Eterna",
-    "url": "https://eterna-ai.co.uk",
-    "description": "Preserve your digital legacy with Eterna's AI-powered Echo Engine.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Eterna AI",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "assets/eterna-logo-169.webp"
-      },
-      "sameAs": [
-        "https://twitter.com/EternaAI",
-        "https://linkedin.com/company/eterna-ai"
-      ]
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Eterna",
+      "url": "https://eterna-ai.co.uk",
+      "description": "Preserve your digital legacy with Eterna's AI-powered Echo Engine.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Eterna AI",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "Assets/eterna-logo-169.webp"
+        },
+        "sameAs": [
+          "https://twitter.com/EternaAI",
+          "https://linkedin.com/company/eterna-ai"
+        ]
+      }
     }
-  }
-  </script>
+    </script>
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EG96DT3C65"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-EG96DT3C65');
-  </script>
-</head>
-
-  <body>
-    <div class="preloader" aria-live="polite">
-      <div class="spinner"></div>
-      <span>Loading...</span>
-    </div>
-    <noscript>
-      <style>
-        .preloader { display: none; }
-        .nav-menu { display: flex; flex-direction: column; position: static; }
-      </style>
-      <p>JavaScript is disabled. Some features may be limited.</p>
-    </noscript>
-
-    <!-- Login Overlay -->
-    <div class="login-overlay" id="login-overlay" style="display: none;" role="dialog" aria-labelledby="login-title">
-      <div class="login-form">
-        <h2 id="login-title">Sign In to Eterna</h2>
-        <form id="login-form" onsubmit="handleLoginSubmit(event)">
-          <label for="login-email">Email</label>
-          <input type="email" id="login-email" placeholder="Enter email" required aria-label="Email" aria-required="true" />
-          <label for="login-password">Password</label>
-          <input type="password" id="login-password" placeholder="Enter password" required aria-label="Password" aria-required="true" />
-          <button type="submit" aria-label="Sign in">Sign In</button>
-          <button type="button" onclick="closeLoginOverlay()" aria-label="Close sign-in form">Close</button>
-        </form>
-      </div>
-    </div>
-
-    <nav class="navbar" aria-label="Main navigation">
-      <button class="menu-icon" role="button" aria-label="Toggle navigation menu" tabindex="0" onclick="toggleNavMenu()">☰</button>
-      <p class="navbar-slogan">Preserve Your voice. Your story. Your legacy</p>
-      <div class="nav-buttons">
-        <button onclick="showLoginOverlay()" aria-label="Log in to Eterna">Login</button>
-        <button onclick="window.location.href='#signup'" aria-label="Sign up for Eterna">Sign Up</button>
-        <!-- Protected buttons hidden until logged in -->
-        <button data-auth="protected" onclick="window.location.href='full-echo-v2.html'" aria-label="Talk to Your Echo">Talk to Echo</button>
-        <button data-auth="protected" onclick="window.location.href='memory-timeline.html'" aria-label="View Your Memories">View Memories</button>
-        <button data-auth="protected" onclick="window.location.href='family-tree.html'" aria-label="View Your Family Tree">Family Tree</button>
-        <button data-auth="protected" onclick="logout()" aria-label="Log out of Eterna">Logout</button>
-      </div>
-      <div class="nav-menu" aria-hidden="true">
-        <button onclick="showLoginOverlay()" aria-label="Log in to Eterna">Login</button>
-        <button onclick="window.location.href='#signup'" aria-label="Sign up for Eterna">Sign Up</button>
-        <!-- Protected buttons hidden until logged in -->
-        <button data-auth="protected" onclick="window.location.href='full-echo-v2.html'" aria-label="Talk to Your Echo">Talk to Echo</button>
-        <button data-auth="protected" onclick="window.location.href='memory-timeline.html'" aria-label="View Your Memories">View Memories</button>
-        <button data-auth="protected" onclick="window.location.href='family-tree.html'" aria-label="View Your Family Tree">Family Tree</button>
-        <button data-auth="protected" onclick="logout()" aria-label="Log out of Eterna">Logout</button>
-      </div>
-    </nav>
-
-    <main>
-      <!-- Section 1: Hero -->
-      <section class="section" id="hero">
-        <video autoplay muted loop class="bg-video" preload="metadata">
-          <source src="/eterna-site/assets/Forest 1.mp4" type="video/mp4">
-          Your browser does not support the video tag. Please ensure videos are available.
-        </video>
-        <img src="/eterna-site/assets/Eterna Logo 1.jpeg" class="main-logo" alt="Eterna Logo" />
-        <div class="overlay-text hero-text" role="region" aria-label="Introduction to Eterna">
-          <h1>Your Story. Preserved. Shared. Remembered.</h1>
-          <p>Eterna uses advanced AI to capture your voice, values, and memories — so your loved ones can keep hearing from you for generations.</p>
-          <p>Have a few fun chats with Eterna and build your own Echo — a living legacy you can shape over time. </p>
-          <button class="cta-button" aria-label="Pre-Launch Sign Up button" onclick="window.location.href='#signup'">Pre-Launch Sign Up</button>
-        </div>
-      </section>
-
-      <!-- New Section: Intro Video -->
-      <section class="section" id="intro-video">
-        <div class="video-container">
-          <video class="intro-video" autoplay muted loop controls preload="auto" poster="/eterna-site/assets/Eterna Logo 1.jpeg">
-            <source src="/eterna-site/assets/Eterna Add V7.mp4" type="video/mp4">
-            Your browser does not support the video tag. Please ensure videos are available.
-          </video>
-        </div>
-      </section>
-
-      <!-- Section 2: Features Overview -->
-      <section class="section" id="features-overview">
-        <video autoplay muted loop class="bg-video" preload="metadata">
-          <source src="/eterna-site/assets/holiday.mp4" type="video/mp4">
-          Your browser does not support the video tag. Please ensure videos are available.
-        </video>
-        <div class="center-block">
-          <h3>Family Memories, Never Lost</h3>
-        </div>
-        <div class="split-block left-block features-block">
-          <h3>Capture Your Unique Voice</h3>
-          <p>Engage in casual, heartfelt conversations with Echo to preserve your tone, humor, and wisdom. Our AI learns your speech patterns and values, creating a voice-first memory timeline that reflects the real you, ready to share with future generations.</p>
-        </div>
-        <div class="split-block right-block features-block">
-          <h3>Cherish Every Moment</h3>
-          <p>From spontaneous family gatherings to your favorite bedtime stories, Echo saves the everyday moments that define you. Relive the laughter and love anytime, ensuring your presence is felt by those you hold dear, now and forever.</p>
-        </div>
-      </section>
-
-      <!-- Section 3: Technology -->
-      <section class="section" id="technology">
-        <video autoplay muted loop class="bg-video" preload="metadata">
-          <source src="/eterna-site/assets/AI 1.mp4" type="video/mp4">
-          Your browser does not support the video tag. Please ensure videos are available.
-        </video>
-        <div class="center-block">
-          <h3>The Technology Behind the Voice</h3>
-        </div>
-        <img src="/eterna-site/assets/echo logo 1.png" class="echo-logo" alt="Echo Logo" />
-        <div class="overlay-text tech-text">
-          <h2>AI That Understands You</h2>
-          <p>Echo uses cutting-edge generative AI to map your voice, personality, and thought patterns. We continuously refine our technology to deliver the most authentic and emotionally resonant experience, all while prioritizing your privacy and security. Your voice, your essence—preserved forever.</p>
-        </div>
-      </section>
-
-      <!-- Section 4: Legacy Reinforcement (First) -->
-      <section class="section" id="legacy-1">
-        <video autoplay muted loop class="bg-video" preload="metadata">
-          <source src="/eterna-site/assets/Book 1.mp4" type="video/mp4">
-          Your browser does not support the video tag. Please ensure videos are available.
-        </video>
-        <div class="center-block">
-          <h3>Memories That Matter Most</h3>
-        </div>
-        <div class="split-block left-block legacy-block">
-          <h3>Keep Nan’s Kitchen Alive</h3>
-          <p>From Yorkshire puds to Sunday roasts, Echo records every step in Nan’s voice. It’s like cooking beside her again — even years from now.</p>
-        </div>
-        <div class="split-block right-block legacy-block">
-          <h3>Never Lose Dad’s Laugh</h3>
-          <p>Whether it’s the punchline he always told or the way he explained things — Echo lets his personality shine through for generations who never got to meet him.</p>
-        </div>
-      </section>
-
-      <!-- Section 5: Legacy Reinforcement (Second) -->
-      <section class="section" id="legacy-2">
-        <video autoplay muted loop class="bg-video" preload="metadata">
-          <source src="/eterna-site/assets/Memory 1.mp4" type="video/mp4">
-          Your browser does not support the video tag. Please ensure videos are available.
-        </video>
-        <div class="overlay-text legacy-text">
-          <h2>A Bridge Between Generations</h2>
-          <p>Let your great-grandchildren laugh at your jokes, learn your lessons, and know your heart. With Eterna, your spirit lives in every conversation.</p>
-        </div>
-      </section>
-
-      <!-- Section 6: Accessibility -->
-      <section class="section" id="accessibility">
-        <video autoplay muted loop class="bg-video" preload="metadata">
-          <source src="/eterna-site/assets/User Post.mp4" type="video/mp4">
-          Your browser does not support the video tag. Please ensure videos are available.
-        </video>
-        <div class="split-text accessibility-text">
-          <h3>Your Memories, Always Within Reach</h3>
-          <p>Whether your family is down the street or across the world, Echo is always ready. Just one click to hear your stories, your laughter — your voice.</p>
-        </div>
-      </section>
-
-      <!-- Section 7: Solitude -->
-      <section class="section" id="solitude">
-        <video autoplay muted loop class="bg-video" preload="metadata">
-          <source src="/eterna-site/assets/alone beach.mp4" type="video/mp4">
-          Your browser does not support the video tag. Please ensure videos are available.
-        </video>
-        <div class="split-text">
-          <h3>Hold On to Every Moment</h3>
-          <p>From quiet beach mornings to small daily rituals, Eterna helps you preserve the subtle moments that shaped who you are — and share them with the people you love.</p>
-        </div>
-      </section>
-
-      <!-- Section 8: Memories of Gramps -->
-      <section class="section" id="memories-gramps">
-        <video autoplay muted loop class="bg-video" preload="metadata">
-          <source src="/eterna-site/assets/lost gramps.mp4" type="video/mp4">
-          Your browser does not support the video tag. Please ensure videos are available.
-        </video>
-        <div class="split-text">
-          <h3>Grampa’s Voice Still Echoes</h3>
-          <p>Standing at the memorial, it’s not just a photo they remember — it’s the warmth of his voice, the way he said their name, the lessons he left behind. With Eterna, those moments aren’t lost. They’re lived.</p>
-        </div>
-      </section>
-
-      <!-- Section 9: Detailed Features -->
-      <section class="section" id="detailed-features">
-        <video class="bg-video final-bg" autoplay muted loop playsinline>
-          <source src="/eterna-site/assets/Abe.mp4" type="video/mp4">
-        </video>
-        <div class="feature-layout">
-          <div class="feature-text left-text">
-            <h3>Leave More Than Memories - Let Your Loved Ones Relive Your Story</h3>
-            <p>They Chat to Echo and Explore your life’s milestones, moments, and memories through Eterna’s dynamic Memory Timeline — all narrated in your own voice.</p>
-            <p>The Echo Assistant lets your family ask questions and receive answers in your voice, creating a bond that lives beyond the moment.</p>
-          </div>
-          <img src="/eterna-site/assets/grand 1.png" class="feature-image" alt="Grandparent sharing a story with family" />
-          <div class="feature-text right-text">
-            <h3>Public Echoes</h3>
-            <p>Ask Public Echoes Anything - Ask Pythagoras your Maths questions</p>
-            <p>Or Ask Albert Einstein Your Science Questions and Echo responds as they would</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section 10: Signup -->
-      <section class="section" id="signup">
-        <div class="signup-container">
-          <h2>Join the Eterna Legacy</h2>
-          <p class="signup-subtitle">Eterna is in its pre-launch phase. Sign up to our waiting list to receive project updates and exclusive pre-launch details.</p>
-          <form id="signup-form" action="https://formspree.io/f/xldblbgg" method="POST">
-            <div class="form-group">
-              <label for="signup-email">Email Address</label>
-              <input type="email" name="email" id="signup-email" placeholder="Enter your email" required aria-label="Email address for signup" />
-            </div>
-            <input type="hidden" name="_subject" value="New Signup for Eterna" />
-            <input type="text" name="_gotcha" style="display:none">
-            <button type="submit" aria-label="Join the waiting list">Reserve Your Spot</button>
-          </form>
-          <p class="signup-motivation">Be a pioneer in preserving memories for generations.</p>
-          <p><a href="https://www.kickstarter.com/projects/your-campaign" aria-label="Visit our Kickstarter campaign" rel="noopener">Support Us on Kickstarter</a></p>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <p>© 2025 Eterna. All rights reserved.</p>
-      <p>
-        <a href="/pages/privacy-policy.html" aria-label="Privacy Policy">Privacy Policy</a> |
-        <a href="/pages/terms.html" aria-label="Terms of Service">Terms</a> |
-        <a href="/pages/contact.html" aria-label="Contact Us">Contact</a>
-      </p>
-      <div class="socials">
-        <a href="https://twitter.com/eterna" aria-label="Twitter" rel="noopener">
-          <svg role="img" aria-label="Twitter logo" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFF8E7" stroke-width="2">
-            <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
-          </svg>
-        </a>
-        <a href="https://facebook.com/eterna" aria-label="Facebook" rel="noopener">
-          <svg role="img" aria-label="Facebook logo" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFF8E7" stroke-width="2">
-            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-          </svg>
-        </a>
-      </div>
-    </footer>
-
-    <script src="/scripts/main.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EG96DT3C65"></script>
     <script>
-      // Preloader
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-EG96DT3C65');
+    </script>
+  </head>
+
+ <body>
+  <div aria-live="polite" class="preloader">
+   <div class="spinner">
+   </div>
+   <span>
+    Loading...
+   </span>
+  </div>
+  <noscript>
+   <style>
+    .preloader { display: none; }
+        .nav-menu { display: flex; flex-direction: column; position: static; }
+   </style>
+   <p>
+    JavaScript is disabled. Some features may be limited.
+   </p>
+  </noscript>
+  <!-- Login Overlay -->
+  <div aria-labelledby="login-title" class="login-overlay" id="login-overlay" role="dialog" style="display: none;">
+   <div class="login-form">
+    <h2 id="login-title">
+     Sign In to Eterna
+    </h2>
+    <form id="login-form" onsubmit="handleLoginSubmit(event)">
+     <label for="login-email">
+      Email
+     </label>
+     <input aria-label="Email" aria-required="true" id="login-email" placeholder="Enter email" required="" type="email"/>
+     <label for="login-password">
+      Password
+     </label>
+     <input aria-label="Password" aria-required="true" id="login-password" placeholder="Enter password" required="" type="password"/>
+     <button aria-label="Sign in" type="submit">
+      Sign In
+     </button>
+     <button aria-label="Close sign-in form" onclick="closeLoginOverlay()" type="button">
+      Close
+     </button>
+    </form>
+   </div>
+  </div>
+  <nav aria-label="Main navigation" class="navbar">
+   <button aria-label="Toggle navigation menu" class="menu-icon" onclick="toggleNavMenu()" role="button" tabindex="0">
+    ☰
+   </button>
+   <p class="navbar-slogan">
+    Preserve Your voice. Your story. Your legacy
+   </p>
+   <div class="nav-buttons">
+    <button aria-label="Log in to Eterna" onclick="showLoginOverlay()">
+     Login
+    </button>
+    <button aria-label="Sign up for Eterna" onclick="window.location.href='#signup'">
+     Sign Up
+    </button>
+    <!-- Protected buttons hidden until logged in -->
+    <button aria-label="Talk to Your Echo" data-auth="protected" onclick="window.location.href='full-echo-v2.html'">
+     Talk to Echo
+    </button>
+    <button aria-label="View Your Memories" data-auth="protected" onclick="window.location.href='memory-timeline.html'">
+     View Memories
+    </button>
+    <button aria-label="View Your Family Tree" data-auth="protected" onclick="window.location.href='family-tree.html'">
+     Family Tree
+    </button>
+    <button aria-label="Log out of Eterna" data-auth="protected" onclick="logout()">
+     Logout
+    </button>
+   </div>
+   <div aria-hidden="true" class="nav-menu">
+    <button aria-label="Log in to Eterna" onclick="showLoginOverlay()">
+     Login
+    </button>
+    <button aria-label="Sign up for Eterna" onclick="window.location.href='#signup'">
+     Sign Up
+    </button>
+    <!-- Protected buttons hidden until logged in -->
+    <button aria-label="Talk to Your Echo" data-auth="protected" onclick="window.location.href='full-echo-v2.html'">
+     Talk to Echo
+    </button>
+    <button aria-label="View Your Memories" data-auth="protected" onclick="window.location.href='memory-timeline.html'">
+     View Memories
+    </button>
+    <button aria-label="View Your Family Tree" data-auth="protected" onclick="window.location.href='family-tree.html'">
+     Family Tree
+    </button>
+    <button aria-label="Log out of Eterna" data-auth="protected" onclick="logout()">
+     Logout
+    </button>
+   </div>
+  </nav>
+  <main>
+   <!-- Section 1: Hero -->
+   <section class="section" id="hero">
+    <video autoplay="" class="bg-video" loop="" muted="" preload="metadata">
+     <source src="Assets/Forest 1.mp4" type="video/mp4"/>
+     Your browser does not support the video tag. Please ensure videos are available.
+    </video>
+    <img alt="Eterna Logo" class="main-logo" src="Assets/Eterna Logo 1.jpeg"/>
+    <div aria-label="Introduction to Eterna" class="overlay-text hero-text" role="region">
+     <h1>
+      Your Story. Preserved. Shared. Remembered.
+     </h1>
+     <p>
+      Eterna uses advanced AI to capture your voice, values, and memories — so your loved ones can keep hearing from you for generations.
+     </p>
+     <p>
+      Have a few fun chats with Eterna and build your own Echo — a living legacy you can shape over time.
+     </p>
+     <button aria-label="Pre-Launch Sign Up button" class="cta-button" onclick="window.location.href='#signup'">
+      Pre-Launch Sign Up
+     </button>
+    </div>
+   </section>
+   <!-- New Section: Intro Video -->
+   <section class="section" id="intro-video">
+    <div class="video-container">
+     <video autoplay="" class="intro-video" controls="" loop="" muted="" poster="Assets/Eterna Logo 1.jpeg" preload="auto">
+      <source src="Assets/Eterna Add V7.mp4" type="video/mp4"/>
+      Your browser does not support the video tag. Please ensure videos are available.
+     </video>
+    </div>
+   </section>
+   <!-- Section 2: Features Overview -->
+   <section class="section" id="features-overview">
+    <video autoplay="" class="bg-video" loop="" muted="" preload="metadata">
+     <source src="Assets/holiday.mp4" type="video/mp4"/>
+     Your browser does not support the video tag. Please ensure videos are available.
+    </video>
+    <div class="center-block">
+     <h3>
+      Family Memories, Never Lost
+     </h3>
+    </div>
+    <div class="split-block left-block features-block">
+     <h3>
+      Capture Your Unique Voice
+     </h3>
+     <p>
+      Engage in casual, heartfelt conversations with Echo to preserve your tone, humor, and wisdom. Our AI learns your speech patterns and values, creating a voice-first memory timeline that reflects the real you, ready to share with future generations.
+     </p>
+    </div>
+    <div class="split-block right-block features-block">
+     <h3>
+      Cherish Every Moment
+     </h3>
+     <p>
+      From spontaneous family gatherings to your favorite bedtime stories, Echo saves the everyday moments that define you. Relive the laughter and love anytime, ensuring your presence is felt by those you hold dear, now and forever.
+     </p>
+    </div>
+   </section>
+   <!-- Section 3: Technology -->
+   <section class="section" id="technology">
+    <video autoplay="" class="bg-video" loop="" muted="" preload="metadata">
+     <source src="Assets/AI 1.mp4" type="video/mp4"/>
+     Your browser does not support the video tag. Please ensure videos are available.
+    </video>
+    <div class="center-block">
+     <h3>
+      The Technology Behind the Voice
+     </h3>
+    </div>
+    <img alt="Echo Logo" class="echo-logo" src="Assets/echo logo 1.png"/>
+    <div class="overlay-text tech-text">
+     <h2>
+      AI That Understands You
+     </h2>
+     <p>
+      Echo uses cutting-edge generative AI to map your voice, personality, and thought patterns. We continuously refine our technology to deliver the most authentic and emotionally resonant experience, all while prioritizing your privacy and security. Your voice, your essence—preserved forever.
+     </p>
+    </div>
+   </section>
+   <!-- Section 4: Legacy Reinforcement (First) -->
+   <section class="section" id="legacy-1">
+    <video autoplay="" class="bg-video" loop="" muted="" preload="metadata">
+     <source src="Assets/Book 1.mp4" type="video/mp4"/>
+     Your browser does not support the video tag. Please ensure videos are available.
+    </video>
+    <div class="center-block">
+     <h3>
+      Memories That Matter Most
+     </h3>
+    </div>
+    <div class="split-block left-block legacy-block">
+     <h3>
+      Keep Nan’s Kitchen Alive
+     </h3>
+     <p>
+      From Yorkshire puds to Sunday roasts, Echo records every step in Nan’s voice. It’s like cooking beside her again — even years from now.
+     </p>
+    </div>
+    <div class="split-block right-block legacy-block">
+     <h3>
+      Never Lose Dad’s Laugh
+     </h3>
+     <p>
+      Whether it’s the punchline he always told or the way he explained things — Echo lets his personality shine through for generations who never got to meet him.
+     </p>
+    </div>
+   </section>
+   <!-- Section 5: Legacy Reinforcement (Second) -->
+   <section class="section" id="legacy-2">
+    <video autoplay="" class="bg-video" loop="" muted="" preload="metadata">
+     <source src="Assets/Memory 1.mp4" type="video/mp4"/>
+     Your browser does not support the video tag. Please ensure videos are available.
+    </video>
+    <div class="overlay-text legacy-text">
+     <h2>
+      A Bridge Between Generations
+     </h2>
+     <p>
+      Let your great-grandchildren laugh at your jokes, learn your lessons, and know your heart. With Eterna, your spirit lives in every conversation.
+     </p>
+    </div>
+   </section>
+   <!-- Section 6: Accessibility -->
+   <section class="section" id="accessibility">
+    <video autoplay="" class="bg-video" loop="" muted="" preload="metadata">
+     <source src="Assets/User Post.mp4" type="video/mp4"/>
+     Your browser does not support the video tag. Please ensure videos are available.
+    </video>
+    <div class="split-text accessibility-text">
+     <h3>
+      Your Memories, Always Within Reach
+     </h3>
+     <p>
+      Whether your family is down the street or across the world, Echo is always ready. Just one click to hear your stories, your laughter — your voice.
+     </p>
+    </div>
+   </section>
+   <!-- Section 7: Solitude -->
+   <section class="section" id="solitude">
+    <video autoplay="" class="bg-video" loop="" muted="" preload="metadata">
+     <source src="Assets/alone beach.mp4" type="video/mp4"/>
+     Your browser does not support the video tag. Please ensure videos are available.
+    </video>
+    <div class="split-text">
+     <h3>
+      Hold On to Every Moment
+     </h3>
+     <p>
+      From quiet beach mornings to small daily rituals, Eterna helps you preserve the subtle moments that shaped who you are — and share them with the people you love.
+     </p>
+    </div>
+   </section>
+   <!-- Section 8: Memories of Gramps -->
+   <section class="section" id="memories-gramps">
+    <video autoplay="" class="bg-video" loop="" muted="" preload="metadata">
+     <source src="Assets/lost gramps.mp4" type="video/mp4"/>
+     Your browser does not support the video tag. Please ensure videos are available.
+    </video>
+    <div class="split-text">
+     <h3>
+      Grampa’s Voice Still Echoes
+     </h3>
+     <p>
+      Standing at the memorial, it’s not just a photo they remember — it’s the warmth of his voice, the way he said their name, the lessons he left behind. With Eterna, those moments aren’t lost. They’re lived.
+     </p>
+    </div>
+   </section>
+   <!-- Section 9: Detailed Features -->
+   <section class="section" id="detailed-features">
+    <video autoplay="" class="bg-video final-bg" loop="" muted="" playsinline="">
+     <source src="Assets/Abe.mp4" type="video/mp4"/>
+    </video>
+    <div class="feature-layout">
+     <div class="feature-text left-text">
+      <h3>
+       Leave More Than Memories - Let Your Loved Ones Relive Your Story
+      </h3>
+      <p>
+       They Chat to Echo and Explore your life’s milestones, moments, and memories through Eterna’s dynamic Memory Timeline — all narrated in your own voice.
+      </p>
+      <p>
+       The Echo Assistant lets your family ask questions and receive answers in your voice, creating a bond that lives beyond the moment.
+      </p>
+     </div>
+     <img alt="Grandparent sharing a story with family" class="feature-image" src="Assets/grand 1.png"/>
+     <div class="feature-text right-text">
+      <h3>
+       Public Echoes
+      </h3>
+      <p>
+       Ask Public Echoes Anything - Ask Pythagoras your Maths questions
+      </p>
+      <p>
+       Or Ask Albert Einstein Your Science Questions and Echo responds as they would
+      </p>
+     </div>
+    </div>
+   </section>
+   <!-- Section 10: Signup -->
+   <section class="section" id="signup">
+    <div class="signup-container">
+     <h2>
+      Join the Eterna Legacy
+     </h2>
+     <p class="signup-subtitle">
+      Eterna is in its pre-launch phase. Sign up to our waiting list to receive project updates and exclusive pre-launch details.
+     </p>
+     <form action="https://formspree.io/f/xldblbgg" id="signup-form" method="POST">
+      <div class="form-group">
+       <label for="signup-email">
+        Email Address
+       </label>
+       <input aria-label="Email address for signup" id="signup-email" name="email" placeholder="Enter your email" required="" type="email"/>
+      </div>
+      <input name="_subject" type="hidden" value="New Signup for Eterna"/>
+      <input name="_gotcha" style="display:none" type="text"/>
+      <button aria-label="Join the waiting list" type="submit">
+       Reserve Your Spot
+      </button>
+     </form>
+     <p class="signup-motivation">
+      Be a pioneer in preserving memories for generations.
+     </p>
+     <p>
+      <a aria-label="Visit our Kickstarter campaign" href="https://www.kickstarter.com/projects/your-campaign" rel="noopener">
+       Support Us on Kickstarter
+      </a>
+     </p>
+    </div>
+   </section>
+  </main>
+  <footer>
+   <p>
+    © 2025 Eterna. All rights reserved.
+   </p>
+   <p>
+    <a aria-label="Privacy Policy" href="pages/privacy-policy.html">
+     Privacy Policy
+    </a>
+    |
+    <a aria-label="Terms of Service" href="pages/terms.html">
+     Terms
+    </a>
+    |
+    <a aria-label="Contact Us" href="pages/contact.html">
+     Contact
+    </a>
+   </p>
+   <div class="socials">
+    <a aria-label="Twitter" href="https://twitter.com/eterna" rel="noopener">
+     <svg aria-label="Twitter logo" fill="none" height="24" role="img" stroke="#FFF8E7" stroke-width="2" viewbox="0 0 24 24" width="24">
+      <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+      </path>
+     </svg>
+    </a>
+    <a aria-label="Facebook" href="https://facebook.com/eterna" rel="noopener">
+     <svg aria-label="Facebook logo" fill="none" height="24" role="img" stroke="#FFF8E7" stroke-width="2" viewbox="0 0 24 24" width="24">
+      <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z">
+      </path>
+     </svg>
+    </a>
+   </div>
+  </footer>
+  <script src="scripts/main.js">
+  </script>
+  <script>
+   // Preloader
       window.addEventListener('load', () => {
         setTimeout(() => {
           document.querySelector('.preloader').classList.add('hidden');
@@ -483,6 +572,6 @@
         }, { threshold: 0.1 });
         observer.observe(video);
       });
-    </script>
-  </body>
+  </script>
+ </body>
 </html>
