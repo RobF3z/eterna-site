@@ -92,21 +92,21 @@ p, li, label { font-size: 1.125rem; }
 }
 
 /* Hero Section */
-#hero.section {
+.section#hero {
+    position: relative;
     min-height: 100vh;
-    background: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
+    background: none;
     z-index: 1;
 }
 #hero .bg-video {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
     height: 100%;
+    width: 100%;
     object-fit: cover;
     z-index: 0;
 }
