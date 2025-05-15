@@ -25,6 +25,13 @@ h2 { font-size: 1.375rem; }
 h3 { font-size: 1.25rem; }
 p, li, label { font-size: 1.125rem; }
 
+/* General Section Styles */
+.section {
+    position: relative; /* Ensure each section is a positioning context */
+    overflow: hidden; /* Prevent videos from spilling out */
+    min-height: 60vh; /* Ensure sections have a minimum height */
+}
+
 /* Hero Section */
 .section#hero {
     min-height: 100vh;
@@ -86,11 +93,17 @@ p, li, label { font-size: 1.125rem; }
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: 0;
+    z-index: -1; /* Place behind other content in the section */
     pointer-events: none;
 }
 #intro-video .intro-video {
     pointer-events: auto;
+}
+
+/* Ensure text overlays are above videos */
+.overlay-text, .split-text, .center-block {
+    position: relative;
+    z-index: 1; /* Ensure text is above the video */
 }
 
 /* Intro Video */
@@ -129,6 +142,25 @@ p, li, label { font-size: 1.125rem; }
 .intro-video:focus {
     outline: 2px solid var(--text-color);
     outline-offset: 2px;
+}
+
+/* Memories of Gramps Section */
+#memories-gramps {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#memories-gramps .split-text {
+    text-align: center;
+    max-width: 80%;
+    background-color: var(--dark-bg);
+    padding: 20px;
+    border: 2px solid var(--accent-color);
+    border-radius: 10px;
+    color: var(--text-color);
+    z-index: 1;
 }
 
 /* Signup Section */
