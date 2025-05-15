@@ -25,24 +25,102 @@ h2 { font-size: 1.375rem; }
 h3 { font-size: 1.25rem; }
 p, li, label { font-size: 1.125rem; }
 
-/* General Section Styles */
+/* Section Base */
 .section {
     position: relative;
     overflow: hidden;
+    width: 100%;
     min-height: 60vh;
 }
 
+/* Hide Sections Temporarily */
+#features-overview,
+#technology,
+#legacy-1,
+#legacy-2,
+#accessibility,
+#solitude,
+#memories-gramps,
+#detailed-features {
+    display: none !important;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: var(--dark-bg-solid);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+.menu-icon {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+.navbar-slogan {
+    font-size: 1rem;
+    margin-left: 1rem;
+    flex-grow: 1;
+    text-align: center;
+    color: var(--text-color);
+}
+.nav-buttons {
+    display: flex;
+    gap: 10px;
+}
+.nav-buttons button {
+    background: transparent;
+    border: 2px solid var(--accent-color);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.nav-buttons button:hover {
+    background-color: var(--accent-color);
+    color: var(--dark-bg-solid);
+}
+.nav-menu {
+    display: none;
+}
+
 /* Hero Section */
-.section#hero {
+#hero.section {
     min-height: 100vh;
-    position: relative;
+    background: none;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+#hero .bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+#hero .main-logo {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 375px;
+    z-index: 2;
 }
 #hero .hero-text {
     position: absolute;
-    top: 60%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -52,7 +130,7 @@ p, li, label { font-size: 1.125rem; }
     border: 2px solid var(--accent-color);
     border-radius: 10px;
     color: var(--text-color);
-    z-index: 2;
+    z-index: 3;
 }
 #hero .hero-text h1 {
     font-size: 3rem;
@@ -75,56 +153,6 @@ p, li, label { font-size: 1.125rem; }
 #hero .cta-button:hover {
     background-color: var(--accent-color);
     color: var(--dark-bg-solid);
-}
-#hero .main-logo {
-    position: absolute;
-    top: 15%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 375px;
-    z-index: 10;
-}
-
-/* Background Video */
-.bg-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-    pointer-events: none;
-}
-#intro-video .intro-video {
-    pointer-events: auto;
-}
-
-/* Nav Buttons Styling */
-.nav-buttons {
-    display: flex;
-    gap: 10px;
-    margin-left: auto;
-    margin-right: 2rem;
-}
-.nav-buttons button {
-    background: transparent;
-    border: 2px solid var(--accent-color);
-    color: var(--text-color);
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-}
-.nav-buttons button:hover {
-    background-color: var(--accent-color);
-    color: var(--dark-bg-solid);
-}
-
-/* Text Layer Z-Index */
-.overlay-text, .split-text, .center-block {
-    position: relative;
-    z-index: 1;
 }
 
 /* Intro Video */
@@ -163,25 +191,6 @@ p, li, label { font-size: 1.125rem; }
 .intro-video:focus {
     outline: 2px solid var(--text-color);
     outline-offset: 2px;
-}
-
-/* Memories of Gramps Section */
-#memories-gramps {
-    position: relative;
-    min-height: 60vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-#memories-gramps .split-text {
-    text-align: center;
-    max-width: 80%;
-    background-color: var(--dark-bg);
-    padding: 20px;
-    border: 2px solid var(--accent-color);
-    border-radius: 10px;
-    color: var(--text-color);
-    z-index: 1;
 }
 
 /* Signup Section */
@@ -239,16 +248,20 @@ p, li, label { font-size: 1.125rem; }
 /* Mobile Tweaks */
 @media (max-width: 768px) {
     #hero .hero-text {
-        top: 50%;
+        top: 60%;
+        padding: 1.25rem;
     }
     #hero .hero-text h1 {
-        font-size: 1.75rem;
+        font-size: 2rem;
     }
     #hero .hero-text p {
-        font-size: 0.95rem;
+        font-size: 1rem;
     }
     .video-container {
         width: 100%;
-        height: 100%;
+        height: auto;
+    }
+    .nav-buttons {
+        flex-wrap: wrap;
     }
 }
