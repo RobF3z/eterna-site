@@ -1,0 +1,30 @@
+/* Blog Page Styles */
+
+:root {
+    --primary-bg: #444E32;
+    --text-color: #FFF8E7;
+    --accent-color: #B08D57;
+    --dark-bg: rgba(32, 24, 12, 0.55);
+    --dark-bg-solid: #20180C;
+}
+
+html, body {
+    font-family: 'Marcellus', serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+}
+
+main {
+    padding: 2rem;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1.2rem;
+}
