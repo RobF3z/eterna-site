@@ -91,32 +91,23 @@
     <nav class="navbar" aria-label="Main navigation">
       <button class="menu-icon" role="button" aria-label="Toggle navigation menu" tabindex="0" onclick="toggleNavMenu()">☰</button>
       <p class="navbar-slogan">Preserve Your voice. Your story. Your legacy</p>
-      <div class="nav-buttons">
-        <button onclick="window.location.href='index.html'" aria-label="Home">Home</button>
-        <button onclick="window.location.href='about.html'" aria-label="About Eterna">About</button>
-        <button onclick="window.location.href='features.html'" aria-label="Eterna Features">Features</button>
-        <button onclick="window.location.href='technology.html'" aria-label="Technology">Technology</button>
-        <button onclick="window.location.href='public-echo.html'" aria-label="Public Echoes">Public Echoes</button>
-        <button onclick="window.location.href='pricing.html'" aria-label="Pricing">Pricing</button>
-        <button onclick="window.location.href='support.html'" aria-label="Support">Support</button>
-        <button onclick="window.location.href='blog.html'" aria-label="Blog">Blog</button>
-        <button data-auth="protected" onclick="window.location.href='onboarding.html'" aria-label="Onboarding">Onboarding</button>
-        <button onclick="showLoginOverlay()" aria-label="Log in to Eterna">Login</button>
-        <button onclick="window.location.href='#signup'" aria-label="Sign up for Eterna">Sign Up</button>
-      </div>
-      <div class="nav-menu" aria-hidden="true">
-        <button onclick="window.location.href='index.html'" aria-label="Home">Home</button>
-        <button onclick="window.location.href='about.html'" aria-label="About Eterna">About</button>
-        <button onclick="window.location.href='features.html'" aria-label="Eterna Features">Features</button>
-        <button onclick="window.location.href='technology.html'" aria-label="Technology">Technology</button>
-        <button onclick="window.location.href='public-echo.html'" aria-label="Public Echoes">Public Echoes</button>
-        <button onclick="window.location.href='pricing.html'" aria-label="Pricing">Pricing</button>
-        <button onclick="window.location.href='support.html'" aria-label="Support">Support</button>
-        <button onclick="window.location.href='blog.html'" aria-label="Blog">Blog</button>
-        <button data-auth="protected" onclick="window.location.href='onboarding.html'" aria-label="Onboarding">Onboarding</button>
-        <button onclick="showLoginOverlay()" aria-label="Log in to Eterna">Login</button>
-        <button onclick="window.location.href='#signup'" aria-label="Sign up for Eterna">Sign Up</button>
-      </div>
+    <div class="nav-buttons">
+  <button onclick="showLoginOverlay()" aria-label="Log in to Eterna">Login</button>
+  <button onclick="window.location.href='#signup'" aria-label="Sign up for Eterna">Sign Up</button>
+</div>
+
+<div class="nav-menu" aria-hidden="true">
+  <button onclick="window.location.href='index.html'" aria-label="Home">Home</button>
+  <button onclick="window.location.href='about.html'" aria-label="About Eterna">About</button>
+  <button onclick="window.location.href='features.html'" aria-label="Eterna Features">Features</button>
+  <button onclick="window.location.href='technology.html'" aria-label="Technology">Technology</button>
+  <button onclick="window.location.href='public-echo.html'" aria-label="Public Echoes">Public Echoes</button>
+  <button onclick="window.location.href='pricing.html'" aria-label="Pricing">Pricing</button>
+  <button onclick="window.location.href='support.html'" aria-label="Support">Support</button>
+  <button onclick="window.location.href='blog.html'" aria-label="Blog">Blog</button>
+  <button onclick="showLoginOverlay()" aria-label="Log in to Eterna">Login</button>
+  <button onclick="window.location.href='#signup'" aria-label="Sign up for Eterna">Sign Up</button>
+</div>
     </nav>
   <main>
    <!-- Section 1: Hero -->
@@ -419,17 +410,34 @@
 });
 
       // Mobile menu toggle
-      function toggleNavMenu() {
-        const navMenu = document.querySelector('.nav-menu');
-        navMenu.classList.toggle('active');
-        navMenu.setAttribute('aria-hidden', !navMenu.classList.contains('active'));
-        navMenu.style.display = navMenu.classList.contains('active') ? 'flex' : 'none';
-        // Ensure protected buttons in mobile menu reflect login state
-        const loggedIn = !!localStorage.getItem('access_token');
-        document.querySelectorAll('.nav-menu [data-auth="protected"]').forEach(el => {
-          el.style.display = loggedIn ? 'block' : 'none';
-        });
-      }
+     function toggleNavMenu() {
+  const navMenu = document.querySelector('.nav-menu');
+  const isVisible = navMenu.classList.contains('active');
+
+  if (isVisible) {
+    navMenu.classList.remove('active');
+    navMenu.setAttribute('aria-hidden', 'true');
+    navMenu.style.display = 'none';
+  } else {
+    navMenu.classList.add('active');
+    navMenu.setAttribute('aria-hidden', 'false');
+    navMenu.style.display = 'flex';
+    navMenu.style.flexDirection = 'column';
+    navMenu.style.background = '#20180C';
+    navMenu.style.position = 'absolute';
+    navMenu.style.top = '100%';
+    navMenu.style.right = '0';
+    navMenu.style.padding = '1rem';
+    navMenu.style.zIndex = '999';
+    navMenu.style.border = '1px solid var(--accent-color)';
+  }
+
+  // Sync visibility of protected links
+  const loggedIn = !!localStorage.getItem('access_token');
+  document.querySelectorAll('.nav-menu [data-auth="protected"]').forEach(el => {
+    el.style.display = loggedIn ? 'block' : 'none';
+  });
+}
 
       // Login overlay
       function showLoginOverlay() {
