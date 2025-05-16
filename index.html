@@ -60,98 +60,64 @@
       gtag('config', 'G-EG96DT3C65');
     </script>
   </head>
-
- <body>
-  <div aria-live="polite" class="preloader">
-   <div class="spinner">
-   </div>
-   <span>
-    Loading...
-   </span>
-  </div>
-  <noscript>
-   <style>
-    .preloader { display: none; }
+  <body>
+    <div aria-live="polite" class="preloader">
+      <div class="spinner"></div>
+      <span>Loading...</span>
+    </div>
+    <noscript>
+      <style>
+        .preloader { display: none; }
         .nav-menu { display: flex; flex-direction: column; position: static; }
-   </style>
-   <p>
-    JavaScript is disabled. Some features may be limited.
-   </p>
-  </noscript>
-  <!-- Login Overlay -->
-  <div aria-labelledby="login-title" class="login-overlay" id="login-overlay" role="dialog" style="display: none;">
-   <div class="login-form">
-    <h2 id="login-title">
-     Sign In to Eterna
-    </h2>
-    <form id="login-form" onsubmit="handleLoginSubmit(event)">
-     <label for="login-email">
-      Email
-     </label>
-     <input aria-label="Email" aria-required="true" id="login-email" placeholder="Enter email" required="" type="email"/>
-     <label for="login-password">
-      Password
-     </label>
-     <input aria-label="Password" aria-required="true" id="login-password" placeholder="Enter password" required="" type="password"/>
-     <button aria-label="Sign in" type="submit">
-      Sign In
-     </button>
-     <button aria-label="Close sign-in form" onclick="closeLoginOverlay()" type="button">
-      Close
-     </button>
-    </form>
-   </div>
-  </div>
-  <nav aria-label="Main navigation" class="navbar">
-   <button aria-label="Toggle navigation menu" class="menu-icon" onclick="toggleNavMenu()" role="button" tabindex="0">
-    ☰
-   </button>
-   <p class="navbar-slogan">
-    Preserve Your voice. Your story. Your legacy
-   </p>
-   <div class="nav-buttons">
-    <button aria-label="Log in to Eterna" onclick="showLoginOverlay()">
-     Login
-    </button>
-    <button aria-label="Sign up for Eterna" onclick="window.location.href='#signup'">
-     Sign Up
-    </button>
-    <!-- Protected buttons hidden until logged in -->
-    <button aria-label="Talk to Your Echo" data-auth="protected" onclick="window.location.href='full-echo-v2.html'">
-     Talk to Echo
-    </button>
-    <button aria-label="View Your Memories" data-auth="protected" onclick="window.location.href='memory-timeline.html'">
-     View Memories
-    </button>
-    <button aria-label="View Your Family Tree" data-auth="protected" onclick="window.location.href='family-tree.html'">
-     Family Tree
-    </button>
-    <button aria-label="Log out of Eterna" data-auth="protected" onclick="logout()">
-     Logout
-    </button>
-   </div>
-   <div aria-hidden="true" class="nav-menu">
-    <button aria-label="Log in to Eterna" onclick="showLoginOverlay()">
-     Login
-    </button>
-    <button aria-label="Sign up for Eterna" onclick="window.location.href='#signup'">
-     Sign Up
-    </button>
-    <!-- Protected buttons hidden until logged in -->
-    <button aria-label="Talk to Your Echo" data-auth="protected" onclick="window.location.href='full-echo-v2.html'">
-     Talk to Echo
-    </button>
-    <button aria-label="View Your Memories" data-auth="protected" onclick="window.location.href='memory-timeline.html'">
-     View Memories
-    </button>
-    <button aria-label="View Your Family Tree" data-auth="protected" onclick="window.location.href='family-tree.html'">
-     Family Tree
-    </button>
-    <button aria-label="Log out of Eterna" data-auth="protected" onclick="logout()">
-     Logout
-    </button>
-   </div>
-  </nav>
+      </style>
+      <p>JavaScript is disabled. Some features may be limited.</p>
+    </noscript>
+
+    <!-- Login Overlay -->
+    <div class="login-overlay" id="login-overlay" role="dialog" aria-labelledby="login-title" style="display: none;">
+      <div class="login-form">
+        <h2 id="login-title">Sign In to Eterna</h2>
+        <form id="login-form" onsubmit="handleLoginSubmit(event)">
+          <label for="login-email">Email</label>
+          <input type="email" id="login-email" placeholder="Enter email" required aria-label="Email" aria-required="true" />
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" placeholder="Enter password" required aria-label="Password" aria-required="true" />
+          <button type="submit" aria-label="Sign in">Sign In</button>
+          <button type="button" onclick="closeLoginOverlay()" aria-label="Close sign-in form">Close</button>
+        </form>
+      </div>
+    </div>
+
+    <nav class="navbar" aria-label="Main navigation">
+      <button class="menu-icon" role="button" aria-label="Toggle navigation menu" tabindex="0" onclick="toggleNavMenu()">☰</button>
+      <p class="navbar-slogan">Preserve Your voice. Your story. Your legacy</p>
+      <div class="nav-buttons">
+        <button onclick="window.location.href='index.html'" aria-label="Home">Home</button>
+        <button onclick="window.location.href='about.html'" aria-label="About Eterna">About</button>
+        <button onclick="window.location.href='features.html'" aria-label="Eterna Features">Features</button>
+        <button onclick="window.location.href='technology.html'" aria-label="Technology">Technology</button>
+        <button onclick="window.location.href='public-echo.html'" aria-label="Public Echoes">Public Echoes</button>
+        <button onclick="window.location.href='pricing.html'" aria-label="Pricing">Pricing</button>
+        <button onclick="window.location.href='support.html'" aria-label="Support">Support</button>
+        <button onclick="window.location.href='blog.html'" aria-label="Blog">Blog</button>
+        <button data-auth="protected" onclick="window.location.href='onboarding.html'" aria-label="Onboarding">Onboarding</button>
+        <button onclick="showLoginOverlay()" aria-label="Log in to Eterna">Login</button>
+        <button onclick="window.location.href='#signup'" aria-label="Sign up for Eterna">Sign Up</button>
+      </div>
+      <div class="nav-menu" aria-hidden="true">
+        <button onclick="window.location.href='index.html'" aria-label="Home">Home</button>
+        <button onclick="window.location.href='about.html'" aria-label="About Eterna">About</button>
+        <button onclick="window.location.href='features.html'" aria-label="Eterna Features">Features</button>
+        <button onclick="window.location.href='technology.html'" aria-label="Technology">Technology</button>
+        <button onclick="window.location.href='public-echo.html'" aria-label="Public Echoes">Public Echoes</button>
+        <button onclick="window.location.href='pricing.html'" aria-label="Pricing">Pricing</button>
+        <button onclick="window.location.href='support.html'" aria-label="Support">Support</button>
+        <button onclick="window.location.href='blog.html'" aria-label="Blog">Blog</button>
+        <button data-auth="protected" onclick="window.location.href='onboarding.html'" aria-label="Onboarding">Onboarding</button>
+        <button onclick="showLoginOverlay()" aria-label="Log in to Eterna">Login</button>
+        <button onclick="window.location.href='#signup'" aria-label="Sign up for Eterna">Sign Up</button>
+      </div>
+    </nav>
   <main>
    <!-- Section 1: Hero -->
    <section class="section" id="hero">
