@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Create your Eterna account and preserve your voice and memories through AI. Choose a plan and begin your digital legacy." />
+  <meta name="keywords" content="eterna signup, AI memory preservation, create account, voice legacy" />
+  <meta name="author" content="Eterna AI" />
+  <title>Create Account | Eterna</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" />
+  <link rel="stylesheet" href="../styles/signup.css" />
+</head>
+<body>
+  <main class="signup-wrapper">
+    <div class="signup-card">
+      <h1>Create Your Eterna Account</h1>
+      <form id="signup-form" action="/submit-signup" method="POST">
+
+        <label for="full-name">Full Name</label>
+        <input type="text" id="full-name" name="full_name" required />
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required />
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required />
+
+        <label for="confirm-password">Confirm Password</label>
+        <input type="password" id="confirm-password" name="confirm_password" required />
+
+        <fieldset>
+          <legend>Address</legend>
+          <label for="address-line1">Street Address</label>
+          <input type="text" id="address-line1" name="address_line1" required />
+          <label for="address-line2">Address Line 2</label>
+          <input type="text" id="address-line2" name="address_line2" />
+          <label for="city">Town/City</label>
+          <input type="text" id="city" name="city" required />
+          <label for="postcode">Postcode</label>
+          <input type="text" id="postcode" name="postcode" required />
+          <label for="country">Country</label>
+          <input type="text" id="country" name="country" required />
+        </fieldset>
+
+        <label for="phone">Phone Number (optional)</label>
+        <input type="tel" id="phone" name="phone" />
+
+        <label for="language">Preferred Language</label>
+        <input type="text" id="language" name="language" placeholder="e.g. English (UK)" />
+
+        <label for="timezone">Time Zone</label>
+        <input type="text" id="timezone" name="timezone" placeholder="e.g. GMT+1" />
+
+        <label for="membership">Select Membership Tier</label>
+        <select id="membership" name="membership" required onchange="toggleFamilyFields()">
+          <option value="">-- Choose a plan --</option>
+          <option value="echo">Echo</option>
+          <option value="continuum">Continuum</option>
+          <option value="immortal">Immortal</option>
+        </select>
+
+        <div id="family-fields" style="display:none;">
+          <fieldset>
+            <legend>Family Members (Up to 5)</legend>
+            <div class="family-group">
+              <input type="text" name="family_name_1" placeholder="Full Name" />
+              <input type="email" name="family_email_1" placeholder="Email Address" />
+            </div>
+            <div class="family-group">
+              <input type="text" name="family_name_2" placeholder="Full Name" />
+              <input type="email" name="family_email_2" placeholder="Email Address" />
+            </div>
+            <div class="family-group">
+              <input type="text" name="family_name_3" placeholder="Full Name" />
+              <input type="email" name="family_email_3" placeholder="Email Address" />
+            </div>
+            <div class="family-group">
+              <input type="text" name="family_name_4" placeholder="Full Name" />
+              <input type="email" name="family_email_4" placeholder="Email Address" />
+            </div>
+            <div class="family-group">
+              <input type="text" name="family_name_5" placeholder="Full Name" />
+              <input type="email" name="family_email_5" placeholder="Email Address" />
+            </div>
+          </fieldset>
+        </div>
+
+        <label for="referral">Referral Code (optional)</label>
+        <input type="text" id="referral" name="referral_code" />
+
+        <label for="agree">
+          <input type="checkbox" id="agree" name="agree_terms" required />
+          I agree to the <a href="terms.html">Terms and Conditions</a>
+        </label>
+
+        <button type="submit">Create Account</button>
+      </form>
+      <p class="note">Payment will be collected in the next step securely.</p>
+    </div>
+  </main>
+
+  <script>
+    function toggleFamilyFields() {
+      const selected = document.getElementById("membership").value;
+      const section = document.getElementById("family-fields");
+      section.style.display = (selected === "continuum" || selected === "immortal") ? "block" : "none";
+    }
+  </script>
+</body>
+</html>
