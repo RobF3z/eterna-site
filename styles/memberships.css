@@ -13,8 +13,10 @@ body {
   font-family: 'Marcellus', serif;
   margin: 0;
   padding: 0;
-  position: relative;
+  background-color: #f6f5f0;
   color: var(--charcoal);
+  position: relative;
+  z-index: 1;
 }
 
 #bg-video {
@@ -35,30 +37,18 @@ body {
   padding: 2rem;
 }
 
-.eterna-logo {
-  max-width: 220px;
-  display: block;
-  margin: 1rem auto;
-}
-
-header {
+.logo-container {
   text-align: center;
-  margin-bottom: 2rem;
 }
-
-header h1 {
-  font-size: 2.5rem;
-  color: var(--accent);
-}
-
-header p {
-  font-size: 1.1rem;
-  color: var(--charcoal);
+.eterna-logo {
+  max-width: 200px;
+  height: auto;
+  margin: 1rem auto;
 }
 
 .navbar {
   text-align: center;
-  margin-bottom: 1rem;
+  margin: 1rem auto;
 }
 
 .nav-menu {
@@ -74,9 +64,28 @@ header p {
   font-weight: bold;
   color: var(--charcoal);
 }
-
 .nav-menu a.active {
   color: var(--highlight);
+  text-decoration: underline;
+}
+
+header {
+  text-align: center;
+  margin: 2.5rem auto;
+}
+header h1 {
+  font-size: 2.5rem;
+  color: var(--accent);
+}
+header p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.section {
+  position: relative;
+  padding: 4rem 2rem;
+  z-index: 2;
 }
 
 .membership-grid {
@@ -84,6 +93,7 @@ header p {
   grid-template-columns: 1.2fr repeat(4, 1fr);
   gap: 1px;
   background: #ddd;
+  margin-top: 2rem;
 }
 
 .features-list,
@@ -92,12 +102,16 @@ header p {
   flex-direction: column;
   background: white;
 }
-
 .features-list div,
 .plan div {
   padding: 1rem;
   text-align: center;
   border-bottom: 1px solid #eee;
+}
+
+.features-list div:nth-child(even),
+.plan div:nth-child(even) {
+  background-color: #f9f9f9;
 }
 
 .plan h2 {
@@ -106,37 +120,35 @@ header p {
   margin: 0;
   padding: 1rem;
 }
-
 .plan.highlight h2 {
   background: var(--highlight);
   color: white;
-  position: relative;
 }
-
 .badge {
-  background: white;
-  color: var(--highlight);
-  font-size: 0.75rem;
-  padding: 2px 6px;
-  border-radius: 6px;
+  background: #fff8e7;
+  color: #B08D57;
+  font-size: 0.8rem;
+  padding: 4px 8px;
+  border-radius: 10px;
   margin-left: 0.5rem;
+  font-weight: bold;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
 
-.plan button {
+.plan-button {
   background: var(--highlight);
   color: white;
-  border: none;
-  padding: 0.75rem;
-  margin: 1rem auto;
-  width: 80%;
+  padding: 0.75rem 1rem;
   font-weight: bold;
+  border: none;
   border-radius: 6px;
+  margin: 1rem auto 2rem;
+  width: 80%;
   cursor: pointer;
   transition: background 0.3s ease;
 }
-
-.plan button:hover {
-  background: #a47535;
+.plan-button:hover {
+  background: #98713f;
 }
 
 .plan.free { background: var(--free); }
@@ -151,19 +163,4 @@ header p {
   .features-list {
     display: none;
   }
-}
-.plan.selected {
-  box-shadow: 0 0 0 4px var(--highlight);
-  transform: scale(1.02);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.plan {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.6s ease-out;
-}
-
-.plan.visible {
-  opacity: 1;
-  transform: translateY(0);
 }
