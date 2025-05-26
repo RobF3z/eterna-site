@@ -16,7 +16,6 @@ body {
   background-color: #f6f5f0;
   color: var(--charcoal);
   position: relative;
-  z-index: 1;
 }
 
 #bg-video {
@@ -31,42 +30,90 @@ body {
   pointer-events: none;
 }
 
-.content-wrapper {
-  position: relative;
-  z-index: 2;
-  padding: 2rem;
+.fixed-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: var(--accent);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.logo-container {
+.navbar-slogan {
+  font-size: 1rem;
+  flex: 1;
   text-align: center;
-}
-.eterna-logo {
-  max-width: 200px;
-  height: auto;
-  margin: 1rem auto;
+  color: white;
 }
 
-.navbar {
-  text-align: center;
-  margin: 1rem auto;
+.nav-buttons button {
+  background: transparent;
+  border: 1px solid var(--highlight);
+  color: var(--highlight);
+  padding: 0.4rem 1rem;
+  margin-left: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.nav-buttons button:hover {
+  background: var(--highlight);
+  color: white;
+}
+
+.menu-icon {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
 }
 
 .nav-menu {
+  display: none;
+  flex-direction: column;
+  background-color: rgba(255,255,255,0.95);
+  padding: 1rem;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+}
+
+.nav-menu.show {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  padding: 0.5rem;
 }
 
 .nav-menu a {
   text-decoration: none;
   font-weight: bold;
   color: var(--charcoal);
+  margin-bottom: 0.5rem;
 }
+
 .nav-menu a.active {
   color: var(--highlight);
   text-decoration: underline;
+}
+
+.content-wrapper {
+  position: relative;
+  z-index: 2;
+  padding: 2rem 1rem;
+}
+
+.logo-container {
+  text-align: center;
+  margin-top: 1rem;
+}
+.eterna-logo {
+  max-width: 180px;
+  height: auto;
 }
 
 header {
@@ -84,7 +131,7 @@ header p {
 
 .section {
   position: relative;
-  padding: 4rem 2rem;
+  padding: 3rem 1rem;
   z-index: 2;
 }
 
@@ -94,6 +141,7 @@ header p {
   gap: 1px;
   background: #ddd;
   margin-top: 2rem;
+  overflow-x: auto;
 }
 
 .features-list,
@@ -104,7 +152,7 @@ header p {
 }
 .features-list div,
 .plan div {
-  padding: 1rem;
+  padding: 1.2rem;
   text-align: center;
   border-bottom: 1px solid #eee;
 }
@@ -161,6 +209,12 @@ header p {
     grid-template-columns: 1fr;
   }
   .features-list {
+    display: none;
+  }
+  .navbar-slogan {
+    display: none;
+  }
+  .nav-buttons {
     display: none;
   }
 }
