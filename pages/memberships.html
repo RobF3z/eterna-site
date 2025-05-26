@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Compare Eterna membership plans and choose the perfect way to preserve your voice and memories using our AI-powered legacy tools." />
+  <meta name="keywords" content="eterna memberships, digital legacy, AI subscription, family history, memory preservation" />
+  <meta name="author" content="Eterna AI" />
+  <title>Eterna: Membership Plans | Preserve Your Legacy</title>
+
+  <link rel="canonical" href="https://eterna-ai.co.uk/pages/memberships.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://eterna-ai.co.uk/pages/memberships.html" />
+  <meta property="og:title" content="Eterna: Membership Plans" />
+  <meta property="og:description" content="Explore Eterna's digital legacy plans. Choose the AI-powered subscription that fits your family’s story." />
+  <meta property="og:image" content="../Assets/eterna-logo-169.webp" />
+  <meta property="og:site_name" content="Eterna" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@EternaAI" />
+  <meta name="twitter:title" content="Eterna: Membership Plans" />
+  <meta name="twitter:description" content="Explore Eterna's digital legacy plans. Choose the AI-powered subscription that fits your family’s story." />
+  <meta name="twitter:image" content="../Assets/eterna-logo-169.jpeg" />
+
+  <link rel="icon" href="../Assets/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="../Assets/apple-touch-icon.png" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" />
+  <link rel="stylesheet" href="../styles/memberships.css" />
+</head>
+<body>
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="../Assets/49981-459802291.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="logo-container">
+    <img src="../Assets/eterna-logo-169.webp" alt="Eterna Logo" class="eterna-logo" />
+  </div>
+
+  <nav class="navbar">
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation menu">☰</button>
+    <div class="nav-menu" id="navMenu">
+      <a href="../index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="features.html">Features</a>
+      <a href="technology.html">Technology</a>
+      <a href="public-echo.html">Public Echo</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="support.html">Support</a>
+      <a href="blog.html">Blog</a>
+      <a href="memberships.html" class="active">Memberships</a>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Eterna Memberships</h1>
+    <p>Choose the plan that best preserves your story, your voice, your legacy.</p>
+  </header>
+
+  <div class="billing-toggle">
+    <label for="billing">Billing:</label>
+    <select id="billing" onchange="updatePrices()">
+      <option value="monthly" selected>Monthly</option>
+      <option value="yearly">Yearly (Save ~20%)</option>
+    </select>
+  </div>
+
+  <section class="pricing-grid">
+    <div class="features-column">
+      <div>Text Interface</div>
+      <div>Monthly Interactions</div>
+      <div>Memory Timeline</div>
+      <div>Memory Uploads</div>
+      <div>Family Tree Access</div>
+      <div>Family Viewers</div>
+      <div>AI Profiles (Echoes)</div>
+      <div>Speech Interaction</div>
+      <div>Video Avatar</div>
+      <div>Storage Duration</div>
+      <div>Beta Access</div>
+      <div>Support</div>
+      <div>Price</div>
+    </div>
+
+    <div class="plan">
+      <h2>Free</h2>
+      <div>✅</div>
+      <div>7 total</div>
+      <div>❌</div>
+      <div>0 files</div>
+      <div>❌</div>
+      <div>❌</div>
+      <div>❌</div>
+      <div>❌</div>
+      <div>❌</div>
+      <div>❌</div>
+      <div>❌</div>
+      <div>Community</div>
+      <button class="subscribe-btn" disabled>Free Plan</button>
+      <div>£0</div>
+    </div>
+
+    <div class="plan highlighted">
+      <h2>Echo</h2>
+      <div>✅</div>
+      <div>50/month</div>
+      <div>10 memories</div>
+      <div>10 files</div>
+      <div>✅</div>
+      <div>❌</div>
+      <div>1</div>
+      <div>❌</div>
+      <div>❌</div>
+      <div>While active</div>
+      <div>❌</div>
+      <div>Email</div>
+      <button class="subscribe-btn" disabled>Select Plan</button>
+      <div>£9.99/mo</div>
+    </div>
+
+    <div class="plan">
+      <h2>Continuum</h2>
+      <div>✅</div>
+      <div>200/month</div>
+      <div>250 memories</div>
+      <div>20 files</div>
+      <div>✅</div>
+      <div>Up to 5</div>
+      <div>3</div>
+      <div>Coming Soon</div>
+      <div>Coming Soon</div>
+      <div>2 years</div>
+      <div>V2 + V3 Access</div>
+      <div>Priority</div>
+      <button class="subscribe-btn" disabled>Select Plan</button>
+      <div>£49/mo</div>
+    </div>
+
+    <div class="plan">
+      <h2>Immortal</h2>
+      <div>✅</div>
+      <div>500/month</div>
+      <div>500+ memories</div>
+      <div>50 files</div>
+      <div>✅</div>
+      <div>Up to 5</div>
+      <div>5</div>
+      <div>Coming Soon</div>
+      <div>Coming Soon</div>
+      <div>5 years</div>
+      <div>V2 + V3 Access</div>
+      <div>Concierge</div>
+      <button class="subscribe-btn" disabled>Select Plan</button>
+      <div>£99/mo</div>
+    </div>
+  </section>
+
+  <div class="note">
+    <p>🔒 Voice and Video Avatar features are launching in future versions (V2 & V3).</p>
+  </div>
+
+  <script>
+    function updatePrices() {
+      const billing = document.getElementById("billing").value;
+      const echo = document.querySelector(".plan:nth-child(3) div:last-child");
+      const continuum = document.querySelector(".plan:nth-child(4) div:last-child");
+      const immortal = document.querySelector(".plan:nth-child(5) div:last-child");
+
+      echo.innerHTML = billing === "monthly" ? "£9.99/mo" : "£99/yr";
+      continuum.innerHTML = billing === "monthly" ? "£49/mo" : "£499/yr";
+      immortal.innerHTML = billing === "monthly" ? "£99/mo" : "£999/yr";
+    }
+
+    function toggleMenu() {
+      const menu = document.getElementById("navMenu");
+      menu.classList.toggle("show");
+    }
+  </script>
+</body>
+</html>
