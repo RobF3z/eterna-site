@@ -41,3 +41,29 @@
   border-radius: 6px;
   font-weight: bold;
 }
+
+body {
+  background-color: var(--dark-bg);
+  color: var(--text-color);
+  font-family: 'Marcellus', serif;
+  margin: 0;
+  padding: 0;
+}
+
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.logo-container {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.eterna-logo {
+  width: 280px;
+  max-width: 80%;
+  display: block;
+  margin: 0 auto;
+}
