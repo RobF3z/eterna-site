@@ -1,120 +1,114 @@
 <!DOCTYPE html>
+
 <html lang="en-GB">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Compare Eterna memberships and find the best digital legacy plan for your voice and memories." />
-  <meta name="keywords" content="eterna memberships, digital legacy, AI voice, family memories" />
-  <meta name="author" content="Eterna AI" />
-  <title>Eterna: Membership Plans | Preserve Your Legacy</title>
-
-  <link rel="stylesheet" href="../styles/memberships.css" />
-  <link rel="icon" href="../Assets/favicon.ico" type="image/x-icon" />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Compare Eterna memberships and find the best digital legacy plan for your voice and memories." name="description"/>
+<meta content="eterna memberships, digital legacy, AI voice, family memories" name="keywords"/>
+<meta content="Eterna AI" name="author"/>
+<title>Eterna: Membership Plans | Preserve Your Legacy</title>
+<link href="../styles/memberships.css" rel="stylesheet"/>
+<link href="../Assets/favicon.ico" rel="icon" type="image/x-icon"/>
 </head>
 <body>
-  <video autoplay muted loop playsinline id="bg-video">
-    <source src="../Assets/49981-459802291.mp4" type="video/mp4" />
-  </video>
-
-  <nav class="navbar fixed-nav">
-    <button class="menu-icon" onclick="toggleMenu()" aria-label="Toggle navigation menu">☰</button>
-    <p class="navbar-slogan">Preserve Your voice. Your story. Your legacy</p>
-    <div class="nav-buttons">
-      <button onclick="showLoginOverlay()">Login</button>
-      <button onclick="window.location.href='signup.html'">Sign Up</button>
-    </div>
-    <div class="nav-menu" id="navMenu" aria-hidden="true">
-      <a href="../index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="features.html">Features</a>
-      <a href="technology.html">Technology</a>
-      <a href="public-echo.html">Public Echo</a>
-      <a href="support.html">Support</a>
-      <a href="blog.html">Blog</a>
-      <a href="memberships.html" class="active">Memberships</a>
-    </div>
-  </nav>
-
-  <main class="content-wrapper">
-    <div class="logo-container">
-      <a href="../index.html"><img src="../Assets/Eterna Logo 1.jpeg" alt="Eterna Logo" class="eterna-logo" /></a>
-    </div>
-
-    <header>
-      <h1>Eterna Memberships</h1>
-      <p>Leave more than just memories — share them, shape them, and save them forever.</p>
-    </header>
-
-    <section class="section">
-      <div class="membership-grid">
-        <div class="grid-row">
-          <div class="feature-label">Text Interface</div>
-          <div>✅</div><div>✅</div><div>✅</div><div>✅</div>
-        </div>
-        <div class="grid-row">
-          <div class="feature-label">Monthly Interactions</div>
-          <div>7 total</div><div>50/mo</div><div>200/mo</div><div>500/mo</div>
-        </div>
-        <div class="grid-row">
-          <div class="feature-label">Memory Timeline</div>
-          <div>❌</div><div>10 memories</div><div>250 memories</div><div>500+ memories</div>
-        </div>
-        <div class="grid-row">
-          <div class="feature-label">Memory Uploads</div>
-          <div>❌</div><div>10 files</div><div>20 files</div><div>50 files</div>
-        </div>
-        <div class="grid-row">
-          <div class="feature-label">Family Tree Access</div>
-          <div>❌</div><div>✅</div><div>✅</div><div>✅</div>
-        </div>
-        <div class="grid-row">
-          <div class="feature-label">Family Viewers</div>
-          <div>❌</div><div>❌</div><div>Up to 5</div><div>Up to 5</div>
-        </div>
-        <div class="grid-row">
-          <div class="feature-label">AI Profiles (Echoes)</div>
-          <div>❌</div><div>1</div><div>3</div><div>5</div>
-        </div>
-        <div class="grid-row">
-          <div class="feature-label">Speech Interaction</div>
-          <div>❌</div><div>❌</div><div>Coming Soon</div><div>Coming Soon</div>
-        </div>
-        <div class="grid-row">
-          <div class="feature-label">Video Avatar</div>
-          <div>❌</div><div>❌</div><div>Coming Soon</div><div>Coming Soon</div>
-        </div>
-        <div class="grid-row">
-          <div class="feature-label">Storage Duration</div>
-          <div>❌</div><div>While active</div><div>2 years</div><div>5 years</div>
-        </div>
-        <div class="grid-row">
-          <div class="feature-label">Beta Access</div>
-          <div>❌</div><div>❌</div><div>V2+V3 Access</div><div>V2+V3 Access</div>
-        </div>
-        <div class="grid-row">
-          <div class="feature-label">Support</div>
-          <div>Community</div><div>Email</div><div>Priority</div><div>Concierge</div>
-        </div>
-        <div class="grid-row highlight">
-          <div class="feature-label">Price</div>
-          <div>£0</div><div>£9.99/mo</div><div>£49/mo</div><div>£99/mo</div>
-        </div>
-        <div class="grid-row">
-          <div class="feature-label"></div>
-          <div><button class="plan-button" disabled>Current Plan</button></div>
-          <div><button class="plan-button select" data-plan="echo">Select Echo</button></div>
-          <div><button class="plan-button select" data-plan="continuum">Select Continuum</button></div>
-          <div><button class="plan-button select" data-plan="immortal">Select Immortal</button></div>
-        </div>
-      </div>
-
-      <div style="text-align:center; margin-top:2rem;">
-        <button id="signupNowBtn" class="plan-button" style="display:none;">Sign Up Now</button>
-      </div>
-    </section>
-  </main>
-
-  <script>
+<video autoplay="" id="bg-video" loop="" muted="" playsinline="">
+<source src="../Assets/49981-459802291.mp4" type="video/mp4"/>
+</video>
+<nav class="navbar fixed-nav">
+<button aria-label="Toggle navigation menu" class="menu-icon" onclick="toggleMenu()">☰</button>
+<p class="navbar-slogan">Preserve Your voice. Your story. Your legacy</p>
+<div class="nav-buttons">
+<button onclick="showLoginOverlay()">Login</button>
+<button onclick="window.location.href='signup.html'">Sign Up</button>
+</div>
+<div aria-hidden="true" class="nav-menu" id="navMenu">
+<a href="../index.html">Home</a>
+<a href="about.html">About</a>
+<a href="features.html">Features</a>
+<a href="technology.html">Technology</a>
+<a href="public-echo.html">Public Echo</a>
+<a href="support.html">Support</a>
+<a href="blog.html">Blog</a>
+<a class="active" href="memberships.html">Memberships</a>
+</div>
+</nav>
+<main class="content-wrapper">
+<div class="logo-container">
+<a href="../index.html"><img alt="Eterna Logo" class="eterna-logo" src="../Assets/Eterna Logo 1.jpeg"/></a>
+</div>
+<header>
+<h1>Eterna Memberships</h1>
+<p>Leave more than just memories — share them, shape them, and save them forever.</p>
+</header>
+<section class="section">
+<div class="membership-grid">
+<div class="grid-row">
+<div class="feature-label">Text Interface</div>
+<div>✅</div><div>✅</div><div>✅</div><div>✅</div>
+</div>
+<div class="grid-row">
+<div class="feature-label">Monthly Interactions</div>
+<div>7 total</div><div>50/mo</div><div>200/mo</div><div>500/mo</div>
+</div>
+<div class="grid-row">
+<div class="feature-label">Memory Timeline</div>
+<div>❌</div><div>10 memories</div><div>250 memories</div><div>500+ memories</div>
+</div>
+<div class="grid-row">
+<div class="feature-label">Memory Uploads</div>
+<div>❌</div><div>10 files</div><div>20 files</div><div>50 files</div>
+</div>
+<div class="grid-row">
+<div class="feature-label">Family Tree Access</div>
+<div>❌</div><div>✅</div><div>✅</div><div>✅</div>
+</div>
+<div class="grid-row">
+<div class="feature-label">Family Viewers</div>
+<div>❌</div><div>❌</div><div>Up to 5</div><div>Up to 5</div>
+</div>
+<div class="grid-row">
+<div class="feature-label">AI Profiles (Echoes)</div>
+<div>❌</div><div>1</div><div>3</div><div>5</div>
+</div>
+<div class="grid-row">
+<div class="feature-label">Speech Interaction</div>
+<div>❌</div><div>❌</div><div>Coming Soon</div><div>Coming Soon</div>
+</div>
+<div class="grid-row">
+<div class="feature-label">Video Avatar</div>
+<div>❌</div><div>❌</div><div>Coming Soon</div><div>Coming Soon</div>
+</div>
+<div class="grid-row">
+<div class="feature-label">Storage Duration</div>
+<div>❌</div><div>While active</div><div>2 years</div><div>5 years</div>
+</div>
+<div class="grid-row">
+<div class="feature-label">Beta Access</div>
+<div>❌</div><div>❌</div><div>V2+V3 Access</div><div>V2+V3 Access</div>
+</div>
+<div class="grid-row">
+<div class="feature-label">Support</div>
+<div>Community</div><div>Email</div><div>Priority</div><div>Concierge</div>
+</div>
+<div class="grid-row highlight">
+<div class="feature-label">Price</div>
+<div>£0</div><div>£9.99/mo</div><div>£49/mo</div><div>£99/mo</div>
+</div>
+<div class="grid-row">
+<div class="feature-label"></div>
+<div><button class="plan-button" disabled="">Current Plan</button></div>
+<div><button class="plan-button select" data-plan="echo">Select Echo</button></div>
+<div><button class="plan-button select" data-plan="continuum">Select Continuum</button></div>
+<div><button class="plan-button select" data-plan="immortal">Select Immortal</button></div>
+</div>
+</div>
+<div style="text-align:center; margin-top:2rem;">
+<button class="plan-button" id="signupNowBtn" style="display:none;">Sign Up Now</button>
+</div>
+</section>
+</main>
+<script>
     function toggleMenu() {
       const menu = document.getElementById("navMenu");
       menu.classList.toggle("show");
