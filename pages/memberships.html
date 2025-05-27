@@ -8,34 +8,15 @@
   <meta name="author" content="Eterna AI" />
   <title>Eterna: Membership Plans | Preserve Your Legacy</title>
 
-  <link rel="canonical" href="https://eterna-ai.co.uk/pages/memberships.html" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://eterna-ai.co.uk/pages/memberships.html" />
-  <meta property="og:title" content="Eterna Memberships" />
-  <meta property="og:description" content="Compare Eterna plans and choose the perfect way to preserve your voice and memories using our AI-powered legacy tools." />
-  <meta property="og:image" content="../Assets/eterna-logo-169.webp" />
-  <meta property="og:site_name" content="Eterna" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@EternaAI" />
-  <meta name="twitter:title" content="Eterna Memberships" />
-  <meta name="twitter:description" content="Choose your Eterna plan and build a voice-powered digital legacy for your family." />
-  <meta name="twitter:image" content="../Assets/eterna-logo-169.jpeg" />
-
-  <link rel="icon" href="../Assets/favicon.ico" type="image/x-icon" />
-  <link rel="apple-touch-icon" href="../Assets/apple-touch-icon.png" />
-
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" as="style" />
-  <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet" />
-  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
   <link rel="stylesheet" href="../styles/memberships.css" />
+  <link rel="icon" href="../Assets/favicon.ico" type="image/x-icon" />
 </head>
 <body>
   <video autoplay muted loop playsinline id="bg-video">
     <source src="../Assets/49981-459802291.mp4" type="video/mp4" />
   </video>
 
-  <div class="navbar fixed-nav" aria-label="Main navigation">
+  <nav class="navbar fixed-nav">
     <button class="menu-icon" onclick="toggleMenu()" aria-label="Toggle navigation menu">☰</button>
     <p class="navbar-slogan">Preserve Your voice. Your story. Your legacy</p>
     <div class="nav-buttons">
@@ -53,9 +34,9 @@
       <a href="blog.html">Blog</a>
       <a href="memberships.html" class="active">Memberships</a>
     </div>
-  </div>
+  </nav>
 
-  <div class="content-wrapper" style="margin-top: 6rem;">
+  <main class="content-wrapper">
     <div class="logo-container">
       <a href="../index.html"><img src="../Assets/Eterna Logo 1.jpeg" alt="Eterna Logo" class="eterna-logo" /></a>
     </div>
@@ -67,48 +48,72 @@
 
     <section class="section">
       <div class="membership-grid">
-        <div class="features-list">
-          <div>Text Interface</div><div>Monthly Interactions</div><div>Memory Timeline</div><div>Memory Uploads</div>
-          <div>Family Tree Access</div><div>Family Viewers</div><div>AI Profiles (Echoes)</div><div>Speech Interaction</div>
-          <div>Video Avatar</div><div>Storage Duration</div><div>Beta Access</div><div>Support</div><div>Price</div><div> </div>
+        <div class="grid-row">
+          <div class="feature-label">Text Interface</div>
+          <div>✅</div><div>✅</div><div>✅</div><div>✅</div>
         </div>
-
-        <div class="plan free">
-          <h2>Free</h2>
-          <div>✅</div><div>7 total</div><div>❌</div><div>❌</div><div>❌</div><div>❌</div><div>❌</div>
-          <div>❌</div><div>❌</div><div>❌</div><div>❌</div><div>Community</div><div>£0</div>
-          <button class="plan-button" disabled>Current Plan</button>
+        <div class="grid-row">
+          <div class="feature-label">Monthly Interactions</div>
+          <div>7 total</div><div>50/mo</div><div>200/mo</div><div>500/mo</div>
         </div>
-
-        <div class="plan echo highlight">
-          <h2>Echo <span class="badge">Most Popular</span></h2>
-          <div>✅</div><div>50/mo</div><div>10 memories</div><div>10 files</div><div>✅</div>
-          <div>❌</div><div>1</div><div>❌</div><div>❌</div><div>While active</div><div>❌</div><div>Email</div><div>£9.99/mo</div>
-          <button class="plan-button">Select Echo</button>
+        <div class="grid-row">
+          <div class="feature-label">Memory Timeline</div>
+          <div>❌</div><div>10 memories</div><div>250 memories</div><div>500+ memories</div>
         </div>
-
-        <div class="plan continuum">
-          <h2>Continuum</h2>
-          <div>✅</div><div>200/mo</div><div>250 memories</div><div>20 files</div><div>✅</div>
-          <div>Up to 5</div><div>3</div><div>Coming Soon</div><div>Coming Soon</div><div>2 years</div>
-          <div>V2+V3 Access</div><div>Priority</div><div>£49/mo</div>
-          <button class="plan-button">Select Continuum</button>
+        <div class="grid-row">
+          <div class="feature-label">Memory Uploads</div>
+          <div>❌</div><div>10 files</div><div>20 files</div><div>50 files</div>
         </div>
-
-        <div class="plan immortal">
-          <h2>Immortal</h2>
-          <div>✅</div><div>500/mo</div><div>500+ memories</div><div>50 files</div><div>✅</div>
-          <div>Up to 5</div><div>5</div><div>Coming Soon</div><div>Coming Soon</div><div>5 years</div>
-          <div>V2+V3 Access</div><div>Concierge</div><div>£99/mo</div>
-          <button class="plan-button">Select Immortal</button>
+        <div class="grid-row">
+          <div class="feature-label">Family Tree Access</div>
+          <div>❌</div><div>✅</div><div>✅</div><div>✅</div>
+        </div>
+        <div class="grid-row">
+          <div class="feature-label">Family Viewers</div>
+          <div>❌</div><div>❌</div><div>Up to 5</div><div>Up to 5</div>
+        </div>
+        <div class="grid-row">
+          <div class="feature-label">AI Profiles (Echoes)</div>
+          <div>❌</div><div>1</div><div>3</div><div>5</div>
+        </div>
+        <div class="grid-row">
+          <div class="feature-label">Speech Interaction</div>
+          <div>❌</div><div>❌</div><div>Coming Soon</div><div>Coming Soon</div>
+        </div>
+        <div class="grid-row">
+          <div class="feature-label">Video Avatar</div>
+          <div>❌</div><div>❌</div><div>Coming Soon</div><div>Coming Soon</div>
+        </div>
+        <div class="grid-row">
+          <div class="feature-label">Storage Duration</div>
+          <div>❌</div><div>While active</div><div>2 years</div><div>5 years</div>
+        </div>
+        <div class="grid-row">
+          <div class="feature-label">Beta Access</div>
+          <div>❌</div><div>❌</div><div>V2+V3 Access</div><div>V2+V3 Access</div>
+        </div>
+        <div class="grid-row">
+          <div class="feature-label">Support</div>
+          <div>Community</div><div>Email</div><div>Priority</div><div>Concierge</div>
+        </div>
+        <div class="grid-row highlight">
+          <div class="feature-label">Price</div>
+          <div>£0</div><div>£9.99/mo</div><div>£49/mo</div><div>£99/mo</div>
+        </div>
+        <div class="grid-row">
+          <div class="feature-label"></div>
+          <div><button class="plan-button" disabled>Current Plan</button></div>
+          <div><button class="plan-button select" data-plan="echo">Select Echo</button></div>
+          <div><button class="plan-button select" data-plan="continuum">Select Continuum</button></div>
+          <div><button class="plan-button select" data-plan="immortal">Select Immortal</button></div>
         </div>
       </div>
 
-      <div style="text-align:center; margin-top: 2rem;">
-        <button id="signupNowBtn" class="plan-button" style="display: none;">Sign Up Now</button>
+      <div style="text-align:center; margin-top:2rem;">
+        <button id="signupNowBtn" class="plan-button" style="display:none;">Sign Up Now</button>
       </div>
     </section>
-  </div>
+  </main>
 
   <script>
     function toggleMenu() {
@@ -117,32 +122,26 @@
     }
 
     const signupBtn = document.getElementById("signupNowBtn");
-    document.querySelectorAll('.plan button:not([disabled])').forEach(button => {
+
+    document.querySelectorAll('.plan-button.select').forEach(button => {
       button.addEventListener('click', () => {
-        document.querySelectorAll('.plan').forEach(plan => plan.classList.remove('selected'));
-        const plan = button.closest('.plan');
-        plan.classList.add('selected');
-
-        const planName = plan.classList[1];
-        localStorage.setItem('eternaSelectedPlan', planName);
-        signupBtn.style.display = 'inline-block';
-        signupBtn.onclick = () => window.location.href = 'signup.html?plan=' + planName;
-
-        document.querySelectorAll('.plan button').forEach(b => {
-          if (!b.disabled) b.textContent = 'Select ' + b.closest('.plan').querySelector('h2').textContent.replace(' Most Popular', '');
+        document.querySelectorAll('.plan-button.select').forEach(btn => {
+          btn.textContent = "Select " + btn.getAttribute('data-plan').charAt(0).toUpperCase() + btn.getAttribute('data-plan').slice(1);
         });
-        button.textContent = 'Selected';
+        button.textContent = "Selected";
+        const plan = button.getAttribute("data-plan");
+        localStorage.setItem("eternaSelectedPlan", plan);
+        signupBtn.style.display = 'inline-block';
+        signupBtn.onclick = () => window.location.href = 'signup.html?plan=' + plan;
       });
     });
 
-    window.addEventListener('DOMContentLoaded', () => {
-      const saved = localStorage.getItem('eternaSelectedPlan');
+    window.addEventListener("DOMContentLoaded", () => {
+      const saved = localStorage.getItem("eternaSelectedPlan");
       if (saved) {
-        const plan = document.querySelector('.plan.' + saved);
-        if (plan) {
-          plan.classList.add('selected');
-          const button = plan.querySelector('button');
-          if (button) button.textContent = 'Selected';
+        const button = document.querySelector('.plan-button.select[data-plan="' + saved + '"]');
+        if (button) {
+          button.textContent = "Selected";
           signupBtn.style.display = 'inline-block';
           signupBtn.onclick = () => window.location.href = 'signup.html?plan=' + saved;
         }
