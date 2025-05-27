@@ -186,3 +186,16 @@ header p {
     display: none;
   }
 }
+/* Style for left-side labels in the membership grid */
+.feature-label {
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.75rem;
+  color: #FFF8E7;
+  text-align: left;
+}
+
+/* Ensure label column stays visually distinct */
+.grid-row .feature-label:first-child {
+  border-left: 2px solid var(--accent-color);
+}
