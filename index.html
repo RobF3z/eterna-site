@@ -97,16 +97,35 @@
   <button onclick="window.location.href='#signup'" aria-label="Sign up for Eterna">Sign Up</button>
 </div>
 
-<div class="nav-menu" id="navMenu">
-      <button onclick="window.location.href='index.html'">Home</button>
-      <button onclick="window.location.href='pages/about.html'">About</button>
-      <button onclick="window.location.href='pages/features.html'">Features</button>
-      <button onclick="window.location.href='pages/technology.html'">Technology</button>
-      <button onclick="window.location.href='pages/public-echo.html'">Public Echo</button>
-      <button onclick="window.location.href='pages/support.html'">Support</button>
-      <button onclick="window.location.href='pages/blog.html'">Blog</button>
-      <button onclick="window.location.href='pages/memberships.html'">Memberships</button>
-    </div>
+<div class="nav-menu" id="navMenu" aria-hidden="true">
+  <a href="pages/memberships.html">Memberships</a>
+  <a href="pages/about.html">About</a>
+  <a href="pages/features.html">Features</a>
+  <a href="pages/blog.html">Blog</a>
+  <a href="pages/contact.html">Contact</a>
+  <a href="pages/public-echo.html">Public Echo</a>
+  <a href="pages/support.html">Support</a>
+  <a href="pages/privacy-policy.html">Privacy Policy</a>
+  <a href="pages/terms.html">Terms</a>
+  
+
+  <hr />
+
+  <strong>Community</strong>
+  <a href="referral.html">Referrals</a>
+  <a href="roadmap.html">Roadmap</a>
+
+  <div class="nav-protected" data-auth="protected" style="display: none;">
+    <hr />
+    <strong>Memory & Legacy</strong>
+    <a href="memory-timeline.html">Memory Timeline</a>
+    <a href="family-tree.html">Family Tree</a>
+
+    <strong>My Account</strong>
+    <a href="ProfilePage.html">Profile</a>
+    <a href="onboarding.html">Onboarding</a>
+    <a href="search.html">Search</a>
+  </div>
     </nav>
   <main>
    <!-- Section 1: Hero -->
