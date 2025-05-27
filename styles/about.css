@@ -1,4 +1,43 @@
-/* about Page Styles - Matches Landing Theme */
-@import url('landing.css');
+/* About Page Styles */
+.about-intro, .about-purpose, .about-mission, .about-cta {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--accent-color);
+  border-radius: 12px;
+}
 
-/* Add custom styles for about page below */
+.about-intro h1,
+.about-purpose h2,
+.about-mission h2,
+.about-cta h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.about-intro p,
+.about-purpose p,
+.about-mission p,
+.about-cta p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.about-cta {
+  text-align: center;
+}
+
+.about-cta .cta-button {
+  padding: 0.6rem 1.2rem;
+  background: var(--accent-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
