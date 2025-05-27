@@ -211,7 +211,7 @@ p, li, label { font-size: 1.125rem; }
 .intro-video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 .intro-video:focus {
