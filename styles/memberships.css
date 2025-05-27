@@ -2,6 +2,7 @@
   --dark-bg: #1F2612;
   --text-color: #FFF8E7;
   --accent-color: #B08D57;
+  --card-bg: rgba(255, 255, 255, 0.03);
 }
 
 body {
@@ -31,51 +32,84 @@ header {
   margin: 2rem 0;
 }
 
-.membership-grid {
+.membership-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
   max-width: 1200px;
   margin: 2rem auto;
-  border-collapse: collapse;
-  border-spacing: 0;
-  font-size: 1rem;
-  background-color: rgba(255,255,255,0.02);
-  border-radius: 8px;
-  overflow: hidden;
 }
 
-.grid-row {
-  display: grid;
-  grid-template-columns: 1.3fr repeat(4, 1fr);
-  padding: 1rem 0.75rem;
-  align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  transition: background 0.2s ease;
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--accent-color);
+  border-radius: 10px;
+  padding: 1.5rem;
+  width: 270px;
+  text-align: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.grid-row:nth-child(even) {
-  background-color: rgba(255, 255, 255, 0.015);
+.card:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  transform: translateY(-4px);
 }
 
-.grid-row:hover {
-  background-color: rgba(255, 255, 255, 0.05);
-}
-
-.feature-label {
-  font-weight: bold;
+.card h2 {
+  font-size: 1.6rem;
   color: var(--text-color);
-  padding-left: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
-.grid-row.highlight {
-  background: rgba(255, 255, 255, 0.06);
-  font-weight: bold;
+.card h2.popular::after {
+  content: "Most Popular";
+  display: block;
+  font-size: 0.85rem;
+  background: var(--accent-color);
+  color: black;
+  margin: 0.5rem auto 0;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  width: fit-content;
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  text-align: left;
+}
+
+.card ul li {
+  margin: 0.5rem 0;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.card ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
   color: var(--accent-color);
+}
+
+.card ul li.unavailable::before {
+  content: "✗";
+  color: #aa3f3f;
+}
+
+.price {
+  font-weight: bold;
+  margin: 1rem 0;
+  color: var(--accent-color);
+  font-size: 1.2rem;
 }
 
 .plan-button {
   background: var(--accent-color);
-  color: #fff;
+  color: #1F2612;
   padding: 0.6rem 1.2rem;
-  margin-top: 0.5rem;
   border: none;
   border-radius: 6px;
   font-weight: bold;
@@ -89,16 +123,12 @@ header {
 }
 
 @media (max-width: 768px) {
-  .grid-row {
-    grid-template-columns: 1fr 1fr;
-    font-size: 0.9rem;
-    row-gap: 0.5rem;
-    padding: 0.6rem;
+  .membership-cards {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .grid-row .feature-label {
-    grid-column: 1 / -1;
-    font-size: 1rem;
-    padding-left: 0;
+  .card {
+    width: 90%;
   }
 }

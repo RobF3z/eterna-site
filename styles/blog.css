@@ -1,13 +1,48 @@
-/* Blog Page Styling */
+:root {
+  --dark-bg: #1a1a1a;
+  --text-color: #ffffff;
+  --accent-color: #b89b5e;
+  --accent-hover: #98713f;
+}
+
+body {
+  background-color: var(--dark-bg);
+  color: var(--text-color);
+  font-family: 'Marcellus', serif;
+  margin: 0;
+  padding: 0;
+}
+
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.logo-container {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+.eterna-logo {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
 .blog-header {
   text-align: center;
-  margin: 2rem auto 1rem;
+  margin: 3rem auto 2rem;
   max-width: 900px;
 }
+
 .blog-header h1 {
   font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
+
 .blog-header p {
   font-size: 1.2rem;
   color: #ccc;
@@ -19,6 +54,18 @@
   gap: 2rem;
   max-width: 900px;
   margin: 2rem auto 4rem;
+}
+
+@media (min-width: 768px) {
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .content-wrapper {
+    padding: 4rem 2rem;
+  }
 }
 
 .blog-card {
@@ -63,32 +110,12 @@
 }
 
 .blog-card .read-more:hover {
-  background: #98713f;
+  background: var(--accent-hover);
   color: white;
 }
 
-body {
-  background-color: var(--dark-bg);
-  color: var(--text-color);
-  font-family: 'Marcellus', serif;
-  margin: 0;
-  padding: 0;
-}
-
-.content-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-}
-
-.logo-container {
-  text-align: center;
-  margin-top: 2rem;
-}
-
-.eterna-logo {
-  width: 280px;
-  max-width: 80%;
-  display: block;
-  margin: 0 auto;
+.nav-section {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--accent-color);
 }
