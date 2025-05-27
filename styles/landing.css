@@ -154,7 +154,7 @@ p, li, label { font-size: 1.125rem; }
 }
 #hero .hero-text {
   position: absolute;
-  top: 74%;
+  top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: var(--dark-bg);
@@ -162,7 +162,7 @@ p, li, label { font-size: 1.125rem; }
   border: 2px solid var(--accent-color);
   border-radius: 12px;
   text-align: center;
-  max-width: 950px;
+  max-width: 1500px;
   color: var(--text-color);
   font-size: 1.1rem;
   line-height: 1.4;
