@@ -120,7 +120,8 @@ p, li, label { font-size: 1.125rem; }
   text-align: left;
   transition: background-color 0.3s;
 }
-.nav-menu button:hover {
+.nav-menu button:hover,
+.nav-menu a:hover {
   background-color: var(--accent-color);
   color: var(--dark-bg-solid);
 }
