@@ -1,3 +1,41 @@
+
+:root {
+  --dark-bg: #1F2612;
+  --dark-bg-solid: #20180C;
+  --text-color: #FFF8E7;
+  --accent-color: #B08D57;
+}
+
+/* Base + Typography */
+body {
+  background-color: var(--dark-bg);
+  color: var(--text-color);
+  font-family: 'Marcellus', serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+main, .content-wrapper {
+  position: relative;
+  z-index: 1;
+  padding: 2rem 1rem;
+}
+
+/* Background Video */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.2;
+}
+
+/* Navbar */
 .navbar {
   display: flex;
   align-items: center;
@@ -9,12 +47,14 @@
   top: 0;
   z-index: 1000;
 }
+
 .menu-icon {
   background: none;
   border: none;
   font-size: 1.5rem;
   color: var(--text-color);
 }
+
 .navbar-slogan {
   font-size: 1rem;
   margin-left: 1rem;
@@ -23,10 +63,13 @@
   color: var(--text-color);
   white-space: nowrap;
 }
+
 .nav-buttons {
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
 }
+
 .nav-buttons button {
   background: transparent;
   border: 2px solid var(--accent-color);
@@ -36,10 +79,12 @@
   cursor: pointer;
   font-size: 1rem;
 }
+
 .nav-buttons button:hover {
   background-color: var(--accent-color);
   color: var(--dark-bg-solid);
 }
+
 .nav-menu {
   display: none;
   flex-direction: column;
@@ -54,10 +99,13 @@
   width: 300px;
   z-index: 999;
 }
+
 .nav-menu.active {
   display: flex;
 }
-.nav-menu button {
+
+.nav-menu button,
+.nav-menu a {
   background: transparent;
   border: 2px solid var(--accent-color);
   color: var(--text-color);
@@ -68,40 +116,20 @@
   width: 100%;
   margin-bottom: 0.5rem;
   text-align: left;
+  text-decoration: none;
   transition: background-color 0.3s;
 }
-.nav-menu button:hover {
+
+.nav-menu button:hover,
+.nav-menu a:hover {
   background-color: var(--accent-color);
   color: var(--dark-bg-solid);
 }
-  .nav-buttons {
-    flex-wrap: wrap;
-  }
 
-
-:root {
-  --dark-bg: #1F2612;
-  --text-color: #FFF8E7;
-  --accent-color: #B08D57;
-}
-
-body {
-  background-color: var(--dark-bg);
-  color: var(--text-color);
-  font-family: 'Marcellus', serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-  font-size: 1rem;
-}
-
-main {
-  padding: 2rem 1rem;
-}
-
+/* Logo */
 .logo-container {
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 6rem;
 }
 
 .eterna-logo {
@@ -109,6 +137,7 @@ main {
   max-width: 80%;
 }
 
+/* Header */
 header {
   text-align: center;
   margin: 2rem 0;
@@ -126,13 +155,24 @@ header p {
   color: #FFF8E7;
 }
 
+/* Membership Table */
 .membership-grid {
   max-width: 1200px;
   margin: 2rem auto;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 0 15px rgba(0,0,0,0.4);
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.grid-header {
+  display: grid;
+  grid-template-columns: 1.5fr repeat(4, 1fr);
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 1rem 0.75rem;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .grid-row {
@@ -140,13 +180,12 @@ header p {
   grid-template-columns: 1.5fr repeat(4, 1fr);
   padding: 1rem 0.75rem;
   align-items: center;
+  text-align: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  background-color: rgba(255, 255, 255, 0.015);
-  transition: background-color 0.3s ease;
 }
 
-.grid-row:hover {
-  background-color: rgba(255, 255, 255, 0.05);
+.grid-row div:not(:first-child) {
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .grid-row:nth-child(even) {
@@ -159,17 +198,22 @@ header p {
   color: var(--accent-color);
 }
 
+.grid-row:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
 .grid-row div {
-  text-align: center;
   font-size: 0.95rem;
 }
 
 .feature-label {
   font-weight: bold;
+  text-align: left;
   padding-left: 0.75rem;
   color: var(--text-color);
 }
 
+/* Plan Buttons */
 .plan-button {
   background: var(--accent-color);
   color: #1F2612;
@@ -188,40 +232,35 @@ header p {
   background: #a3743f;
 }
 
+/* Mobile Layout */
 @media (max-width: 768px) {
+  .grid-header,
   .grid-row {
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
+    text-align: center;
+    gap: 0.5rem;
     padding: 1rem;
+  }
+
+  .grid-row div {
+    width: 100%;
   }
 
   .feature-label {
     font-size: 1.1rem;
   }
 
-  .grid-row div {
-    width: 100%;
-    text-align: center;
-  }
-
   .grid-row.highlight {
     font-size: 1.1rem;
   }
-}
 
-#bg-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  z-index: -1;
-  opacity: 0.2;
-}
+  .navbar {
+    flex-wrap: wrap;
+  }
 
-main, .content-wrapper {
-  position: relative;
-  z-index: 1;
+  .nav-buttons {
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
 }
