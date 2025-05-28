@@ -1,8 +1,88 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: var(--dark-bg-solid);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+.menu-icon {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-color);
+}
+.navbar-slogan {
+  font-size: 1rem;
+  margin-left: 1rem;
+  flex-grow: 1;
+  text-align: center;
+  color: var(--text-color);
+  white-space: nowrap;
+}
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+}
+.nav-buttons button {
+  background: transparent;
+  border: 2px solid var(--accent-color);
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.nav-buttons button:hover {
+  background-color: var(--accent-color);
+  color: var(--dark-bg-solid);
+}
+.nav-menu {
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--dark-bg-solid);
+  padding: 1rem;
+  border: 2px solid var(--accent-color);
+  border-radius: 8px;
+  width: 300px;
+  z-index: 999;
+}
+.nav-menu.active {
+  display: flex;
+}
+.nav-menu button {
+  background: transparent;
+  border: 2px solid var(--accent-color);
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  text-align: left;
+  transition: background-color 0.3s;
+}
+.nav-menu button:hover {
+  background-color: var(--accent-color);
+  color: var(--dark-bg-solid);
+}
+  .nav-buttons {
+    flex-wrap: wrap;
+  }
+
+
 :root {
   --dark-bg: #1F2612;
   --text-color: #FFF8E7;
   --accent-color: #B08D57;
-  --button-hover: #a3743f;
 }
 
 body {
@@ -47,21 +127,20 @@ header p {
 }
 
 .membership-grid {
-  width: 100%;
   max-width: 1200px;
   margin: 2rem auto;
-  border-radius: 12px;
+  border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 0 18px rgba(0, 0, 0, 0.35);
-  background-color: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .grid-row {
   display: grid;
   grid-template-columns: 1.5fr repeat(4, 1fr);
-  padding: 1.2rem 0.8rem;
+  padding: 1rem 0.75rem;
   align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   background-color: rgba(255, 255, 255, 0.015);
   transition: background-color 0.3s ease;
 }
@@ -71,11 +150,11 @@ header p {
 }
 
 .grid-row:nth-child(even) {
-  background-color: rgba(255, 255, 255, 0.025);
+  background-color: rgba(255, 255, 255, 0.03);
 }
 
 .grid-row.highlight {
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: rgba(255, 255, 255, 0.07);
   font-weight: bold;
   color: var(--accent-color);
 }
@@ -83,15 +162,12 @@ header p {
 .grid-row div {
   text-align: center;
   font-size: 0.95rem;
-  padding: 0.5rem;
 }
 
 .feature-label {
   font-weight: bold;
+  padding-left: 0.75rem;
   color: var(--text-color);
-  text-align: left;
-  padding-left: 1rem;
-  font-size: 1rem;
 }
 
 .plan-button {
@@ -105,32 +181,28 @@ header p {
   cursor: pointer;
   transition: background 0.3s ease;
   margin: 0.25rem auto;
-  display: inline-block;
+  display: block;
 }
 
 .plan-button:hover {
-  background: var(--button-hover);
-}
-
-#signupNowBtn {
-  margin-top: 2rem;
+  background: #a3743f;
 }
 
 @media (max-width: 768px) {
   .grid-row {
     display: flex;
     flex-direction: column;
+    gap: 0.4rem;
     padding: 1rem;
+  }
+
+  .feature-label {
+    font-size: 1.1rem;
   }
 
   .grid-row div {
     width: 100%;
     text-align: center;
-  }
-
-  .feature-label {
-    text-align: center;
-    font-size: 1.1rem;
   }
 
   .grid-row.highlight {
