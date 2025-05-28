@@ -1,8 +1,8 @@
-
 :root {
   --dark-bg: #1F2612;
   --text-color: #FFF8E7;
   --accent-color: #B08D57;
+  --button-hover: #a3743f;
 }
 
 body {
@@ -47,20 +47,21 @@ header p {
 }
 
 .membership-grid {
+  width: 100%;
   max-width: 1200px;
   margin: 2rem auto;
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 0 15px rgba(0,0,0,0.4);
-  background: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.35);
+  background-color: rgba(255, 255, 255, 0.03);
 }
 
 .grid-row {
   display: grid;
   grid-template-columns: 1.5fr repeat(4, 1fr);
-  padding: 1rem 0.75rem;
+  padding: 1.2rem 0.8rem;
   align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
   background-color: rgba(255, 255, 255, 0.015);
   transition: background-color 0.3s ease;
 }
@@ -70,11 +71,11 @@ header p {
 }
 
 .grid-row:nth-child(even) {
-  background-color: rgba(255, 255, 255, 0.03);
+  background-color: rgba(255, 255, 255, 0.025);
 }
 
 .grid-row.highlight {
-  background-color: rgba(255, 255, 255, 0.07);
+  background-color: rgba(255, 255, 255, 0.08);
   font-weight: bold;
   color: var(--accent-color);
 }
@@ -82,12 +83,15 @@ header p {
 .grid-row div {
   text-align: center;
   font-size: 0.95rem;
+  padding: 0.5rem;
 }
 
 .feature-label {
   font-weight: bold;
-  padding-left: 0.75rem;
   color: var(--text-color);
+  text-align: left;
+  padding-left: 1rem;
+  font-size: 1rem;
 }
 
 .plan-button {
@@ -101,28 +105,32 @@ header p {
   cursor: pointer;
   transition: background 0.3s ease;
   margin: 0.25rem auto;
-  display: block;
+  display: inline-block;
 }
 
 .plan-button:hover {
-  background: #a3743f;
+  background: var(--button-hover);
+}
+
+#signupNowBtn {
+  margin-top: 2rem;
 }
 
 @media (max-width: 768px) {
   .grid-row {
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
     padding: 1rem;
-  }
-
-  .feature-label {
-    font-size: 1.1rem;
   }
 
   .grid-row div {
     width: 100%;
     text-align: center;
+  }
+
+  .feature-label {
+    text-align: center;
+    font-size: 1.1rem;
   }
 
   .grid-row.highlight {
