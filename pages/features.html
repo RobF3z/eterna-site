@@ -35,12 +35,10 @@
 </head>
 
 <body>
-  <!-- Background -->
   <video autoplay muted loop class="bg-video" id="features-bg">
     <source src="../Assets/Forest 1.mp4" type="video/mp4" />
   </video>
 
-  <!-- Navbar -->
   <nav class="navbar">
     <button class="menu-icon" onclick="toggleNavMenu()">☰</button>
     <p class="navbar-slogan">Preserve Your voice. Your story. Your legacy</p>
@@ -48,32 +46,20 @@
       <button onclick="showLoginOverlay()">Login</button>
       <button onclick="window.location.href='../index.html#signup'">Sign Up</button>
     </div>
-    <div class="nav-menu" id="navMenu" aria-hidden="true">
-      <button onclick="window.location.href='../index.html'">Home</button>
-      <button onclick="window.location.href='about.html'">About</button>
-      <button onclick="window.location.href='features.html'">Features</button>
-      <button onclick="window.location.href='blog.html'">Blog</button>
-      <button onclick="window.location.href='contact.html'">Contact</button>
-      <button onclick="window.location.href='public-echo.html'">Public Echo</button>
-      <button onclick="window.location.href='support.html'">Support</button>
-      <button onclick="window.location.href='privacy-policy.html'">Privacy Policy</button>
-      <button onclick="window.location.href='terms.html'">Terms</button>
-      <button onclick="window.location.href='memberships.html'">Memberships</button>
-      <hr />
-      <div class="menu-section">Community</div>
-      <a href="referral.html" class="menu-link">Referrals</a>
-      <a href="roadmap.html" class="menu-link">Roadmap</a>
-    </div>
   </nav>
 
-  <!-- Main Content -->
   <main class="content-wrapper">
-    <section class="features-hero">
-      <h1>Eterna Features</h1>
-      <p>More than memories — create a living, interactive legacy your family can return to anytime.</p>
-    </section>
+    <div class="logo-container">
+      <img src="../Assets/Eterna Logo 1.jpeg" alt="Eterna Logo" class="eterna-logo" />
+    </div>
+
+    <p class="features-intro">
+      Eterna isn’t just technology — it’s a promise. A voice that never fades. A story that lives on.
+      Explore the features that make this possible.
+    </p>
 
     <section class="features-grid">
+      <h3 class="feature-group-title">Preserve Your Voice</h3>
       <div class="feature-card">
         <h3>Voice Preservation</h3>
         <p>Record your natural tone, accent, and warmth through casual conversation. Eterna learns how you speak and think.</p>
@@ -82,6 +68,8 @@
         <h3>Interactive Echo</h3>
         <p>Your loved ones can ask you anything — and get replies in your voice. It’s like you’re still there to guide them.</p>
       </div>
+
+      <h3 class="feature-group-title">Shape Your Story</h3>
       <div class="feature-card">
         <h3>Memory Timeline</h3>
         <p>Chronologically explore life’s milestones with voice notes, text, photos and videos — searchable by tag, date, or topic.</p>
@@ -91,17 +79,21 @@
         <p>Leave goodbye messages or last thoughts for the people who matter most. Deliver them when the time is right.</p>
       </div>
       <div class="feature-card">
-        <h3>Family Tree Access Control</h3>
-        <p>Decide who can hear which stories. Echo permissions are linked to your family tree, giving you full control over privacy.</p>
-      </div>
-      <div class="feature-card">
         <h3>Memory Montages</h3>
         <p>Auto-generated highlight reels bring together your favourite stories, quotes, and moments — beautifully curated.</p>
+      </div>
+
+      <h3 class="feature-group-title">Control Your Legacy</h3>
+      <div class="feature-card">
+        <h3>Family Tree Access Control</h3>
+        <p>Decide who can hear which stories. Echo permissions are linked to your family tree, giving you full control over privacy.</p>
       </div>
       <div class="feature-card">
         <h3>Eternal Storage</h3>
         <p>Choose your archive duration — from a few years to a century. Rest easy knowing your legacy will last beyond lifetimes.</p>
       </div>
+
+      <h3 class="feature-group-title">Grow Together</h3>
       <div class="feature-card">
         <h3>Community & Support</h3>
         <p>Join Discord groups and connect with others building digital legacies. Share advice, ideas, and support each other’s journeys.</p>
@@ -111,6 +103,14 @@
         <p>Eterna is designed with care — using ethical AI practices, grief-sensitive prompts, and emotion-aware responses to support healing. It’s not just about preserving the past, but offering comfort in the present.</p>
       </div>
     </section>
+
+    <blockquote class="testimonial">
+      “My daughter will always be able to hear me say I love you. That means everything.” — Early Tester
+    </blockquote>
+
+    <div class="privacy-note">
+      All memories are encrypted and fully under your control. You decide what’s shared and with whom.
+    </div>
 
     <section class="features-cta">
       <h2>Start Your Legacy Today</h2>
