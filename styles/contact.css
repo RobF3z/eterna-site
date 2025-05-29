@@ -1,4 +1,178 @@
-/* contact Page Styles - Matches Landing Theme */
-@import url('landing.css');
+/* Contact Page Styles */
 
-/* Add custom styles for contact page below */
+.content-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 6rem 1rem 4rem;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.logo-container {
+  margin-bottom: 1.5rem;
+}
+
+.eterna-logo {
+  width: 180px;
+  max-width: 100%;
+}
+
+.contact-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.contact-section p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.contact-section a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+.contact-section a:hover {
+  text-decoration: underline;
+}
+
+.contact-form {
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contact-form label {
+  align-self: flex-start;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  max-width: 600px;
+  padding: 0.75rem;
+  border: 1px solid var(--accent-color);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-color);
+}
+
+.contact-form button {
+  background-color: var(--accent-color);
+  color: white;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: white;
+  color: var(--dark-bg);
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.social-links a {
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--text-color);
+  border: 1px solid var(--accent-color);
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.social-links a:hover {
+  background-color: var(--accent-color);
+  color: var(--dark-bg);
+}
+
+/* Signup Section */
+.signup-container {
+  background: var(--dark-bg-solid);
+  padding: 3rem 1rem;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.signup-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.signup-content p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--accent-color);
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: white;
+  color: var(--dark-bg);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.95rem;
+  background: var(--dark-bg);
+  color: var(--text-color);
+}
+
+.footer a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .contact-section h1 {
+    font-size: 2rem;
+  }
+
+  .contact-section p {
+    font-size: 1rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+  }
+
+  .signup-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .signup-content p {
+    font-size: 1rem;
+  }
+}
