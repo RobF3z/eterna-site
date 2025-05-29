@@ -1,0 +1,117 @@
+/* Background video */
+#features-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+/* Hero section */
+.features-hero {
+  text-align: center;
+  padding: 6rem 1rem 2rem;
+  color: var(--text-color);
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  max-width: 1000px;
+  margin: 0 auto 2rem;
+}
+
+.features-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.features-hero p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Features grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--accent-color);
+  border-radius: 10px;
+  padding: 1.5rem;
+  color: var(--text-color);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  background-color: rgba(255, 255, 255, 0.07);
+}
+
+/* CTA section */
+.features-cta {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: rgba(0, 0, 0, 0.5);
+  border-top: 1px solid var(--accent-color);
+  margin-top: 2rem;
+}
+
+.features-cta h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.features-cta p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+}
+
+.features-cta .cta-button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  background: var(--accent-color);
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.features-cta .cta-button:hover {
+  background-color: white;
+  color: var(--dark-bg-solid);
+}
+
+/* Mobile tweaks */
+@media (max-width: 768px) {
+  .features-hero h1 {
+    font-size: 2rem;
+  }
+
+  .features-hero p {
+    font-size: 1rem;
+  }
+
+  .feature-card {
+    padding: 1.2rem;
+  }
+
+  .features-cta h2 {
+    font-size: 1.6rem;
+  }
+
+  .features-cta p {
+    font-size: 1rem;
+  }
+}

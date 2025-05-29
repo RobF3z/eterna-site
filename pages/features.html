@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore the powerful features of Eterna — the AI platform that helps you preserve your voice, stories, and legacy." />
+  <title>Features | Eterna AI Digital Legacy Platform</title>
+
+  <link rel="canonical" href="https://eterna-ai.co.uk/pages/features.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://eterna-ai.co.uk/pages/features.html" />
+  <meta property="og:title" content="Features | Eterna AI Digital Legacy Platform" />
+  <meta property="og:description" content="Discover how Eterna helps preserve your voice, stories, and wisdom through AI-powered memory timelines, voice avatars, and more." />
+  <meta property="og:image" content="../Assets/eterna-logo-169.webp" />
+  <meta property="og:site_name" content="Eterna" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@AiEterna44082" />
+  <meta name="twitter:title" content="Features | Eterna AI Digital Legacy Platform" />
+  <meta name="twitter:description" content="Explore the features of Eterna that preserve your voice and legacy using AI." />
+  <meta name="twitter:image" content="../Assets/eterna-logo-169.jpeg" />
+
+  <link rel="icon" href="../Assets/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="../Assets/apple-touch-icon.png" />
+  <link rel="stylesheet" href="../styles/landing.css" />
+  <link rel="stylesheet" href="../styles/features.css" />
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EG96DT3C65"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-EG96DT3C65');
+  </script>
+</head>
+
+<body>
+  <!-- Background -->
+  <video autoplay muted loop class="bg-video" id="features-bg">
+    <source src="../Assets/Forest 1.mp4" type="video/mp4" />
+  </video>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <button class="menu-icon" onclick="toggleNavMenu()">☰</button>
+    <p class="navbar-slogan">Preserve Your voice. Your story. Your legacy</p>
+    <div class="nav-buttons">
+      <button onclick="showLoginOverlay()">Login</button>
+      <button onclick="window.location.href='../index.html#signup'">Sign Up</button>
+    </div>
+    <div class="nav-menu" id="navMenu" aria-hidden="true">
+      <button onclick="window.location.href='../index.html'">Home</button>
+      <button onclick="window.location.href='about.html'">About</button>
+      <button onclick="window.location.href='features.html'">Features</button>
+      <button onclick="window.location.href='blog.html'">Blog</button>
+      <button onclick="window.location.href='contact.html'">Contact</button>
+      <button onclick="window.location.href='public-echo.html'">Public Echo</button>
+      <button onclick="window.location.href='support.html'">Support</button>
+      <button onclick="window.location.href='privacy-policy.html'">Privacy Policy</button>
+      <button onclick="window.location.href='terms.html'">Terms</button>
+      <button onclick="window.location.href='memberships.html'">Memberships</button>
+      <hr />
+      <div class="menu-section">Community</div>
+      <a href="referral.html" class="menu-link">Referrals</a>
+      <a href="roadmap.html" class="menu-link">Roadmap</a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="content-wrapper">
+    <section class="features-hero">
+      <h1>Eterna Features</h1>
+      <p>More than memories — create a living, interactive legacy your family can return to anytime.</p>
+    </section>
+
+    <section class="features-grid">
+      <div class="feature-card">
+        <h3>Voice Preservation</h3>
+        <p>Record your natural tone, accent, and warmth through casual conversation. Eterna learns how you speak and think.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Interactive Echo</h3>
+        <p>Your loved ones can ask you anything — and get replies in your voice. It’s like you’re still there to guide them.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Memory Timeline</h3>
+        <p>Chronologically explore life’s milestones with voice notes, text, photos and videos — searchable by tag, date, or topic.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Final Messages</h3>
+        <p>Leave goodbye messages or last thoughts for the people who matter most. Deliver them when the time is right.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Family Tree Access Control</h3>
+        <p>Decide who can hear which stories. Echo permissions are linked to your family tree, giving you full control over privacy.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Memory Montages</h3>
+        <p>Auto-generated highlight reels bring together your favourite stories, quotes, and moments — beautifully curated.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Eternal Storage</h3>
+        <p>Choose your archive duration — from a few years to a century. Rest easy knowing your legacy will last beyond lifetimes.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Community & Support</h3>
+        <p>Join Discord groups and connect with others building digital legacies. Share advice, ideas, and support each other’s journeys.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Emotional Guardrails & Healing</h3>
+        <p>Eterna is designed with care — using ethical AI practices, grief-sensitive prompts, and emotion-aware responses to support healing. It’s not just about preserving the past, but offering comfort in the present.</p>
+      </div>
+    </section>
+
+    <section class="features-cta">
+      <h2>Start Your Legacy Today</h2>
+      <p>Begin capturing your story now — even a short message can become a timeless gift.</p>
+      <a class="cta-button" href="memberships.html">View Membership Options</a>
+    </section>
+  </main>
+
+  <script>
+    function toggleNavMenu() {
+      const navMenu = document.getElementById('navMenu');
+      const isVisible = navMenu.classList.contains('active');
+      navMenu.style.display = isVisible ? 'none' : 'flex';
+      navMenu.classList.toggle('active');
+      navMenu.setAttribute('aria-hidden', isVisible);
+    }
+  </script>
+</body>
+</html>
