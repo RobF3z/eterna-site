@@ -3,46 +3,56 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Create a lasting digital legacy with Eterna’s AI. Preserve your voice and memories for loved ones to cherish forever. Start today!" />
-  <meta name="keywords" content="digital legacy, voice preservation, AI legacy, memory preservation, eterna ai" />
+  <meta name="description" content="Learn why we created Eterna — the AI legacy platform preserving your voice, memories, and stories for future generations." />
+  <meta name="keywords" content="AI legacy, digital legacy, memory preservation, voice AI, Eterna platform, about Eterna, story preservation" />
   <meta name="author" content="Eterna AI" />
-  <title>Eterna: About Us</title>
+  <title>About Eterna | AI Digital Legacy Platform</title>
 
-  <link rel="canonical" href="https://eterna-ai.co.uk/" />
+  <!-- Canonical -->
+  <link rel="canonical" href="https://eterna-ai.co.uk/pages/about.html" />
+
+  <!-- Open Graph Meta -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://eterna-ai.co.uk/" />
-  <meta property="og:title" content="Eterna: AI Digital Legacy Platform" />
-  <meta property="og:description" content="Preserve your voice and memories with Eterna’s AI. Build a digital legacy for generations to cherish. Start now!" />
+  <meta property="og:url" content="https://eterna-ai.co.uk/pages/about.html" />
+  <meta property="og:title" content="About Eterna | AI Digital Legacy Platform" />
+  <meta property="og:description" content="Discover why we created Eterna, the platform that uses AI to preserve your voice, personality, and memories for generations." />
   <meta property="og:image" content="../Assets/eterna-logo-169.webp" />
   <meta property="og:site_name" content="Eterna" />
 
+  <!-- Twitter Meta -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@AiEterna44082" />
-  <meta name="twitter:title" content="Eterna: AI Digital Legacy Platform" />
-  <meta name="twitter:description" content="Preserve your voice and memories with Eterna’s AI. Build a digital legacy for generations to cherish. Start now!" />
+  <meta name="twitter:title" content="About Eterna | AI Digital Legacy Platform" />
+  <meta name="twitter:description" content="Discover why we created Eterna, the platform that uses AI to preserve your voice, personality, and memories for generations." />
   <meta name="twitter:image" content="../Assets/eterna-logo-169.jpeg" />
 
+  <!-- Icons -->
   <link rel="icon" href="../Assets/favicon.ico" type="image/x-icon" />
   <link rel="apple-touch-icon" href="../Assets/apple-touch-icon.png" />
 
+  <!-- Fonts -->
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" as="style" />
   <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet" />
   <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../styles/landing.css" />
   <link rel="stylesheet" href="../styles/about.css" />
 
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Eterna",
-    "url": "https://eterna-ai.co.uk",
-    "description": "Preserve your digital legacy with Eterna's AI-powered Echo Engine.",
+    "@type": "WebPage",
+    "name": "About Eterna",
+    "url": "https://eterna-ai.co.uk/pages/about.html",
+    "description": "Learn about Eterna’s mission to preserve voices and stories through ethical AI.",
     "publisher": {
       "@type": "Organization",
       "name": "Eterna AI",
       "logo": {
         "@type": "ImageObject",
-        "url": "Assets/eterna-logo-169.webp"
+        "url": "https://eterna-ai.co.uk/Assets/eterna-logo-169.webp"
       },
       "sameAs": [
         "https://x.com/AiEterna44082",
@@ -51,44 +61,41 @@
     }
   }
   </script>
+
+  <!-- Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EG96DT3C65"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-EG96DT3C65');
+  </script>
 </head>
 
 <body>
-  <nav class="navbar fixed-nav">
+  <nav class="navbar">
     <button class="menu-icon" onclick="toggleNavMenu()">☰</button>
     <p class="navbar-slogan">Preserve Your voice. Your story. Your legacy</p>
     <div class="nav-buttons">
       <button onclick="showLoginOverlay()">Login</button>
-      <button onclick="window.location.href='../pages/signup.html'">Sign Up</button>
+      <button onclick="window.location.href='../index.html#signup'">Sign Up</button>
+    </div>
     <div class="nav-menu" id="navMenu" aria-hidden="true">
-  <a href="../index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="features.html">Features</a>
-  <a href="blog.html">Blog</a>
-  <a href="contact.html">Contact</a>
-  <a href="public-echo.html">Public Echo</a>
-  <a href="support.html">Support</a>
-  <a href="privacy-policy.html">Privacy Policy</a>
-  <a href="terms.html">Terms</a>
-  <a href="memberships.html">Memberships</a>
-
-  <hr />
-
-  <strong>Community</strong>
-  <a href="referral.html">Referrals</a>
-  <a href="roadmap.html">Roadmap</a>
-
-  <div class="nav-protected" data-auth="protected" style="display: none;">
-    <hr />
-    <strong>Memory & Legacy</strong>
-    <a href="memory-timeline.html">Memory Timeline</a>
-    <a href="family-tree.html">Family Tree</a>
-
-    <strong>My Account</strong>
-    <a href="ProfilePage.html">Profile</a>
-    <a href="onboarding.html">Onboarding</a>
-    <a href="search.html">Search</a>
-  </div>
+      <button onclick="window.location.href='../index.html'">Home</button>
+      <button onclick="window.location.href='about.html'">About</button>
+      <button onclick="window.location.href='features.html'">Features</button>
+      <button onclick="window.location.href='blog.html'">Blog</button>
+      <button onclick="window.location.href='contact.html'">Contact</button>
+      <button onclick="window.location.href='public-echo.html'">Public Echo</button>
+      <button onclick="window.location.href='support.html'">Support</button>
+      <button onclick="window.location.href='privacy-policy.html'">Privacy Policy</button>
+      <button onclick="window.location.href='terms.html'">Terms</button>
+      <button onclick="window.location.href='memberships.html'">Memberships</button>
+      <hr />
+      <div class="menu-section">Community</div>
+      <a href="referral.html" class="menu-link">Referrals</a>
+      <a href="roadmap.html" class="menu-link">Roadmap</a>
+    </div>
   </nav>
 
   <main class="content-wrapper">
@@ -122,8 +129,11 @@
 
   <script>
     function toggleNavMenu() {
-      const menu = document.getElementById('navMenu');
-      menu.classList.toggle('show');
+      const navMenu = document.getElementById('navMenu');
+      const isVisible = navMenu.classList.contains('active');
+      navMenu.style.display = isVisible ? 'none' : 'flex';
+      navMenu.classList.toggle('active');
+      navMenu.setAttribute('aria-hidden', isVisible);
     }
   </script>
 </body>

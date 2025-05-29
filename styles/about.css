@@ -53,12 +53,12 @@ body {
 .content-wrapper {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 8rem 1rem 3rem;
 }
 
 .logo-container {
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .eterna-logo {
@@ -66,4 +66,17 @@ body {
   max-width: 80%;
   display: block;
   margin: 0 auto;
+}
+
+/* Fullscreen Background Video */
+#about-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.3;
+  pointer-events: none;
 }
