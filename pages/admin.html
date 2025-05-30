@@ -24,12 +24,91 @@
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" as="style" />
   <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet" />
   <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-  <link rel="stylesheet" href="/styles/landing.css" />
+  <link rel="stylesheet" href="../styles/admin.css" />
 </head>
-<body>
-  <main style="padding: 3rem; text-align: center;">
-    <h1>This is a placeholder page</h1>
-    <p>The content for this page will be added soon.</p>
-  </main>
-</body>
+
+  <body>
+    <nav class="navbar">
+      <img src="../Assets/Eterna Logo 1.jpeg" alt="Eterna Logo" class="main-logo" />
+      <div class="nav-toggle" onclick="toggleMenu()">☰</div>
+      <div class="nav-menu" aria-hidden="true">
+        <button onclick="window.location.href='../index.html'">Home</button>
+        <button onclick="window.location.href='contact.html'">Contact</button>
+        <button onclick="window.location.href='support.html'">Support</button>
+        <button onclick="showLoginOverlay()">Logout</button>
+      </div>
+    </nav>
+
+    <main class="admin-container">
+      <h1>Admin Dashboard</h1>
+      <div id="access-denied" class="hidden"><h2>Access Denied</h2></div>
+
+      <div id="admin-panel" class="hidden">
+        <section class="kpi-cards">
+          <div class="card"><h3>Total Users</h3><p id="kpi-users">--</p></div>
+          <div class="card"><h3>Active Subscriptions</h3><p id="kpi-subs">--</p></div>
+          <div class="card"><h3>Echo Sessions</h3><p id="kpi-sessions">--</p></div>
+        </section>
+
+        <section class="charts">
+          <canvas id="growthChart"></canvas>
+        </section>
+
+        <section class="data-tools">
+          <h2>Export Tools</h2>
+          <button onclick="exportUsers()">Download Users CSV</button>
+          <button onclick="exportSessions()">Download Echo Logs</button>
+        </section>
+      </div>
+    </main>
+
+    <script>
+      const email = localStorage.getItem("userEmail") || "";
+      if (email === "rob@eterna-ai.co.uk") {
+        document.getElementById("admin-panel").classList.remove("hidden");
+      } else {
+        document.getElementById("access-denied").classList.remove("hidden");
+      }
+
+      // Example charts + values for testing only
+      document.getElementById("kpi-users").innerText = "1,024";
+      document.getElementById("kpi-subs").innerText = "245";
+      document.getElementById("kpi-sessions").innerText = "8,370";
+
+      const ctx = document.getElementById("growthChart");
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+          datasets: [{
+            label: 'User Growth',
+            data: [200, 450, 800, 1200, 1600],
+            borderColor: '#B08D57',
+            fill: false,
+            tension: 0.4
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { display: false }
+          }
+        }
+      });
+
+      function exportUsers() {
+        alert("Exporting user data as CSV (stub)...");
+      }
+
+      function exportSessions() {
+        alert("Exporting echo logs as CSV (stub)...");
+      }
+
+      function toggleMenu() {
+        const menu = document.querySelector(".nav-menu");
+        const isOpen = menu.getAttribute("aria-hidden") === "false";
+        menu.setAttribute("aria-hidden", isOpen ? "true" : "false");
+      }
+    </script>
+  </body>
 </html>
