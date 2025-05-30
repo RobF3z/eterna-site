@@ -1,96 +1,126 @@
 <!DOCTYPE html>
 <html lang="en-GB">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Create a lasting digital legacy with Eterna’s AI. Preserve your voice and memories for loved ones to cherish forever. Start today!" />
-  <meta name="keywords" content="digital legacy, voice preservation, AI legacy, memory preservation, eterna ai" />
-  <meta name="author" content="Eterna AI" />
-  <title>Eterna: Privacy Policy</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Review how Eterna collects, uses, and protects your personal data as you preserve your digital legacy." />
+    <meta name="author" content="Eterna AI" />
+    <title>Privacy Policy | Eterna AI</title>
 
-  <link rel="canonical" href="https://eterna-ai.co.uk/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://eterna-ai.co.uk/" />
-  <meta property="og:title" content="Eterna: AI Digital Legacy Platform" />
-  <meta property="og:description" content="Preserve your voice and memories with Eterna’s AI. Build a digital legacy for generations to cherish. Start now!" />
-  <meta property="og:image" content="../Assets/eterna-logo-169.webp" />
-  <meta property="og:site_name" content="Eterna" />
+    <link rel="canonical" href="https://eterna-ai.co.uk/pages/privacy-policy.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://eterna-ai.co.uk/pages/privacy-policy.html" />
+    <meta property="og:title" content="Privacy Policy | Eterna AI" />
+    <meta property="og:description" content="Understand how Eterna protects your data, voice, and legacy under UK GDPR." />
+    <meta property="og:image" content="../Assets/eterna-logo-169.webp" />
+    <meta property="og:site_name" content="Eterna" />
 
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@AiEterna44082" />
-  <meta name="twitter:title" content="Eterna: AI Digital Legacy Platform" />
-  <meta name="twitter:description" content="Preserve your voice and memories with Eterna’s AI. Build a digital legacy for generations to cherish. Start now!" />
-  <meta name="twitter:image" content="../Assets/eterna-logo-169.jpeg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@AiEterna44082" />
+    <meta name="twitter:title" content="Privacy Policy | Eterna AI" />
+    <meta name="twitter:description" content="Understand how Eterna protects your data, voice, and legacy under UK GDPR." />
+    <meta name="twitter:image" content="../Assets/eterna-logo-169.jpeg" />
 
-  <link rel="icon" href="../Assets/favicon.ico" type="image/x-icon" />
-  <link rel="apple-touch-icon" href="../Assets/apple-touch-icon.png" />
+    <link rel="icon" href="../Assets/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="../Assets/apple-touch-icon.png" />
+    <link rel="stylesheet" href="../styles/landing.css" />
+    <link rel="stylesheet" href="../styles/privacy-policy.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <img src="../Assets/Eterna Logo 1.jpeg" alt="Eterna Logo" class="main-logo" />
+      <div class="nav-toggle" onclick="toggleMenu()">☰</div>
+      <div class="nav-menu" aria-hidden="true">
+        <button onclick="window.location.href='../index.html'" aria-label="Home">Home</button>
+        <button onclick="window.location.href='about.html'" aria-label="About Eterna">About</button>
+        <button onclick="window.location.href='features.html'" aria-label="Eterna Features">Features</button>
+        <button onclick="window.location.href='technology.html'" aria-label="Technology">Technology</button>
+        <button onclick="window.location.href='public-echo.html'" aria-label="Public Echoes">Public Echoes</button>
+        <button onclick="window.location.href='pricing.html'" aria-label="Pricing">Pricing</button>
+        <button onclick="window.location.href='support.html'" aria-label="Support">Support</button>
+        <button onclick="window.location.href='blog.html'" aria-label="Blog">Blog</button>
+        <button onclick="window.location.href='contact.html'" aria-label="Contact">Contact</button>
+        <button onclick="showLoginOverlay()" aria-label="Log in to Eterna">Login</button>
+      </div>
+    </nav>
 
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" as="style" />
-  <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet" />
-  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-  <link rel="stylesheet" href="../styles/landing.css" />
+    <main class="policy-container">
+      <section class="policy">
+        <h1>Privacy Policy</h1>
+        <p>Last updated: 30 May 2025</p>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Eterna",
-    "url": "https://eterna-ai.co.uk",
-    "description": "Preserve your digital legacy with Eterna's AI-powered Echo Engine.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Eterna AI",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "Assets/eterna-logo-169.webp"
-      },
-      "sameAs": [
-        "https://x.com/AiEterna44082",
-        "https://linkedin.com/company/eterna-ai"
-      ]
-    }
-  }
-  </script>
-</head>
+        <p>Eterna (“we”, “our”, or “us”) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your personal data when you use our website, platform, and related services.</p>
 
-<body>
-  <nav class="navbar fixed-nav">
-    <button class="menu-icon" onclick="toggleNavMenu()">☰</button>
-    <p class="navbar-slogan">Preserve Your voice. Your story. Your legacy</p>
-    <div class="nav-buttons">
-      <button onclick="showLoginOverlay()">Login</button>
-      <button onclick="window.location.href='../pages/signup.html'">Sign Up</button>
-    </div>
-    <div class="nav-menu" id="navMenu" aria-hidden="true">
-      <button onclick="window.location.href='../index.html'">Home</button>
-      <button onclick="window.location.href='about.html'">About</button>
-      <button onclick="window.location.href='features.html'">Features</button>
-      <button onclick="window.location.href='technology.html'">Technology</button>
-      <button onclick="window.location.href='public-echo.html'">Public Echo</button>
-      <button onclick="window.location.href='support.html'">Support</button>
-      <button onclick="window.location.href='blog.html'">Blog</button>
-      <button onclick="window.location.href='memberships.html'">Memberships</button>
-    </div>
-  </nav>
+        <h2>1. Who We Are</h2>
+        <p>Eterna is a digital legacy platform that allows users to preserve their voice, memories, and values for future generations through AI-enhanced tools.</p>
 
-  <main class="content-wrapper">
-    <div class="logo-container">
-      <img src="../Assets/Eterna Logo 1.jpeg" alt="Eterna Logo" class="eterna-logo" />
-    </div>
+        <h2>2. What Data We Collect</h2>
+        <ul>
+          <li>Account Information: Name, email address, login credentials</li>
+          <li>Voice & Memory Data: Text inputs, audio files, media uploads, and metadata</li>
+          <li>Family Tree Information: Names, relationships, birth/death dates</li>
+          <li>Usage Data: IP address, browser type, session logs</li>
+          <li>Payment Data: Processed securely via Stripe; we do not store card details</li>
+        </ul>
 
-    <header style="text-align:center; margin-top: 4rem;">
-      <h1>[Page Title]</h1>
-      <p>This page is under construction as part of the Eterna platform.</p>
-      <p>Check back soon for updates.</p>
-      <p><a href="../index.html">← Return to Home</a></p>
-    </header>
-  </main>
+        <h2>3. How We Use Your Data</h2>
+        <ul>
+          <li>Deliver and improve the Eterna platform</li>
+          <li>Power the Echo AI interaction engine</li>
+          <li>Secure and maintain user accounts</li>
+          <li>Send updates, alerts, and reminders</li>
+          <li>Comply with legal obligations</li>
+        </ul>
 
-  <script>
-    function toggleNavMenu() {
-      const menu = document.getElementById('navMenu');
-      menu.classList.toggle('show');
-    }
-  </script>
-</body>
+        <h2>4. Lawful Basis for Processing</h2>
+        <ul>
+          <li>Consent: For AI training and optional features</li>
+          <li>Contract: To provide membership services</li>
+          <li>Legal Obligation: For tax and compliance</li>
+          <li>Legitimate Interest: Improving Eterna's experience and security</li>
+        </ul>
+
+        <h2>5. Sharing & Disclosure</h2>
+        <p>We never sell or rent your personal data. We only share it with trusted processors (e.g., Stripe, Render), authorised family contacts (if permitted), or legal authorities when required.</p>
+
+        <h2>6. Your Rights</h2>
+        <p>You have the right to access, correct, delete, or restrict your data, as well as request data portability or withdraw consent. Contact us at <strong>privacy@eterna-ai.co.uk</strong>.</p>
+
+        <h2>7. Storage & Security</h2>
+        <p>Your data is encrypted, hosted in secure UK/EU centres, and retained only as long as necessary.</p>
+
+        <h2>8. Cookies</h2>
+        <p>We use minimal cookies for authentication and preference storage. You can control cookies via your browser settings.</p>
+
+        <h2>9. AI Transparency</h2>
+        <p>Some of Eterna’s features are powered by artificial intelligence. Responses may be generated based on the data you provide. These do not represent real-time human communication and are designed to support reflection, memory, and storytelling.</p>
+
+        <h2>10. Posthumous Data Handling</h2>
+        <p>You may choose to designate family members or authorised individuals to manage or access your Echo after death. Tools are provided to manage permissions and digital legacy wishes.</p>
+
+        <h2>11. Third-Party AI & Infrastructure</h2>
+        <p>Some features are powered by third-party services (e.g., OpenAI, AWS). These partners are contractually bound to protect your data. No personally identifiable information is used for model training without your consent.</p>
+
+        <h2>12. Right to Human Review</h2>
+        <p>You may request human review of any automated AI decisions or generated responses if you believe they misrepresent your story or values.</p>
+
+        <h2>13. Voice & Likeness Consent</h2>
+        <p>By uploading your voice or likeness, you confirm you have the legal right to use this content. You grant Eterna permission to process and store this data as part of your Echo experience.</p>
+
+        <h2>14. Children’s Privacy</h2>
+        <p>Eterna is not intended for children under 13. We do not knowingly collect children’s data.</p>
+
+        <h2>15. Contact Us</h2>
+        <p>Questions? Email <strong>privacy@eterna-ai.co.uk</strong> or visit <strong>https://eterna-ai.co.uk</strong></p>
+      </section>
+    </main>
+
+    <script>
+      function toggleMenu() {
+        const menu = document.querySelector(".nav-menu");
+        const isOpen = menu.getAttribute("aria-hidden") === "false";
+        menu.setAttribute("aria-hidden", isOpen ? "true" : "false");
+      }
+    </script>
+  </body>
 </html>
