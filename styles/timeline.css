@@ -1,1 +1,147 @@
 
+body {
+  margin: 0;
+  font-family: 'Marcellus', serif;
+  background-color: #0f0f1a;
+  color: #FFF8E7;
+}
+
+.bg-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.overlay {
+  background: linear-gradient(to bottom, rgba(15,15,26,0.9), rgba(15,15,26,0.7));
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.header-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn-primary {
+  background-color: #B08D57;
+  color: #fff;
+  padding: 0.5rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn-link {
+  color: #B08D57;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.memory-usage {
+  color: #FFF8E7;
+  font-size: 0.9rem;
+}
+
+.memory-usage progress {
+  width: 100%;
+  height: 6px;
+}
+
+.control-panel {
+  background: rgba(15,15,26,0.95);
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.control-panel input,
+.control-panel select {
+  background: #1e1e2d;
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid #444;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.timeline-container {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+.date-divider {
+  font-size: 1.3rem;
+  margin: 2rem 0 1rem;
+  color: #B08D57;
+  border-bottom: 1px solid #444;
+  padding-bottom: 0.5rem;
+}
+
+.memory-card {
+  background: rgba(255, 248, 231, 0.05);
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 8px rgba(176, 141, 87, 0.3);
+  transition: transform 0.2s ease-in-out;
+}
+
+.memory-card:hover {
+  transform: scale(1.02);
+}
+
+.memory-card img,
+.memory-card video {
+  max-width: 100%;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+}
+
+.emotional-weight {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.actions button {
+  background: transparent;
+  color: #B08D57;
+  border: 1px solid #B08D57;
+  padding: 0.3rem 0.8rem;
+  margin-right: 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.slider-container {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: #1e1e2d;
+}
+
+.site-footer {
+  background-color: #0f0f1a;
+  color: #ccc;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.site-footer .socials svg {
+  margin: 0 0.5rem;
+  stroke: #FFF8E7;
+}
