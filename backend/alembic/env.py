@@ -11,7 +11,7 @@ from alembic import context
 
 # Import Base and all models so their tables register with metadata
 from backend.db.base import Base
-from backend.models import diary_entry, user  # noqa: F401
+from backend.models import diary_entry, echo, session_log, user, user_personality  # noqa: F401
 
 config = context.config
 

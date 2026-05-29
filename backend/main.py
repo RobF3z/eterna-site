@@ -6,7 +6,7 @@ from fastapi import FastAPI, Request, status
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
-from backend.routes import auth, diary
+from backend.routes import auth, chat, diary
 
 app = FastAPI(title="Eterna API", version="2.0.0")
 
@@ -19,6 +19,7 @@ app.add_middleware(
 )
 
 app.include_router(auth.router, prefix="/api/v1")
+app.include_router(chat.router, prefix="/api/v1")
 app.include_router(diary.router, prefix="/api/v1")
 
 
